@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiDocGen.Core", "ApiDocGen.Core\ApiDocGen.Core.csproj", "{F1A4A71C-89E8-4D75-98DF-D932A5DFC713}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiDocGen.Git", "ApiDocGen.Git\ApiDocGen.Git.csproj", "{497DC0C3-6527-43D9-82A5-6A5642EA0BCD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiDocGen.Scanner.Roslyn", "ApiDocGen.Scanner.Roslyn\ApiDocGen.Scanner.Roslyn.csproj", "{ABE1465C-918D-4AAC-A740-5087BA63CD60}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiDocGen.AI.Ollama", "ApiDocGen.AI.Ollama\ApiDocGen.AI.Ollama.csproj", "{1D46BE45-22A6-40B9-9C89-6A89098150B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiDocGen.Cli", "ApiDocGen.Cli\ApiDocGen.Cli.csproj", "{20250F58-F5BC-45D7-AACC-5CBF2A81492A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F1A4A71C-89E8-4D75-98DF-D932A5DFC713}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1A4A71C-89E8-4D75-98DF-D932A5DFC713}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1A4A71C-89E8-4D75-98DF-D932A5DFC713}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1A4A71C-89E8-4D75-98DF-D932A5DFC713}.Release|Any CPU.Build.0 = Release|Any CPU
+		{497DC0C3-6527-43D9-82A5-6A5642EA0BCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{497DC0C3-6527-43D9-82A5-6A5642EA0BCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{497DC0C3-6527-43D9-82A5-6A5642EA0BCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{497DC0C3-6527-43D9-82A5-6A5642EA0BCD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABE1465C-918D-4AAC-A740-5087BA63CD60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABE1465C-918D-4AAC-A740-5087BA63CD60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABE1465C-918D-4AAC-A740-5087BA63CD60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABE1465C-918D-4AAC-A740-5087BA63CD60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D46BE45-22A6-40B9-9C89-6A89098150B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D46BE45-22A6-40B9-9C89-6A89098150B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D46BE45-22A6-40B9-9C89-6A89098150B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D46BE45-22A6-40B9-9C89-6A89098150B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20250F58-F5BC-45D7-AACC-5CBF2A81492A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20250F58-F5BC-45D7-AACC-5CBF2A81492A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20250F58-F5BC-45D7-AACC-5CBF2A81492A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20250F58-F5BC-45D7-AACC-5CBF2A81492A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

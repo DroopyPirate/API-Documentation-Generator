@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "sYPHX+V0uk8=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\pritv\\Documents\\Prit\\AI Suite Project\\API-Documentation-Generator\\ApiDocGen.Cli\\ApiDocGen.Cli.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\pritv\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\3.11.0\\microsoft.codeanalysis.analyzers.3.11.0.nupkg.sha512",
+    "C:\\Users\\pritv\\.nuget\\packages\\microsoft.codeanalysis.common\\5.0.0\\microsoft.codeanalysis.common.5.0.0.nupkg.sha512",
+    "C:\\Users\\pritv\\.nuget\\packages\\microsoft.codeanalysis.csharp\\5.0.0\\microsoft.codeanalysis.csharp.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

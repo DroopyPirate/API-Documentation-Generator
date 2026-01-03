@@ -1,0 +1,1313 @@
+{
+  "RepoUrl": "https://github.com/DroopyPirate/Exam-Portal.git",
+  "RepoCommit": "e02d83db7df75a24ae83323b99dc5b27b47af57f",
+  "Controllers": [
+    {
+      "Name": "AdminController",
+      "RoutePrefix": null,
+      "Endpoints": [
+        {
+          "HttpMethod": "GET",
+          "Route": "/",
+          "Action": "AddFaculty",
+          "Parameters": [],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        },
+        {
+          "HttpMethod": "GET",
+          "Route": "/",
+          "Action": "AddFacultyExcel",
+          "Parameters": [
+            {
+              "Name": "model",
+              "Type": "List\u003CApplicationUser\u003E",
+              "Source": "unknown"
+            }
+          ],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        },
+        {
+          "HttpMethod": "GET",
+          "Route": "/",
+          "Action": "ViewFaculty",
+          "Parameters": [],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        },
+        {
+          "HttpMethod": "GET",
+          "Route": "/",
+          "Action": "EditFaculty",
+          "Parameters": [
+            {
+              "Name": "id",
+              "Type": "int",
+              "Source": "unknown"
+            }
+          ],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        },
+        {
+          "HttpMethod": "GET",
+          "Route": "/",
+          "Action": "AddStudent",
+          "Parameters": [],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        },
+        {
+          "HttpMethod": "GET",
+          "Route": "/",
+          "Action": "AddStudentExcel",
+          "Parameters": [
+            {
+              "Name": "model",
+              "Type": "List\u003CApplicationUser\u003E",
+              "Source": "unknown"
+            }
+          ],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        },
+        {
+          "HttpMethod": "GET",
+          "Route": "/",
+          "Action": "ViewStudent",
+          "Parameters": [],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        },
+        {
+          "HttpMethod": "GET",
+          "Route": "/",
+          "Action": "EditStudent",
+          "Parameters": [
+            {
+              "Name": "id",
+              "Type": "int",
+              "Source": "unknown"
+            }
+          ],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        },
+        {
+          "HttpMethod": "GET",
+          "Route": "/",
+          "Action": "ViewTest",
+          "Parameters": [],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        },
+        {
+          "HttpMethod": "POST",
+          "Route": "/",
+          "Action": "AddFaculty",
+          "Parameters": [
+            {
+              "Name": "model",
+              "Type": "AddFacultyViewModel",
+              "Source": "unknown"
+            }
+          ],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        },
+        {
+          "HttpMethod": "POST",
+          "Route": "/",
+          "Action": "AddFacultyExcel",
+          "Parameters": [
+            {
+              "Name": "file",
+              "Type": "IFormFile",
+              "Source": "unknown"
+            },
+            {
+              "Name": "hostingEnvironment",
+              "Type": "IHostingEnvironment",
+              "Source": "unknown"
+            }
+          ],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        },
+        {
+          "HttpMethod": "POST",
+          "Route": "/",
+          "Action": "DeleteFaculty",
+          "Parameters": [
+            {
+              "Name": "id",
+              "Type": "int",
+              "Source": "unknown"
+            }
+          ],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        },
+        {
+          "HttpMethod": "POST",
+          "Route": "/",
+          "Action": "FacultyDetails",
+          "Parameters": [
+            {
+              "Name": "id",
+              "Type": "int",
+              "Source": "unknown"
+            }
+          ],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        },
+        {
+          "HttpMethod": "POST",
+          "Route": "/",
+          "Action": "EditFaculty",
+          "Parameters": [
+            {
+              "Name": "model",
+              "Type": "FacultyDetailsViewModel",
+              "Source": "unknown"
+            }
+          ],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        },
+        {
+          "HttpMethod": "POST",
+          "Route": "/",
+          "Action": "AddStudent",
+          "Parameters": [
+            {
+              "Name": "model",
+              "Type": "AddStudentViewModel",
+              "Source": "unknown"
+            }
+          ],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        },
+        {
+          "HttpMethod": "POST",
+          "Route": "/",
+          "Action": "AddStudentExcel",
+          "Parameters": [
+            {
+              "Name": "file",
+              "Type": "IFormFile",
+              "Source": "unknown"
+            },
+            {
+              "Name": "hostingEnvironment",
+              "Type": "IHostingEnvironment",
+              "Source": "unknown"
+            }
+          ],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        },
+        {
+          "HttpMethod": "POST",
+          "Route": "/",
+          "Action": "DeleteStudent",
+          "Parameters": [
+            {
+              "Name": "id",
+              "Type": "int",
+              "Source": "unknown"
+            }
+          ],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        },
+        {
+          "HttpMethod": "POST",
+          "Route": "/",
+          "Action": "StudentDetails",
+          "Parameters": [
+            {
+              "Name": "id",
+              "Type": "int",
+              "Source": "unknown"
+            }
+          ],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        },
+        {
+          "HttpMethod": "POST",
+          "Route": "/",
+          "Action": "EditStudent",
+          "Parameters": [
+            {
+              "Name": "model",
+              "Type": "StudentDetailsViewModel",
+              "Source": "unknown"
+            }
+          ],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Name": "FacultyController",
+      "RoutePrefix": null,
+      "Endpoints": [
+        {
+          "HttpMethod": "GET",
+          "Route": "/",
+          "Action": "AddStudent",
+          "Parameters": [],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        },
+        {
+          "HttpMethod": "GET",
+          "Route": "/",
+          "Action": "AddStudentExcel",
+          "Parameters": [
+            {
+              "Name": "model",
+              "Type": "List\u003CApplicationUser\u003E",
+              "Source": "unknown"
+            }
+          ],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        },
+        {
+          "HttpMethod": "GET",
+          "Route": "/",
+          "Action": "ViewStudent",
+          "Parameters": [],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        },
+        {
+          "HttpMethod": "GET",
+          "Route": "/",
+          "Action": "EditStudent",
+          "Parameters": [
+            {
+              "Name": "id",
+              "Type": "int",
+              "Source": "unknown"
+            }
+          ],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        },
+        {
+          "HttpMethod": "GET",
+          "Route": "/",
+          "Action": "ViewTest",
+          "Parameters": [],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        },
+        {
+          "HttpMethod": "POST",
+          "Route": "/",
+          "Action": "AddStudent",
+          "Parameters": [
+            {
+              "Name": "model",
+              "Type": "AddStudentViewModel",
+              "Source": "unknown"
+            }
+          ],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        },
+        {
+          "HttpMethod": "POST",
+          "Route": "/",
+          "Action": "AddStudentExcel",
+          "Parameters": [
+            {
+              "Name": "file",
+              "Type": "IFormFile",
+              "Source": "unknown"
+            },
+            {
+              "Name": "hostingEnvironment",
+              "Type": "IHostingEnvironment",
+              "Source": "unknown"
+            }
+          ],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        },
+        {
+          "HttpMethod": "POST",
+          "Route": "/",
+          "Action": "DeleteStudent",
+          "Parameters": [
+            {
+              "Name": "id",
+              "Type": "int",
+              "Source": "unknown"
+            }
+          ],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        },
+        {
+          "HttpMethod": "POST",
+          "Route": "/",
+          "Action": "StudentDetails",
+          "Parameters": [
+            {
+              "Name": "id",
+              "Type": "int",
+              "Source": "unknown"
+            }
+          ],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        },
+        {
+          "HttpMethod": "POST",
+          "Route": "/",
+          "Action": "EditStudent",
+          "Parameters": [
+            {
+              "Name": "model",
+              "Type": "StudentDetailsViewModel",
+              "Source": "unknown"
+            }
+          ],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Name": "GroupController",
+      "RoutePrefix": null,
+      "Endpoints": [
+        {
+          "HttpMethod": "GET",
+          "Route": "/",
+          "Action": "CreateGroup",
+          "Parameters": [],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        },
+        {
+          "HttpMethod": "GET",
+          "Route": "/",
+          "Action": "GroupDetails",
+          "Parameters": [
+            {
+              "Name": "id",
+              "Type": "int",
+              "Source": "unknown"
+            }
+          ],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        },
+        {
+          "HttpMethod": "GET",
+          "Route": "/",
+          "Action": "AddStudentToGroup",
+          "Parameters": [
+            {
+              "Name": "id",
+              "Type": "int",
+              "Source": "unknown"
+            }
+          ],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        },
+        {
+          "HttpMethod": "GET",
+          "Route": "/",
+          "Action": "ViewUserGroups",
+          "Parameters": [],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        },
+        {
+          "HttpMethod": "GET",
+          "Route": "/",
+          "Action": "ViewOtherGroups",
+          "Parameters": [],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        },
+        {
+          "HttpMethod": "GET",
+          "Route": "/",
+          "Action": "EditGroup",
+          "Parameters": [
+            {
+              "Name": "id",
+              "Type": "int",
+              "Source": "unknown"
+            }
+          ],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        },
+        {
+          "HttpMethod": "POST",
+          "Route": "/",
+          "Action": "CreateGroup",
+          "Parameters": [
+            {
+              "Name": "model",
+              "Type": "CreateGroupViewModel",
+              "Source": "unknown"
+            }
+          ],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        },
+        {
+          "HttpMethod": "POST",
+          "Route": "/",
+          "Action": "AddStudentToGroup",
+          "Parameters": [
+            {
+              "Name": "array",
+              "Type": "string[]",
+              "Source": "body"
+            }
+          ],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        },
+        {
+          "HttpMethod": "POST",
+          "Route": "/",
+          "Action": "RemoveStudent",
+          "Parameters": [
+            {
+              "Name": "array",
+              "Type": "string[]",
+              "Source": "body"
+            }
+          ],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        },
+        {
+          "HttpMethod": "POST",
+          "Route": "/",
+          "Action": "EditGroup",
+          "Parameters": [
+            {
+              "Name": "id",
+              "Type": "int",
+              "Source": "unknown"
+            },
+            {
+              "Name": "model",
+              "Type": "CreateGroupViewModel",
+              "Source": "unknown"
+            }
+          ],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        },
+        {
+          "HttpMethod": "POST",
+          "Route": "/",
+          "Action": "DeleteGroup",
+          "Parameters": [
+            {
+              "Name": "id",
+              "Type": "int",
+              "Source": "unknown"
+            }
+          ],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Name": "HomeController",
+      "RoutePrefix": null,
+      "Endpoints": [
+        {
+          "HttpMethod": "GET",
+          "Route": "/",
+          "Action": "Index",
+          "Parameters": [],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        },
+        {
+          "HttpMethod": "GET",
+          "Route": "/",
+          "Action": "ChangePassword",
+          "Parameters": [],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        },
+        {
+          "HttpMethod": "GET",
+          "Route": "/",
+          "Action": "Profile",
+          "Parameters": [],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        },
+        {
+          "HttpMethod": "POST",
+          "Route": "/",
+          "Action": "Index",
+          "Parameters": [
+            {
+              "Name": "model",
+              "Type": "LoginViewModel",
+              "Source": "unknown"
+            }
+          ],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        },
+        {
+          "HttpMethod": "POST",
+          "Route": "/",
+          "Action": "LogOut",
+          "Parameters": [],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        },
+        {
+          "HttpMethod": "POST",
+          "Route": "/",
+          "Action": "ChangePassword",
+          "Parameters": [
+            {
+              "Name": "model",
+              "Type": "ChangePasswordViewModel",
+              "Source": "unknown"
+            }
+          ],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        },
+        {
+          "HttpMethod": "POST",
+          "Route": "/",
+          "Action": "Profile",
+          "Parameters": [
+            {
+              "Name": "model",
+              "Type": "ApplicationUser",
+              "Source": "unknown"
+            }
+          ],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Name": "SuperAdminController",
+      "RoutePrefix": null,
+      "Endpoints": [
+        {
+          "HttpMethod": "GET",
+          "Route": "/",
+          "Action": "AddAdmin",
+          "Parameters": [],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        },
+        {
+          "HttpMethod": "GET",
+          "Route": "/",
+          "Action": "ViewAdmin",
+          "Parameters": [],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        },
+        {
+          "HttpMethod": "GET",
+          "Route": "/",
+          "Action": "EditAdmin",
+          "Parameters": [
+            {
+              "Name": "id",
+              "Type": "int",
+              "Source": "unknown"
+            }
+          ],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        },
+        {
+          "HttpMethod": "POST",
+          "Route": "/",
+          "Action": "AddAdmin",
+          "Parameters": [
+            {
+              "Name": "model",
+              "Type": "AddFacultyViewModel",
+              "Source": "unknown"
+            }
+          ],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        },
+        {
+          "HttpMethod": "POST",
+          "Route": "/",
+          "Action": "AdminDetails",
+          "Parameters": [
+            {
+              "Name": "id",
+              "Type": "int",
+              "Source": "unknown"
+            }
+          ],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        },
+        {
+          "HttpMethod": "POST",
+          "Route": "/",
+          "Action": "EditAdmin",
+          "Parameters": [
+            {
+              "Name": "model",
+              "Type": "FacultyDetailsViewModel",
+              "Source": "unknown"
+            }
+          ],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        },
+        {
+          "HttpMethod": "POST",
+          "Route": "/",
+          "Action": "DeleteAdmin",
+          "Parameters": [
+            {
+              "Name": "id",
+              "Type": "int",
+              "Source": "unknown"
+            }
+          ],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Name": "TagController",
+      "RoutePrefix": null,
+      "Endpoints": [
+        {
+          "HttpMethod": "GET",
+          "Route": "/",
+          "Action": "Index",
+          "Parameters": [],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        },
+        {
+          "HttpMethod": "GET",
+          "Route": "/",
+          "Action": "Rename",
+          "Parameters": [
+            {
+              "Name": "id",
+              "Type": "int",
+              "Source": "unknown"
+            }
+          ],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        },
+        {
+          "HttpMethod": "POST",
+          "Route": "/",
+          "Action": "CreateTag",
+          "Parameters": [
+            {
+              "Name": "model",
+              "Type": "CreateTagViewModel",
+              "Source": "unknown"
+            }
+          ],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        },
+        {
+          "HttpMethod": "POST",
+          "Route": "/",
+          "Action": "DeleteTag",
+          "Parameters": [
+            {
+              "Name": "id",
+              "Type": "int",
+              "Source": "unknown"
+            }
+          ],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        },
+        {
+          "HttpMethod": "POST",
+          "Route": "/",
+          "Action": "Rename",
+          "Parameters": [
+            {
+              "Name": "id",
+              "Type": "int",
+              "Source": "unknown"
+            },
+            {
+              "Name": "model",
+              "Type": "CreateTagViewModel",
+              "Source": "unknown"
+            }
+          ],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Name": "TestController",
+      "RoutePrefix": null,
+      "Endpoints": [
+        {
+          "HttpMethod": "GET",
+          "Route": "/",
+          "Action": "Index",
+          "Parameters": [],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        },
+        {
+          "HttpMethod": "GET",
+          "Route": "/",
+          "Action": "TestDetails",
+          "Parameters": [
+            {
+              "Name": "id",
+              "Type": "int",
+              "Source": "unknown"
+            }
+          ],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        },
+        {
+          "HttpMethod": "GET",
+          "Route": "/",
+          "Action": "AddQuestions",
+          "Parameters": [
+            {
+              "Name": "id",
+              "Type": "int",
+              "Source": "unknown"
+            }
+          ],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        },
+        {
+          "HttpMethod": "GET",
+          "Route": "/",
+          "Action": "AssignTest",
+          "Parameters": [
+            {
+              "Name": "id",
+              "Type": "int",
+              "Source": "unknown"
+            }
+          ],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        },
+        {
+          "HttpMethod": "POST",
+          "Route": "/",
+          "Action": "CreateTest",
+          "Parameters": [
+            {
+              "Name": "model",
+              "Type": "CreateTestViewModel",
+              "Source": "unknown"
+            }
+          ],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        },
+        {
+          "HttpMethod": "POST",
+          "Route": "/",
+          "Action": "AddQuestions",
+          "Parameters": [
+            {
+              "Name": "model",
+              "Type": "AddQuestionsViewModel",
+              "Source": "unknown"
+            }
+          ],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        },
+        {
+          "HttpMethod": "POST",
+          "Route": "/",
+          "Action": "AssignTest",
+          "Parameters": [
+            {
+              "Name": "array",
+              "Type": "string[]",
+              "Source": "body"
+            }
+          ],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Name": "TestTypeController",
+      "RoutePrefix": null,
+      "Endpoints": [
+        {
+          "HttpMethod": "GET",
+          "Route": "/",
+          "Action": "Index",
+          "Parameters": [],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        },
+        {
+          "HttpMethod": "GET",
+          "Route": "/",
+          "Action": "Rename",
+          "Parameters": [
+            {
+              "Name": "id",
+              "Type": "int",
+              "Source": "unknown"
+            }
+          ],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        },
+        {
+          "HttpMethod": "POST",
+          "Route": "/",
+          "Action": "CreateType",
+          "Parameters": [
+            {
+              "Name": "model",
+              "Type": "CreateTestTypeViewModel",
+              "Source": "unknown"
+            }
+          ],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        },
+        {
+          "HttpMethod": "POST",
+          "Route": "/",
+          "Action": "DeleteType",
+          "Parameters": [
+            {
+              "Name": "id",
+              "Type": "int",
+              "Source": "unknown"
+            }
+          ],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        },
+        {
+          "HttpMethod": "POST",
+          "Route": "/",
+          "Action": "Rename",
+          "Parameters": [
+            {
+              "Name": "id",
+              "Type": "int",
+              "Source": "unknown"
+            },
+            {
+              "Name": "model",
+              "Type": "CreateTestTypeViewModel",
+              "Source": "unknown"
+            }
+          ],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Body": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
