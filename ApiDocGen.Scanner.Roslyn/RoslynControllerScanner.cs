@@ -9,10 +9,9 @@ public static class RoslynControllerScanner
 {
     public static List<ControllerSpec> ScanControllers(string repoRoot)
     {
-        // Common pattern: <Project>/Controllers/*.cs
         var controllerFiles = Directory.EnumerateFiles(repoRoot, "*.cs", SearchOption.AllDirectories)
             .Where(p => p.EndsWith("Controller.cs", StringComparison.OrdinalIgnoreCase)
-                        || p.Contains($"{Path.DirectorySeparatorChar}Controllers{Path.DirectorySeparatorChar}", StringComparison.OrdinalIgnoreCase))
+                     || p.Contains($"{Path.DirectorySeparatorChar}Controllers{Path.DirectorySeparatorChar}", StringComparison.OrdinalIgnoreCase))
             .ToList();
 
         var controllers = new List<ControllerSpec>();
@@ -31,6 +30,10 @@ public static class RoslynControllerScanner
                 var controllerName = classNode.Identifier.Text;
                 var routePrefix = GetRouteTemplate(classNode.AttributeLists);
 
+                var isApiController = classNode.AttributeLists
+                    .SelectMany(a => a.Attributes)
+                    .Any(a => a.Name.ToString().Contains("ApiController", StringComparison.OrdinalIgnoreCase));
+
                 var endpoints = new List<EndpointSpec>();
 
                 foreach (var method in classNode.Members.OfType<MethodDeclarationSyntax>())
@@ -38,55 +41,106 @@ public static class RoslynControllerScanner
                     var http = GetHttpMethod(method.AttributeLists);
                     if (http is null) continue;
 
-                    var methodTemplate = GetHttpTemplate(method.AttributeLists); // e.g. "{id}"
+                    var endpointKind = isApiController ? "api" : "mvc";
+
+                    var methodTemplate = GetHttpTemplate(method.AttributeLists);
                     var route = CombineRoutes(routePrefix, methodTemplate);
 
                     var parameters = new List<ParameterSpec>();
-                    string? bodyType = null;
 
                     foreach (var p in method.ParameterList.Parameters)
                     {
-                        var pName = p.Identifier.Text;
-                        var pType = p.Type?.ToString() ?? "object";
-                        var source = GetParamSource(p.AttributeLists);
-
-                        if (source == "body") bodyType = pType;
-
                         parameters.Add(new ParameterSpec(
-                            Name: pName,
-                            Type: pType,
-                            Source: source
+                            Name: p.Identifier.Text,
+                            Type: p.Type?.ToString() ?? "object",
+                            Source: GetParamSource(p.AttributeLists, endpointKind)
                         ));
                     }
 
-                    // Request body schema (FromBody)
-                    var bodyParam = method.ParameterList.Parameters.FirstOrDefault(p =>
-                        p.AttributeLists.SelectMany(a => a.Attributes)
-                            .Any(a => a.Name.ToString().Contains("FromBody", StringComparison.OrdinalIgnoreCase)));
-
+                    // -------- REQUEST SCHEMA --------
                     TypeSchema? requestSchema = null;
-                    if (bodyParam?.Type is not null)
+
+                    // Explicit [FromBody] or [FromForm]
+                    var explicitBody = method.ParameterList.Parameters.FirstOrDefault(p =>
+                        p.AttributeLists.SelectMany(a => a.Attributes)
+                            .Any(a => a.Name.ToString().Contains("FromBody", StringComparison.OrdinalIgnoreCase)
+                                   || a.Name.ToString().Contains("FromForm", StringComparison.OrdinalIgnoreCase)));
+
+                    if (explicitBody?.Type is not null)
                     {
-                        requestSchema = SchemaExtractor.TryBuildSchema(bodyParam.Type.ToString(), idx);
+                        requestSchema = SchemaExtractor.TryBuildSchema(explicitBody.Type.ToString(), idx);
+                    }
+                    else
+                    {
+                        // Default complex model
+                        var complexParam = method.ParameterList.Parameters
+                            .FirstOrDefault(p => p.Type is not null && !IsSimpleType(p.Type.ToString()));
+
+                        if (complexParam?.Type is not null)
+                        {
+                            requestSchema = SchemaExtractor.TryBuildSchema(complexParam.Type.ToString(), idx);
+                        }
                     }
 
-                    // Response schema (best-effort from return type)
-                    var responseBodyType = ReturnTypeParser.TryExtractResponseBodyType(method.ReturnType.ToString());
+                    // -------- RESPONSES --------
+                    var responses = new List<ResponseSpec>();
 
-                    TypeSchema? responseSchema = null;
-                    if (!string.IsNullOrWhiteSpace(responseBodyType))
+                    if (endpointKind == "api")
                     {
-                        responseSchema = SchemaExtractor.TryBuildSchema(responseBodyType, idx);
+                        // Ok(new Response<T>(...))
+                        var t = ResponseInference.TryInferOkResponseModelType(method);
+
+                        TypeSchema? jsonSchema = null;
+                        if (!string.IsNullOrWhiteSpace(t))
+                        {
+                            jsonSchema = SchemaExtractor.TryBuildSchema(t!, idx);
+                        }
+
+                        responses.Add(new ResponseSpec(
+                            StatusCode: 200,
+                            Kind: "json",
+                            JsonBodySchema: jsonSchema,
+                            ViewModelSchema: null
+                        ));
                     }
-
-                    var responses = new List<ResponseSpec>
+                    else // MVC
                     {
-                        new ResponseSpec(200, responseSchema)
-                    };
+                        // View(model)
+                        var (vmType, isView) = MvcResponseInference.TryInferViewModel(method);
+                        if (isView)
+                        {
+                            responses.Add(new ResponseSpec(
+                                StatusCode: 200,
+                                Kind: "view",
+                                JsonBodySchema: null,
+                                ViewModelSchema: requestSchema
+                            ));
+                        }
 
+                        // Redirect
+                        if (MvcResponseInference.HasRedirect(method))
+                        {
+                            responses.Add(new ResponseSpec(
+                                StatusCode: 302,
+                                Kind: "redirect",
+                                JsonBodySchema: null,
+                                ViewModelSchema: null
+                            ));
+                        }
 
+                        if (responses.Count == 0)
+                        {
+                            responses.Add(new ResponseSpec(
+                                StatusCode: 200,
+                                Kind: "unknown",
+                                JsonBodySchema: null,
+                                ViewModelSchema: null
+                            ));
+                        }
+                    }
 
                     endpoints.Add(new EndpointSpec(
+                        Kind: endpointKind,
                         HttpMethod: http,
                         Route: NormalizeRoute(route, controllerName),
                         Action: method.Identifier.Text,
@@ -94,7 +148,6 @@ public static class RoslynControllerScanner
                         RequestBodySchema: requestSchema,
                         Responses: responses
                     ));
-
                 }
 
                 if (endpoints.Count > 0)
@@ -111,7 +164,6 @@ public static class RoslynControllerScanner
             }
         }
 
-        // de-dupe by name (if partial classes etc.)
         return controllers
             .GroupBy(c => c.Name)
             .Select(g => new ControllerSpec(
@@ -123,28 +175,25 @@ public static class RoslynControllerScanner
             .ToList();
     }
 
+    // ---------- HELPERS ----------
+
     private static bool LooksLikeController(ClassDeclarationSyntax cls)
     {
         var name = cls.Identifier.Text;
         if (name.EndsWith("Controller", StringComparison.OrdinalIgnoreCase)) return true;
 
-        // Also allow [ApiController]
         return cls.AttributeLists
             .SelectMany(a => a.Attributes)
-            .Any(a => a.Name.ToString().EndsWith("ApiController", StringComparison.OrdinalIgnoreCase)
-                   || a.Name.ToString().EndsWith("ApiControllerAttribute", StringComparison.OrdinalIgnoreCase));
+            .Any(a => a.Name.ToString().Contains("ApiController", StringComparison.OrdinalIgnoreCase));
     }
 
     private static string? GetRouteTemplate(SyntaxList<AttributeListSyntax> attrs)
     {
-        // [Route("api/[controller]")]
         foreach (var a in attrs.SelectMany(x => x.Attributes))
         {
-            var n = a.Name.ToString();
-            if (n.EndsWith("Route", StringComparison.OrdinalIgnoreCase) || n.EndsWith("RouteAttribute", StringComparison.OrdinalIgnoreCase))
+            if (a.Name.ToString().Contains("Route", StringComparison.OrdinalIgnoreCase))
             {
-                var arg = a.ArgumentList?.Arguments.FirstOrDefault()?.ToString();
-                return StripQuotes(arg);
+                return StripQuotes(a.ArgumentList?.Arguments.FirstOrDefault()?.ToString());
             }
         }
         return null;
@@ -155,36 +204,35 @@ public static class RoslynControllerScanner
         foreach (var a in attrs.SelectMany(x => x.Attributes))
         {
             var n = a.Name.ToString();
-            if (EndsWithAny(n, "HttpGet", "HttpGetAttribute")) return "GET";
-            if (EndsWithAny(n, "HttpPost", "HttpPostAttribute")) return "POST";
-            if (EndsWithAny(n, "HttpPut", "HttpPutAttribute")) return "PUT";
-            if (EndsWithAny(n, "HttpDelete", "HttpDeleteAttribute")) return "DELETE";
-            if (EndsWithAny(n, "HttpPatch", "HttpPatchAttribute")) return "PATCH";
+            if (n.Contains("HttpGet")) return "GET";
+            if (n.Contains("HttpPost")) return "POST";
+            if (n.Contains("HttpPut")) return "PUT";
+            if (n.Contains("HttpDelete")) return "DELETE";
+            if (n.Contains("HttpPatch")) return "PATCH";
         }
         return null;
     }
 
     private static string? GetHttpTemplate(SyntaxList<AttributeListSyntax> attrs)
     {
-        // [HttpGet("{id}")]
         foreach (var a in attrs.SelectMany(x => x.Attributes))
         {
-            var n = a.Name.ToString();
-            if (!n.StartsWith("Http", StringComparison.OrdinalIgnoreCase)) continue;
-
-            var arg = a.ArgumentList?.Arguments.FirstOrDefault()?.ToString();
-            return StripQuotes(arg);
+            if (!a.Name.ToString().StartsWith("Http", StringComparison.OrdinalIgnoreCase)) continue;
+            return StripQuotes(a.ArgumentList?.Arguments.FirstOrDefault()?.ToString());
         }
         return null;
     }
 
-    private static string GetParamSource(SyntaxList<AttributeListSyntax> attrs)
+    private static string GetParamSource(SyntaxList<AttributeListSyntax> attrs, string kind)
     {
         var names = attrs.SelectMany(x => x.Attributes).Select(a => a.Name.ToString()).ToList();
-        if (names.Any(n => EndsWithAny(n, "FromBody", "FromBodyAttribute"))) return "body";
-        if (names.Any(n => EndsWithAny(n, "FromRoute", "FromRouteAttribute"))) return "route";
-        if (names.Any(n => EndsWithAny(n, "FromQuery", "FromQueryAttribute"))) return "query";
-        return "unknown";
+
+        if (names.Any(n => n.Contains("FromBody"))) return "body";
+        if (names.Any(n => n.Contains("FromRoute"))) return "route";
+        if (names.Any(n => n.Contains("FromQuery"))) return "query";
+        if (names.Any(n => n.Contains("FromForm"))) return "form";
+
+        return kind == "api" ? "body" : "form";
     }
 
     private static string CombineRoutes(string? prefix, string? template)
@@ -203,7 +251,6 @@ public static class RoslynControllerScanner
         var r = (route ?? "").Trim();
         if (string.IsNullOrWhiteSpace(r)) r = "/";
 
-        // Replace [controller] token with controller name sans "Controller"
         var tokenValue = controllerName.EndsWith("Controller", StringComparison.OrdinalIgnoreCase)
             ? controllerName[..^"Controller".Length]
             : controllerName;
@@ -216,15 +263,18 @@ public static class RoslynControllerScanner
         return r;
     }
 
-    private static bool EndsWithAny(string value, params string[] suffixes)
-        => suffixes.Any(s => value.EndsWith(s, StringComparison.OrdinalIgnoreCase));
+    private static bool IsSimpleType(string typeName)
+    {
+        typeName = typeName.Trim().TrimEnd('?');
+        return typeName is "string" or "int" or "long" or "short" or "byte"
+            or "bool" or "double" or "float" or "decimal"
+            or "DateTime" or "Guid";
+    }
 
     private static string? StripQuotes(string? s)
     {
         if (string.IsNullOrWhiteSpace(s)) return null;
         s = s.Trim();
-        if (s.StartsWith("\"") && s.EndsWith("\"") && s.Length >= 2)
-            return s[1..^1];
-        return s;
+        return s.StartsWith("\"") && s.EndsWith("\"") ? s[1..^1] : s;
     }
 }

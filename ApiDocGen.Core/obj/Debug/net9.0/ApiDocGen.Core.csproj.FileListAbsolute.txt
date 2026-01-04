@@ -9,3 +9,15 @@ C:\Users\pritv\Documents\Prit\AI Suite Project\ApiDocGenFromSource\ApiDocGen.Cor
 C:\Users\pritv\Documents\Prit\AI Suite Project\ApiDocGenFromSource\ApiDocGen.Core\obj\Debug\net9.0\refint\ApiDocGen.Core.dll
 C:\Users\pritv\Documents\Prit\AI Suite Project\ApiDocGenFromSource\ApiDocGen.Core\obj\Debug\net9.0\ApiDocGen.Core.pdb
 C:\Users\pritv\Documents\Prit\AI Suite Project\ApiDocGenFromSource\ApiDocGen.Core\obj\Debug\net9.0\ref\ApiDocGen.Core.dll
+C:\Users\pritv\Documents\Prit\AI Suite Project\API-Documentation-Generator\ApiDocGen.Core\bin\Debug\net9.0\ApiDocGen.Core.deps.json
+C:\Users\pritv\Documents\Prit\AI Suite Project\API-Documentation-Generator\ApiDocGen.Core\bin\Debug\net9.0\ApiDocGen.Core.dll
+C:\Users\pritv\Documents\Prit\AI Suite Project\API-Documentation-Generator\ApiDocGen.Core\bin\Debug\net9.0\ApiDocGen.Core.pdb
+C:\Users\pritv\Documents\Prit\AI Suite Project\API-Documentation-Generator\ApiDocGen.Core\obj\Debug\net9.0\ApiDocGen.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pritv\Documents\Prit\AI Suite Project\API-Documentation-Generator\ApiDocGen.Core\obj\Debug\net9.0\ApiDocGen.Core.AssemblyInfoInputs.cache
+C:\Users\pritv\Documents\Prit\AI Suite Project\API-Documentation-Generator\ApiDocGen.Core\obj\Debug\net9.0\ApiDocGen.Core.AssemblyInfo.cs
+C:\Users\pritv\Documents\Prit\AI Suite Project\API-Documentation-Generator\ApiDocGen.Core\obj\Debug\net9.0\ApiDocGen.Core.csproj.CoreCompileInputs.cache
+C:\Users\pritv\Documents\Prit\AI Suite Project\API-Documentation-Generator\ApiDocGen.Core\obj\Debug\net9.0\ApiDocGen.Core.sourcelink.json
+C:\Users\pritv\Documents\Prit\AI Suite Project\API-Documentation-Generator\ApiDocGen.Core\obj\Debug\net9.0\ApiDocGen.Core.dll
+C:\Users\pritv\Documents\Prit\AI Suite Project\API-Documentation-Generator\ApiDocGen.Core\obj\Debug\net9.0\refint\ApiDocGen.Core.dll
+C:\Users\pritv\Documents\Prit\AI Suite Project\API-Documentation-Generator\ApiDocGen.Core\obj\Debug\net9.0\ApiDocGen.Core.pdb
+C:\Users\pritv\Documents\Prit\AI Suite Project\API-Documentation-Generator\ApiDocGen.Core\obj\Debug\net9.0\ref\ApiDocGen.Core.dll

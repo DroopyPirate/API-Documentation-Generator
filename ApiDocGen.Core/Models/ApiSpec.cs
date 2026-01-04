@@ -13,6 +13,7 @@ public sealed record ControllerSpec(
 );
 
 public sealed record EndpointSpec(
+    string Kind,                // "api" or "mvc"
     string HttpMethod,
     string Route,
     string Action,
@@ -21,6 +22,7 @@ public sealed record EndpointSpec(
     List<ResponseSpec> Responses
 );
 
+
 public sealed record ParameterSpec(
     string Name,
     string Type,
@@ -28,18 +30,20 @@ public sealed record ParameterSpec(
 );
 
 public sealed record TypeSchema(
-    string Name,
+    string Name, 
     List<PropertySchema> Properties
 );
 
 public sealed record PropertySchema(
-    string Name,
-    string Type,
-    bool IsRequired,
+    string Name, 
+    string Type, 
+    bool IsRequired, 
     List<string> Attributes
 );
 
 public sealed record ResponseSpec(
     int StatusCode,
-    TypeSchema? Body
+    string Kind,                // "json" | "view" | "redirect" | "unknown"
+    TypeSchema? JsonBodySchema,
+    TypeSchema? ViewModelSchema
 );

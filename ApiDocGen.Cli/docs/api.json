@@ -7,6 +7,7 @@
       "RoutePrefix": null,
       "Endpoints": [
         {
+          "Kind": "mvc",
           "HttpMethod": "GET",
           "Route": "/",
           "Action": "AddFaculty",
@@ -15,11 +16,14 @@
           "Responses": [
             {
               "StatusCode": 200,
-              "Body": null
+              "Kind": "view",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         },
         {
+          "Kind": "mvc",
           "HttpMethod": "GET",
           "Route": "/",
           "Action": "AddFacultyExcel",
@@ -27,18 +31,21 @@
             {
               "Name": "model",
               "Type": "List\u003CApplicationUser\u003E",
-              "Source": "unknown"
+              "Source": "form"
             }
           ],
           "RequestBodySchema": null,
           "Responses": [
             {
               "StatusCode": 200,
-              "Body": null
+              "Kind": "view",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         },
         {
+          "Kind": "mvc",
           "HttpMethod": "GET",
           "Route": "/",
           "Action": "ViewFaculty",
@@ -47,11 +54,14 @@
           "Responses": [
             {
               "StatusCode": 200,
-              "Body": null
+              "Kind": "view",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         },
         {
+          "Kind": "mvc",
           "HttpMethod": "GET",
           "Route": "/",
           "Action": "EditFaculty",
@@ -59,18 +69,21 @@
             {
               "Name": "id",
               "Type": "int",
-              "Source": "unknown"
+              "Source": "form"
             }
           ],
           "RequestBodySchema": null,
           "Responses": [
             {
               "StatusCode": 200,
-              "Body": null
+              "Kind": "view",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         },
         {
+          "Kind": "mvc",
           "HttpMethod": "GET",
           "Route": "/",
           "Action": "AddStudent",
@@ -79,11 +92,14 @@
           "Responses": [
             {
               "StatusCode": 200,
-              "Body": null
+              "Kind": "view",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         },
         {
+          "Kind": "mvc",
           "HttpMethod": "GET",
           "Route": "/",
           "Action": "AddStudentExcel",
@@ -91,18 +107,21 @@
             {
               "Name": "model",
               "Type": "List\u003CApplicationUser\u003E",
-              "Source": "unknown"
+              "Source": "form"
             }
           ],
           "RequestBodySchema": null,
           "Responses": [
             {
               "StatusCode": 200,
-              "Body": null
+              "Kind": "view",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         },
         {
+          "Kind": "mvc",
           "HttpMethod": "GET",
           "Route": "/",
           "Action": "ViewStudent",
@@ -111,11 +130,14 @@
           "Responses": [
             {
               "StatusCode": 200,
-              "Body": null
+              "Kind": "view",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         },
         {
+          "Kind": "mvc",
           "HttpMethod": "GET",
           "Route": "/",
           "Action": "EditStudent",
@@ -123,18 +145,21 @@
             {
               "Name": "id",
               "Type": "int",
-              "Source": "unknown"
+              "Source": "form"
             }
           ],
           "RequestBodySchema": null,
           "Responses": [
             {
               "StatusCode": 200,
-              "Body": null
+              "Kind": "view",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         },
         {
+          "Kind": "mvc",
           "HttpMethod": "GET",
           "Route": "/",
           "Action": "ViewTest",
@@ -143,11 +168,14 @@
           "Responses": [
             {
               "StatusCode": 200,
-              "Body": null
+              "Kind": "view",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         },
         {
+          "Kind": "mvc",
           "HttpMethod": "POST",
           "Route": "/",
           "Action": "AddFaculty",
@@ -155,18 +183,219 @@
             {
               "Name": "model",
               "Type": "AddFacultyViewModel",
-              "Source": "unknown"
+              "Source": "form"
             }
           ],
-          "RequestBodySchema": null,
+          "RequestBodySchema": {
+            "Name": "AddFacultyViewModel",
+            "Properties": [
+              {
+                "Name": "Role",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required"
+                ]
+              },
+              {
+                "Name": "Email",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "DataType",
+                  "EmailAddress"
+                ]
+              },
+              {
+                "Name": "Password",
+                "Type": "string",
+                "IsRequired": false,
+                "Attributes": [
+                  "DataType"
+                ]
+              },
+              {
+                "Name": "Name",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "MaxLength",
+                  "DataType"
+                ]
+              },
+              {
+                "Name": "MiddleName",
+                "Type": "string",
+                "IsRequired": false,
+                "Attributes": [
+                  "MaxLength",
+                  "DataType"
+                ]
+              },
+              {
+                "Name": "LastName",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "MaxLength",
+                  "DataType"
+                ]
+              },
+              {
+                "Name": "PhoneNumber",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "DataType",
+                  "RegularExpression"
+                ]
+              },
+              {
+                "Name": "Address",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "MaxLength",
+                  "DataType"
+                ]
+              },
+              {
+                "Name": "Branch",
+                "Type": "BranchEnum",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required"
+                ]
+              },
+              {
+                "Name": "DOB",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "DataType"
+                ]
+              }
+            ]
+          },
           "Responses": [
             {
               "StatusCode": 200,
-              "Body": null
+              "Kind": "view",
+              "JsonBodySchema": null,
+              "ViewModelSchema": {
+                "Name": "AddFacultyViewModel",
+                "Properties": [
+                  {
+                    "Name": "Role",
+                    "Type": "string",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required"
+                    ]
+                  },
+                  {
+                    "Name": "Email",
+                    "Type": "string",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required",
+                      "DataType",
+                      "EmailAddress"
+                    ]
+                  },
+                  {
+                    "Name": "Password",
+                    "Type": "string",
+                    "IsRequired": false,
+                    "Attributes": [
+                      "DataType"
+                    ]
+                  },
+                  {
+                    "Name": "Name",
+                    "Type": "string",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required",
+                      "MaxLength",
+                      "DataType"
+                    ]
+                  },
+                  {
+                    "Name": "MiddleName",
+                    "Type": "string",
+                    "IsRequired": false,
+                    "Attributes": [
+                      "MaxLength",
+                      "DataType"
+                    ]
+                  },
+                  {
+                    "Name": "LastName",
+                    "Type": "string",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required",
+                      "MaxLength",
+                      "DataType"
+                    ]
+                  },
+                  {
+                    "Name": "PhoneNumber",
+                    "Type": "string",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required",
+                      "DataType",
+                      "RegularExpression"
+                    ]
+                  },
+                  {
+                    "Name": "Address",
+                    "Type": "string",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required",
+                      "MaxLength",
+                      "DataType"
+                    ]
+                  },
+                  {
+                    "Name": "Branch",
+                    "Type": "BranchEnum",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required"
+                    ]
+                  },
+                  {
+                    "Name": "DOB",
+                    "Type": "string",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required",
+                      "DataType"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "StatusCode": 302,
+              "Kind": "redirect",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         },
         {
+          "Kind": "mvc",
           "HttpMethod": "POST",
           "Route": "/",
           "Action": "AddFacultyExcel",
@@ -174,23 +403,26 @@
             {
               "Name": "file",
               "Type": "IFormFile",
-              "Source": "unknown"
+              "Source": "form"
             },
             {
               "Name": "hostingEnvironment",
               "Type": "IHostingEnvironment",
-              "Source": "unknown"
+              "Source": "form"
             }
           ],
           "RequestBodySchema": null,
           "Responses": [
             {
               "StatusCode": 200,
-              "Body": null
+              "Kind": "view",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         },
         {
+          "Kind": "mvc",
           "HttpMethod": "POST",
           "Route": "/",
           "Action": "DeleteFaculty",
@@ -198,18 +430,27 @@
             {
               "Name": "id",
               "Type": "int",
-              "Source": "unknown"
+              "Source": "form"
             }
           ],
           "RequestBodySchema": null,
           "Responses": [
             {
               "StatusCode": 200,
-              "Body": null
+              "Kind": "view",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
+            },
+            {
+              "StatusCode": 302,
+              "Kind": "redirect",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         },
         {
+          "Kind": "mvc",
           "HttpMethod": "POST",
           "Route": "/",
           "Action": "FacultyDetails",
@@ -217,18 +458,21 @@
             {
               "Name": "id",
               "Type": "int",
-              "Source": "unknown"
+              "Source": "form"
             }
           ],
           "RequestBodySchema": null,
           "Responses": [
             {
               "StatusCode": 200,
-              "Body": null
+              "Kind": "view",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         },
         {
+          "Kind": "mvc",
           "HttpMethod": "POST",
           "Route": "/",
           "Action": "EditFaculty",
@@ -236,18 +480,229 @@
             {
               "Name": "model",
               "Type": "FacultyDetailsViewModel",
-              "Source": "unknown"
+              "Source": "form"
             }
           ],
-          "RequestBodySchema": null,
+          "RequestBodySchema": {
+            "Name": "FacultyDetailsViewModel",
+            "Properties": [
+              {
+                "Name": "Role",
+                "Type": "string",
+                "IsRequired": false,
+                "Attributes": []
+              },
+              {
+                "Name": "Id",
+                "Type": "int",
+                "IsRequired": false,
+                "Attributes": []
+              },
+              {
+                "Name": "Email",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "DataType",
+                  "EmailAddress"
+                ]
+              },
+              {
+                "Name": "Password",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "DataType"
+                ]
+              },
+              {
+                "Name": "Name",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "MaxLength",
+                  "DataType"
+                ]
+              },
+              {
+                "Name": "MiddleName",
+                "Type": "string",
+                "IsRequired": false,
+                "Attributes": [
+                  "MaxLength",
+                  "DataType"
+                ]
+              },
+              {
+                "Name": "LastName",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "MaxLength",
+                  "DataType"
+                ]
+              },
+              {
+                "Name": "PhoneNumber",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "DataType",
+                  "RegularExpression"
+                ]
+              },
+              {
+                "Name": "Address",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "MaxLength",
+                  "DataType"
+                ]
+              },
+              {
+                "Name": "Branch",
+                "Type": "BranchEnum",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required"
+                ]
+              },
+              {
+                "Name": "DOB",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "DataType"
+                ]
+              }
+            ]
+          },
           "Responses": [
             {
               "StatusCode": 200,
-              "Body": null
+              "Kind": "view",
+              "JsonBodySchema": null,
+              "ViewModelSchema": {
+                "Name": "FacultyDetailsViewModel",
+                "Properties": [
+                  {
+                    "Name": "Role",
+                    "Type": "string",
+                    "IsRequired": false,
+                    "Attributes": []
+                  },
+                  {
+                    "Name": "Id",
+                    "Type": "int",
+                    "IsRequired": false,
+                    "Attributes": []
+                  },
+                  {
+                    "Name": "Email",
+                    "Type": "string",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required",
+                      "DataType",
+                      "EmailAddress"
+                    ]
+                  },
+                  {
+                    "Name": "Password",
+                    "Type": "string",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required",
+                      "DataType"
+                    ]
+                  },
+                  {
+                    "Name": "Name",
+                    "Type": "string",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required",
+                      "MaxLength",
+                      "DataType"
+                    ]
+                  },
+                  {
+                    "Name": "MiddleName",
+                    "Type": "string",
+                    "IsRequired": false,
+                    "Attributes": [
+                      "MaxLength",
+                      "DataType"
+                    ]
+                  },
+                  {
+                    "Name": "LastName",
+                    "Type": "string",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required",
+                      "MaxLength",
+                      "DataType"
+                    ]
+                  },
+                  {
+                    "Name": "PhoneNumber",
+                    "Type": "string",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required",
+                      "DataType",
+                      "RegularExpression"
+                    ]
+                  },
+                  {
+                    "Name": "Address",
+                    "Type": "string",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required",
+                      "MaxLength",
+                      "DataType"
+                    ]
+                  },
+                  {
+                    "Name": "Branch",
+                    "Type": "BranchEnum",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required"
+                    ]
+                  },
+                  {
+                    "Name": "DOB",
+                    "Type": "string",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required",
+                      "DataType"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "StatusCode": 302,
+              "Kind": "redirect",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         },
         {
+          "Kind": "mvc",
           "HttpMethod": "POST",
           "Route": "/",
           "Action": "AddStudent",
@@ -255,18 +710,251 @@
             {
               "Name": "model",
               "Type": "AddStudentViewModel",
-              "Source": "unknown"
+              "Source": "form"
             }
           ],
-          "RequestBodySchema": null,
+          "RequestBodySchema": {
+            "Name": "AddStudentViewModel",
+            "Properties": [
+              {
+                "Name": "Role",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required"
+                ]
+              },
+              {
+                "Name": "Email",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "DataType",
+                  "EmailAddress"
+                ]
+              },
+              {
+                "Name": "Password",
+                "Type": "string",
+                "IsRequired": false,
+                "Attributes": [
+                  "DataType"
+                ]
+              },
+              {
+                "Name": "Name",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "MaxLength",
+                  "DataType"
+                ]
+              },
+              {
+                "Name": "MiddleName",
+                "Type": "string",
+                "IsRequired": false,
+                "Attributes": [
+                  "MaxLength",
+                  "DataType"
+                ]
+              },
+              {
+                "Name": "LastName",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "MaxLength",
+                  "DataType"
+                ]
+              },
+              {
+                "Name": "PhoneNumber",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "DataType",
+                  "RegularExpression"
+                ]
+              },
+              {
+                "Name": "Address",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "MaxLength",
+                  "DataType"
+                ]
+              },
+              {
+                "Name": "Branch",
+                "Type": "BranchEnum",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required"
+                ]
+              },
+              {
+                "Name": "Semester",
+                "Type": "int",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required"
+                ]
+              },
+              {
+                "Name": "Division",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required"
+                ]
+              },
+              {
+                "Name": "DOB",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "DataType"
+                ]
+              }
+            ]
+          },
           "Responses": [
             {
               "StatusCode": 200,
-              "Body": null
+              "Kind": "view",
+              "JsonBodySchema": null,
+              "ViewModelSchema": {
+                "Name": "AddStudentViewModel",
+                "Properties": [
+                  {
+                    "Name": "Role",
+                    "Type": "string",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required"
+                    ]
+                  },
+                  {
+                    "Name": "Email",
+                    "Type": "string",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required",
+                      "DataType",
+                      "EmailAddress"
+                    ]
+                  },
+                  {
+                    "Name": "Password",
+                    "Type": "string",
+                    "IsRequired": false,
+                    "Attributes": [
+                      "DataType"
+                    ]
+                  },
+                  {
+                    "Name": "Name",
+                    "Type": "string",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required",
+                      "MaxLength",
+                      "DataType"
+                    ]
+                  },
+                  {
+                    "Name": "MiddleName",
+                    "Type": "string",
+                    "IsRequired": false,
+                    "Attributes": [
+                      "MaxLength",
+                      "DataType"
+                    ]
+                  },
+                  {
+                    "Name": "LastName",
+                    "Type": "string",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required",
+                      "MaxLength",
+                      "DataType"
+                    ]
+                  },
+                  {
+                    "Name": "PhoneNumber",
+                    "Type": "string",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required",
+                      "DataType",
+                      "RegularExpression"
+                    ]
+                  },
+                  {
+                    "Name": "Address",
+                    "Type": "string",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required",
+                      "MaxLength",
+                      "DataType"
+                    ]
+                  },
+                  {
+                    "Name": "Branch",
+                    "Type": "BranchEnum",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required"
+                    ]
+                  },
+                  {
+                    "Name": "Semester",
+                    "Type": "int",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required"
+                    ]
+                  },
+                  {
+                    "Name": "Division",
+                    "Type": "string",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required"
+                    ]
+                  },
+                  {
+                    "Name": "DOB",
+                    "Type": "string",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required",
+                      "DataType"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "StatusCode": 302,
+              "Kind": "redirect",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         },
         {
+          "Kind": "mvc",
           "HttpMethod": "POST",
           "Route": "/",
           "Action": "AddStudentExcel",
@@ -274,23 +962,26 @@
             {
               "Name": "file",
               "Type": "IFormFile",
-              "Source": "unknown"
+              "Source": "form"
             },
             {
               "Name": "hostingEnvironment",
               "Type": "IHostingEnvironment",
-              "Source": "unknown"
+              "Source": "form"
             }
           ],
           "RequestBodySchema": null,
           "Responses": [
             {
               "StatusCode": 200,
-              "Body": null
+              "Kind": "view",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         },
         {
+          "Kind": "mvc",
           "HttpMethod": "POST",
           "Route": "/",
           "Action": "DeleteStudent",
@@ -298,18 +989,27 @@
             {
               "Name": "id",
               "Type": "int",
-              "Source": "unknown"
+              "Source": "form"
             }
           ],
           "RequestBodySchema": null,
           "Responses": [
             {
               "StatusCode": 200,
-              "Body": null
+              "Kind": "view",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
+            },
+            {
+              "StatusCode": 302,
+              "Kind": "redirect",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         },
         {
+          "Kind": "mvc",
           "HttpMethod": "POST",
           "Route": "/",
           "Action": "StudentDetails",
@@ -317,18 +1017,21 @@
             {
               "Name": "id",
               "Type": "int",
-              "Source": "unknown"
+              "Source": "form"
             }
           ],
           "RequestBodySchema": null,
           "Responses": [
             {
               "StatusCode": 200,
-              "Body": null
+              "Kind": "view",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         },
         {
+          "Kind": "mvc",
           "HttpMethod": "POST",
           "Route": "/",
           "Action": "EditStudent",
@@ -336,14 +1039,256 @@
             {
               "Name": "model",
               "Type": "StudentDetailsViewModel",
-              "Source": "unknown"
+              "Source": "form"
             }
           ],
-          "RequestBodySchema": null,
+          "RequestBodySchema": {
+            "Name": "StudentDetailsViewModel",
+            "Properties": [
+              {
+                "Name": "Role",
+                "Type": "string",
+                "IsRequired": false,
+                "Attributes": []
+              },
+              {
+                "Name": "Id",
+                "Type": "int",
+                "IsRequired": false,
+                "Attributes": []
+              },
+              {
+                "Name": "Email",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "DataType",
+                  "EmailAddress"
+                ]
+              },
+              {
+                "Name": "Password",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "DataType"
+                ]
+              },
+              {
+                "Name": "Name",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "MaxLength",
+                  "DataType"
+                ]
+              },
+              {
+                "Name": "MiddleName",
+                "Type": "string",
+                "IsRequired": false,
+                "Attributes": [
+                  "MaxLength",
+                  "DataType"
+                ]
+              },
+              {
+                "Name": "LastName",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "MaxLength",
+                  "DataType"
+                ]
+              },
+              {
+                "Name": "PhoneNumber",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "DataType",
+                  "RegularExpression"
+                ]
+              },
+              {
+                "Name": "Address",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "MaxLength",
+                  "DataType"
+                ]
+              },
+              {
+                "Name": "Branch",
+                "Type": "BranchEnum",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required"
+                ]
+              },
+              {
+                "Name": "Semester",
+                "Type": "int",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required"
+                ]
+              },
+              {
+                "Name": "Division",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required"
+                ]
+              },
+              {
+                "Name": "DOB",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "DataType"
+                ]
+              }
+            ]
+          },
           "Responses": [
             {
               "StatusCode": 200,
-              "Body": null
+              "Kind": "view",
+              "JsonBodySchema": null,
+              "ViewModelSchema": {
+                "Name": "StudentDetailsViewModel",
+                "Properties": [
+                  {
+                    "Name": "Role",
+                    "Type": "string",
+                    "IsRequired": false,
+                    "Attributes": []
+                  },
+                  {
+                    "Name": "Id",
+                    "Type": "int",
+                    "IsRequired": false,
+                    "Attributes": []
+                  },
+                  {
+                    "Name": "Email",
+                    "Type": "string",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required",
+                      "DataType",
+                      "EmailAddress"
+                    ]
+                  },
+                  {
+                    "Name": "Password",
+                    "Type": "string",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required",
+                      "DataType"
+                    ]
+                  },
+                  {
+                    "Name": "Name",
+                    "Type": "string",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required",
+                      "MaxLength",
+                      "DataType"
+                    ]
+                  },
+                  {
+                    "Name": "MiddleName",
+                    "Type": "string",
+                    "IsRequired": false,
+                    "Attributes": [
+                      "MaxLength",
+                      "DataType"
+                    ]
+                  },
+                  {
+                    "Name": "LastName",
+                    "Type": "string",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required",
+                      "MaxLength",
+                      "DataType"
+                    ]
+                  },
+                  {
+                    "Name": "PhoneNumber",
+                    "Type": "string",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required",
+                      "DataType",
+                      "RegularExpression"
+                    ]
+                  },
+                  {
+                    "Name": "Address",
+                    "Type": "string",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required",
+                      "MaxLength",
+                      "DataType"
+                    ]
+                  },
+                  {
+                    "Name": "Branch",
+                    "Type": "BranchEnum",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required"
+                    ]
+                  },
+                  {
+                    "Name": "Semester",
+                    "Type": "int",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required"
+                    ]
+                  },
+                  {
+                    "Name": "Division",
+                    "Type": "string",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required"
+                    ]
+                  },
+                  {
+                    "Name": "DOB",
+                    "Type": "string",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required",
+                      "DataType"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "StatusCode": 302,
+              "Kind": "redirect",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         }
@@ -354,6 +1299,7 @@
       "RoutePrefix": null,
       "Endpoints": [
         {
+          "Kind": "mvc",
           "HttpMethod": "GET",
           "Route": "/",
           "Action": "AddStudent",
@@ -362,11 +1308,14 @@
           "Responses": [
             {
               "StatusCode": 200,
-              "Body": null
+              "Kind": "view",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         },
         {
+          "Kind": "mvc",
           "HttpMethod": "GET",
           "Route": "/",
           "Action": "AddStudentExcel",
@@ -374,18 +1323,21 @@
             {
               "Name": "model",
               "Type": "List\u003CApplicationUser\u003E",
-              "Source": "unknown"
+              "Source": "form"
             }
           ],
           "RequestBodySchema": null,
           "Responses": [
             {
               "StatusCode": 200,
-              "Body": null
+              "Kind": "view",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         },
         {
+          "Kind": "mvc",
           "HttpMethod": "GET",
           "Route": "/",
           "Action": "ViewStudent",
@@ -394,11 +1346,14 @@
           "Responses": [
             {
               "StatusCode": 200,
-              "Body": null
+              "Kind": "view",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         },
         {
+          "Kind": "mvc",
           "HttpMethod": "GET",
           "Route": "/",
           "Action": "EditStudent",
@@ -406,18 +1361,21 @@
             {
               "Name": "id",
               "Type": "int",
-              "Source": "unknown"
+              "Source": "form"
             }
           ],
           "RequestBodySchema": null,
           "Responses": [
             {
               "StatusCode": 200,
-              "Body": null
+              "Kind": "view",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         },
         {
+          "Kind": "mvc",
           "HttpMethod": "GET",
           "Route": "/",
           "Action": "ViewTest",
@@ -426,11 +1384,14 @@
           "Responses": [
             {
               "StatusCode": 200,
-              "Body": null
+              "Kind": "view",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         },
         {
+          "Kind": "mvc",
           "HttpMethod": "POST",
           "Route": "/",
           "Action": "AddStudent",
@@ -438,18 +1399,251 @@
             {
               "Name": "model",
               "Type": "AddStudentViewModel",
-              "Source": "unknown"
+              "Source": "form"
             }
           ],
-          "RequestBodySchema": null,
+          "RequestBodySchema": {
+            "Name": "AddStudentViewModel",
+            "Properties": [
+              {
+                "Name": "Role",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required"
+                ]
+              },
+              {
+                "Name": "Email",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "DataType",
+                  "EmailAddress"
+                ]
+              },
+              {
+                "Name": "Password",
+                "Type": "string",
+                "IsRequired": false,
+                "Attributes": [
+                  "DataType"
+                ]
+              },
+              {
+                "Name": "Name",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "MaxLength",
+                  "DataType"
+                ]
+              },
+              {
+                "Name": "MiddleName",
+                "Type": "string",
+                "IsRequired": false,
+                "Attributes": [
+                  "MaxLength",
+                  "DataType"
+                ]
+              },
+              {
+                "Name": "LastName",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "MaxLength",
+                  "DataType"
+                ]
+              },
+              {
+                "Name": "PhoneNumber",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "DataType",
+                  "RegularExpression"
+                ]
+              },
+              {
+                "Name": "Address",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "MaxLength",
+                  "DataType"
+                ]
+              },
+              {
+                "Name": "Branch",
+                "Type": "BranchEnum",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required"
+                ]
+              },
+              {
+                "Name": "Semester",
+                "Type": "int",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required"
+                ]
+              },
+              {
+                "Name": "Division",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required"
+                ]
+              },
+              {
+                "Name": "DOB",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "DataType"
+                ]
+              }
+            ]
+          },
           "Responses": [
             {
               "StatusCode": 200,
-              "Body": null
+              "Kind": "view",
+              "JsonBodySchema": null,
+              "ViewModelSchema": {
+                "Name": "AddStudentViewModel",
+                "Properties": [
+                  {
+                    "Name": "Role",
+                    "Type": "string",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required"
+                    ]
+                  },
+                  {
+                    "Name": "Email",
+                    "Type": "string",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required",
+                      "DataType",
+                      "EmailAddress"
+                    ]
+                  },
+                  {
+                    "Name": "Password",
+                    "Type": "string",
+                    "IsRequired": false,
+                    "Attributes": [
+                      "DataType"
+                    ]
+                  },
+                  {
+                    "Name": "Name",
+                    "Type": "string",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required",
+                      "MaxLength",
+                      "DataType"
+                    ]
+                  },
+                  {
+                    "Name": "MiddleName",
+                    "Type": "string",
+                    "IsRequired": false,
+                    "Attributes": [
+                      "MaxLength",
+                      "DataType"
+                    ]
+                  },
+                  {
+                    "Name": "LastName",
+                    "Type": "string",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required",
+                      "MaxLength",
+                      "DataType"
+                    ]
+                  },
+                  {
+                    "Name": "PhoneNumber",
+                    "Type": "string",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required",
+                      "DataType",
+                      "RegularExpression"
+                    ]
+                  },
+                  {
+                    "Name": "Address",
+                    "Type": "string",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required",
+                      "MaxLength",
+                      "DataType"
+                    ]
+                  },
+                  {
+                    "Name": "Branch",
+                    "Type": "BranchEnum",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required"
+                    ]
+                  },
+                  {
+                    "Name": "Semester",
+                    "Type": "int",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required"
+                    ]
+                  },
+                  {
+                    "Name": "Division",
+                    "Type": "string",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required"
+                    ]
+                  },
+                  {
+                    "Name": "DOB",
+                    "Type": "string",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required",
+                      "DataType"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "StatusCode": 302,
+              "Kind": "redirect",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         },
         {
+          "Kind": "mvc",
           "HttpMethod": "POST",
           "Route": "/",
           "Action": "AddStudentExcel",
@@ -457,23 +1651,26 @@
             {
               "Name": "file",
               "Type": "IFormFile",
-              "Source": "unknown"
+              "Source": "form"
             },
             {
               "Name": "hostingEnvironment",
               "Type": "IHostingEnvironment",
-              "Source": "unknown"
+              "Source": "form"
             }
           ],
           "RequestBodySchema": null,
           "Responses": [
             {
               "StatusCode": 200,
-              "Body": null
+              "Kind": "view",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         },
         {
+          "Kind": "mvc",
           "HttpMethod": "POST",
           "Route": "/",
           "Action": "DeleteStudent",
@@ -481,18 +1678,27 @@
             {
               "Name": "id",
               "Type": "int",
-              "Source": "unknown"
+              "Source": "form"
             }
           ],
           "RequestBodySchema": null,
           "Responses": [
             {
               "StatusCode": 200,
-              "Body": null
+              "Kind": "view",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
+            },
+            {
+              "StatusCode": 302,
+              "Kind": "redirect",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         },
         {
+          "Kind": "mvc",
           "HttpMethod": "POST",
           "Route": "/",
           "Action": "StudentDetails",
@@ -500,18 +1706,21 @@
             {
               "Name": "id",
               "Type": "int",
-              "Source": "unknown"
+              "Source": "form"
             }
           ],
           "RequestBodySchema": null,
           "Responses": [
             {
               "StatusCode": 200,
-              "Body": null
+              "Kind": "view",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         },
         {
+          "Kind": "mvc",
           "HttpMethod": "POST",
           "Route": "/",
           "Action": "EditStudent",
@@ -519,14 +1728,256 @@
             {
               "Name": "model",
               "Type": "StudentDetailsViewModel",
-              "Source": "unknown"
+              "Source": "form"
             }
           ],
-          "RequestBodySchema": null,
+          "RequestBodySchema": {
+            "Name": "StudentDetailsViewModel",
+            "Properties": [
+              {
+                "Name": "Role",
+                "Type": "string",
+                "IsRequired": false,
+                "Attributes": []
+              },
+              {
+                "Name": "Id",
+                "Type": "int",
+                "IsRequired": false,
+                "Attributes": []
+              },
+              {
+                "Name": "Email",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "DataType",
+                  "EmailAddress"
+                ]
+              },
+              {
+                "Name": "Password",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "DataType"
+                ]
+              },
+              {
+                "Name": "Name",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "MaxLength",
+                  "DataType"
+                ]
+              },
+              {
+                "Name": "MiddleName",
+                "Type": "string",
+                "IsRequired": false,
+                "Attributes": [
+                  "MaxLength",
+                  "DataType"
+                ]
+              },
+              {
+                "Name": "LastName",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "MaxLength",
+                  "DataType"
+                ]
+              },
+              {
+                "Name": "PhoneNumber",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "DataType",
+                  "RegularExpression"
+                ]
+              },
+              {
+                "Name": "Address",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "MaxLength",
+                  "DataType"
+                ]
+              },
+              {
+                "Name": "Branch",
+                "Type": "BranchEnum",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required"
+                ]
+              },
+              {
+                "Name": "Semester",
+                "Type": "int",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required"
+                ]
+              },
+              {
+                "Name": "Division",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required"
+                ]
+              },
+              {
+                "Name": "DOB",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "DataType"
+                ]
+              }
+            ]
+          },
           "Responses": [
             {
               "StatusCode": 200,
-              "Body": null
+              "Kind": "view",
+              "JsonBodySchema": null,
+              "ViewModelSchema": {
+                "Name": "StudentDetailsViewModel",
+                "Properties": [
+                  {
+                    "Name": "Role",
+                    "Type": "string",
+                    "IsRequired": false,
+                    "Attributes": []
+                  },
+                  {
+                    "Name": "Id",
+                    "Type": "int",
+                    "IsRequired": false,
+                    "Attributes": []
+                  },
+                  {
+                    "Name": "Email",
+                    "Type": "string",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required",
+                      "DataType",
+                      "EmailAddress"
+                    ]
+                  },
+                  {
+                    "Name": "Password",
+                    "Type": "string",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required",
+                      "DataType"
+                    ]
+                  },
+                  {
+                    "Name": "Name",
+                    "Type": "string",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required",
+                      "MaxLength",
+                      "DataType"
+                    ]
+                  },
+                  {
+                    "Name": "MiddleName",
+                    "Type": "string",
+                    "IsRequired": false,
+                    "Attributes": [
+                      "MaxLength",
+                      "DataType"
+                    ]
+                  },
+                  {
+                    "Name": "LastName",
+                    "Type": "string",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required",
+                      "MaxLength",
+                      "DataType"
+                    ]
+                  },
+                  {
+                    "Name": "PhoneNumber",
+                    "Type": "string",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required",
+                      "DataType",
+                      "RegularExpression"
+                    ]
+                  },
+                  {
+                    "Name": "Address",
+                    "Type": "string",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required",
+                      "MaxLength",
+                      "DataType"
+                    ]
+                  },
+                  {
+                    "Name": "Branch",
+                    "Type": "BranchEnum",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required"
+                    ]
+                  },
+                  {
+                    "Name": "Semester",
+                    "Type": "int",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required"
+                    ]
+                  },
+                  {
+                    "Name": "Division",
+                    "Type": "string",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required"
+                    ]
+                  },
+                  {
+                    "Name": "DOB",
+                    "Type": "string",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required",
+                      "DataType"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "StatusCode": 302,
+              "Kind": "redirect",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         }
@@ -537,6 +1988,7 @@
       "RoutePrefix": null,
       "Endpoints": [
         {
+          "Kind": "mvc",
           "HttpMethod": "GET",
           "Route": "/",
           "Action": "CreateGroup",
@@ -545,11 +1997,14 @@
           "Responses": [
             {
               "StatusCode": 200,
-              "Body": null
+              "Kind": "view",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         },
         {
+          "Kind": "mvc",
           "HttpMethod": "GET",
           "Route": "/",
           "Action": "GroupDetails",
@@ -557,18 +2012,21 @@
             {
               "Name": "id",
               "Type": "int",
-              "Source": "unknown"
+              "Source": "form"
             }
           ],
           "RequestBodySchema": null,
           "Responses": [
             {
               "StatusCode": 200,
-              "Body": null
+              "Kind": "view",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         },
         {
+          "Kind": "mvc",
           "HttpMethod": "GET",
           "Route": "/",
           "Action": "AddStudentToGroup",
@@ -576,18 +2034,21 @@
             {
               "Name": "id",
               "Type": "int",
-              "Source": "unknown"
+              "Source": "form"
             }
           ],
           "RequestBodySchema": null,
           "Responses": [
             {
               "StatusCode": 200,
-              "Body": null
+              "Kind": "view",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         },
         {
+          "Kind": "mvc",
           "HttpMethod": "GET",
           "Route": "/",
           "Action": "ViewUserGroups",
@@ -596,11 +2057,14 @@
           "Responses": [
             {
               "StatusCode": 200,
-              "Body": null
+              "Kind": "view",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         },
         {
+          "Kind": "mvc",
           "HttpMethod": "GET",
           "Route": "/",
           "Action": "ViewOtherGroups",
@@ -609,11 +2073,14 @@
           "Responses": [
             {
               "StatusCode": 200,
-              "Body": null
+              "Kind": "view",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         },
         {
+          "Kind": "mvc",
           "HttpMethod": "GET",
           "Route": "/",
           "Action": "EditGroup",
@@ -621,18 +2088,21 @@
             {
               "Name": "id",
               "Type": "int",
-              "Source": "unknown"
+              "Source": "form"
             }
           ],
           "RequestBodySchema": null,
           "Responses": [
             {
               "StatusCode": 200,
-              "Body": null
+              "Kind": "view",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         },
         {
+          "Kind": "mvc",
           "HttpMethod": "POST",
           "Route": "/",
           "Action": "CreateGroup",
@@ -640,18 +2110,59 @@
             {
               "Name": "model",
               "Type": "CreateGroupViewModel",
-              "Source": "unknown"
+              "Source": "form"
             }
           ],
-          "RequestBodySchema": null,
+          "RequestBodySchema": {
+            "Name": "CreateGroupViewModel",
+            "Properties": [
+              {
+                "Name": "Creator_id",
+                "Type": "int",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required"
+                ]
+              },
+              {
+                "Name": "Name",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required"
+                ]
+              },
+              {
+                "Name": "Branch",
+                "Type": "BranchEnumNullable?",
+                "IsRequired": false,
+                "Attributes": []
+              },
+              {
+                "Name": "Division",
+                "Type": "DivisionEnumNullable?",
+                "IsRequired": false,
+                "Attributes": []
+              },
+              {
+                "Name": "Semester",
+                "Type": "int?",
+                "IsRequired": false,
+                "Attributes": []
+              }
+            ]
+          },
           "Responses": [
             {
-              "StatusCode": 200,
-              "Body": null
+              "StatusCode": 302,
+              "Kind": "redirect",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         },
         {
+          "Kind": "mvc",
           "HttpMethod": "POST",
           "Route": "/",
           "Action": "AddStudentToGroup",
@@ -666,11 +2177,14 @@
           "Responses": [
             {
               "StatusCode": 200,
-              "Body": null
+              "Kind": "unknown",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         },
         {
+          "Kind": "mvc",
           "HttpMethod": "POST",
           "Route": "/",
           "Action": "RemoveStudent",
@@ -685,11 +2199,14 @@
           "Responses": [
             {
               "StatusCode": 200,
-              "Body": null
+              "Kind": "unknown",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         },
         {
+          "Kind": "mvc",
           "HttpMethod": "POST",
           "Route": "/",
           "Action": "EditGroup",
@@ -697,23 +2214,64 @@
             {
               "Name": "id",
               "Type": "int",
-              "Source": "unknown"
+              "Source": "form"
             },
             {
               "Name": "model",
               "Type": "CreateGroupViewModel",
-              "Source": "unknown"
+              "Source": "form"
             }
           ],
-          "RequestBodySchema": null,
+          "RequestBodySchema": {
+            "Name": "CreateGroupViewModel",
+            "Properties": [
+              {
+                "Name": "Creator_id",
+                "Type": "int",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required"
+                ]
+              },
+              {
+                "Name": "Name",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required"
+                ]
+              },
+              {
+                "Name": "Branch",
+                "Type": "BranchEnumNullable?",
+                "IsRequired": false,
+                "Attributes": []
+              },
+              {
+                "Name": "Division",
+                "Type": "DivisionEnumNullable?",
+                "IsRequired": false,
+                "Attributes": []
+              },
+              {
+                "Name": "Semester",
+                "Type": "int?",
+                "IsRequired": false,
+                "Attributes": []
+              }
+            ]
+          },
           "Responses": [
             {
-              "StatusCode": 200,
-              "Body": null
+              "StatusCode": 302,
+              "Kind": "redirect",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         },
         {
+          "Kind": "mvc",
           "HttpMethod": "POST",
           "Route": "/",
           "Action": "DeleteGroup",
@@ -721,14 +2279,16 @@
             {
               "Name": "id",
               "Type": "int",
-              "Source": "unknown"
+              "Source": "form"
             }
           ],
           "RequestBodySchema": null,
           "Responses": [
             {
-              "StatusCode": 200,
-              "Body": null
+              "StatusCode": 302,
+              "Kind": "redirect",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         }
@@ -739,6 +2299,7 @@
       "RoutePrefix": null,
       "Endpoints": [
         {
+          "Kind": "mvc",
           "HttpMethod": "GET",
           "Route": "/",
           "Action": "Index",
@@ -747,11 +2308,14 @@
           "Responses": [
             {
               "StatusCode": 200,
-              "Body": null
+              "Kind": "view",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         },
         {
+          "Kind": "mvc",
           "HttpMethod": "GET",
           "Route": "/",
           "Action": "ChangePassword",
@@ -760,11 +2324,14 @@
           "Responses": [
             {
               "StatusCode": 200,
-              "Body": null
+              "Kind": "view",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         },
         {
+          "Kind": "mvc",
           "HttpMethod": "GET",
           "Route": "/",
           "Action": "Profile",
@@ -773,11 +2340,14 @@
           "Responses": [
             {
               "StatusCode": 200,
-              "Body": null
+              "Kind": "view",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         },
         {
+          "Kind": "mvc",
           "HttpMethod": "POST",
           "Route": "/",
           "Action": "Index",
@@ -785,18 +2355,89 @@
             {
               "Name": "model",
               "Type": "LoginViewModel",
-              "Source": "unknown"
+              "Source": "form"
             }
           ],
-          "RequestBodySchema": null,
+          "RequestBodySchema": {
+            "Name": "LoginViewModel",
+            "Properties": [
+              {
+                "Name": "Email",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "DataType",
+                  "EmailAddress"
+                ]
+              },
+              {
+                "Name": "Password",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "DataType"
+                ]
+              },
+              {
+                "Name": "RememberMe",
+                "Type": "bool",
+                "IsRequired": false,
+                "Attributes": [
+                  "Display"
+                ]
+              }
+            ]
+          },
           "Responses": [
             {
               "StatusCode": 200,
-              "Body": null
+              "Kind": "view",
+              "JsonBodySchema": null,
+              "ViewModelSchema": {
+                "Name": "LoginViewModel",
+                "Properties": [
+                  {
+                    "Name": "Email",
+                    "Type": "string",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required",
+                      "DataType",
+                      "EmailAddress"
+                    ]
+                  },
+                  {
+                    "Name": "Password",
+                    "Type": "string",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required",
+                      "DataType"
+                    ]
+                  },
+                  {
+                    "Name": "RememberMe",
+                    "Type": "bool",
+                    "IsRequired": false,
+                    "Attributes": [
+                      "Display"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "StatusCode": 302,
+              "Kind": "redirect",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         },
         {
+          "Kind": "mvc",
           "HttpMethod": "POST",
           "Route": "/",
           "Action": "LogOut",
@@ -804,12 +2445,15 @@
           "RequestBodySchema": null,
           "Responses": [
             {
-              "StatusCode": 200,
-              "Body": null
+              "StatusCode": 302,
+              "Kind": "redirect",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         },
         {
+          "Kind": "mvc",
           "HttpMethod": "POST",
           "Route": "/",
           "Action": "ChangePassword",
@@ -817,18 +2461,95 @@
             {
               "Name": "model",
               "Type": "ChangePasswordViewModel",
-              "Source": "unknown"
+              "Source": "form"
             }
           ],
-          "RequestBodySchema": null,
+          "RequestBodySchema": {
+            "Name": "ChangePasswordViewModel",
+            "Properties": [
+              {
+                "Name": "CurrentPassword",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "DataType",
+                  "Display"
+                ]
+              },
+              {
+                "Name": "NewPassword",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "DataType",
+                  "Display"
+                ]
+              },
+              {
+                "Name": "ConfirmPassword",
+                "Type": "string",
+                "IsRequired": false,
+                "Attributes": [
+                  "DataType",
+                  "Display",
+                  "Compare"
+                ]
+              }
+            ]
+          },
           "Responses": [
             {
               "StatusCode": 200,
-              "Body": null
+              "Kind": "view",
+              "JsonBodySchema": null,
+              "ViewModelSchema": {
+                "Name": "ChangePasswordViewModel",
+                "Properties": [
+                  {
+                    "Name": "CurrentPassword",
+                    "Type": "string",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required",
+                      "DataType",
+                      "Display"
+                    ]
+                  },
+                  {
+                    "Name": "NewPassword",
+                    "Type": "string",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required",
+                      "DataType",
+                      "Display"
+                    ]
+                  },
+                  {
+                    "Name": "ConfirmPassword",
+                    "Type": "string",
+                    "IsRequired": false,
+                    "Attributes": [
+                      "DataType",
+                      "Display",
+                      "Compare"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "StatusCode": 302,
+              "Kind": "redirect",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         },
         {
+          "Kind": "mvc",
           "HttpMethod": "POST",
           "Route": "/",
           "Action": "Profile",
@@ -836,14 +2557,143 @@
             {
               "Name": "model",
               "Type": "ApplicationUser",
-              "Source": "unknown"
+              "Source": "form"
             }
           ],
-          "RequestBodySchema": null,
+          "RequestBodySchema": {
+            "Name": "ApplicationUser",
+            "Properties": [
+              {
+                "Name": "Password",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "DataType"
+                ]
+              },
+              {
+                "Name": "Name",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "MaxLength",
+                  "DataType"
+                ]
+              },
+              {
+                "Name": "MiddleName",
+                "Type": "string",
+                "IsRequired": false,
+                "Attributes": [
+                  "MaxLength",
+                  "DataType"
+                ]
+              },
+              {
+                "Name": "LastName",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "MaxLength",
+                  "DataType"
+                ]
+              },
+              {
+                "Name": "Address",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "MaxLength",
+                  "DataType"
+                ]
+              },
+              {
+                "Name": "Branch",
+                "Type": "string",
+                "IsRequired": false,
+                "Attributes": []
+              },
+              {
+                "Name": "Semester",
+                "Type": "int",
+                "IsRequired": false,
+                "Attributes": []
+              },
+              {
+                "Name": "Division",
+                "Type": "string",
+                "IsRequired": false,
+                "Attributes": []
+              },
+              {
+                "Name": "DOB",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "DataType"
+                ]
+              },
+              {
+                "Name": "InitialLogin",
+                "Type": "bool",
+                "IsRequired": false,
+                "Attributes": []
+              },
+              {
+                "Name": "Tags",
+                "Type": "List\u003CTag\u003E",
+                "IsRequired": false,
+                "Attributes": []
+              },
+              {
+                "Name": "Tests",
+                "Type": "ICollection\u003CTest\u003E",
+                "IsRequired": false,
+                "Attributes": []
+              },
+              {
+                "Name": "Groups",
+                "Type": "ICollection\u003CGroups\u003E",
+                "IsRequired": false,
+                "Attributes": []
+              },
+              {
+                "Name": "UserGroups",
+                "Type": "ICollection\u003CUserGroup\u003E",
+                "IsRequired": false,
+                "Attributes": []
+              },
+              {
+                "Name": "QuestionResults",
+                "Type": "ICollection\u003CQuestionResult\u003E",
+                "IsRequired": false,
+                "Attributes": []
+              },
+              {
+                "Name": "DescriptiveResults",
+                "Type": "ICollection\u003CDescriptiveResult\u003E",
+                "IsRequired": false,
+                "Attributes": []
+              },
+              {
+                "Name": "TotalResults",
+                "Type": "ICollection\u003CTotalResult\u003E",
+                "IsRequired": false,
+                "Attributes": []
+              }
+            ]
+          },
           "Responses": [
             {
-              "StatusCode": 200,
-              "Body": null
+              "StatusCode": 302,
+              "Kind": "redirect",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         }
@@ -854,6 +2704,7 @@
       "RoutePrefix": null,
       "Endpoints": [
         {
+          "Kind": "mvc",
           "HttpMethod": "GET",
           "Route": "/",
           "Action": "AddAdmin",
@@ -862,11 +2713,14 @@
           "Responses": [
             {
               "StatusCode": 200,
-              "Body": null
+              "Kind": "view",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         },
         {
+          "Kind": "mvc",
           "HttpMethod": "GET",
           "Route": "/",
           "Action": "ViewAdmin",
@@ -875,11 +2729,14 @@
           "Responses": [
             {
               "StatusCode": 200,
-              "Body": null
+              "Kind": "view",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         },
         {
+          "Kind": "mvc",
           "HttpMethod": "GET",
           "Route": "/",
           "Action": "EditAdmin",
@@ -887,18 +2744,21 @@
             {
               "Name": "id",
               "Type": "int",
-              "Source": "unknown"
+              "Source": "form"
             }
           ],
           "RequestBodySchema": null,
           "Responses": [
             {
               "StatusCode": 200,
-              "Body": null
+              "Kind": "view",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         },
         {
+          "Kind": "mvc",
           "HttpMethod": "POST",
           "Route": "/",
           "Action": "AddAdmin",
@@ -906,18 +2766,219 @@
             {
               "Name": "model",
               "Type": "AddFacultyViewModel",
-              "Source": "unknown"
+              "Source": "form"
             }
           ],
-          "RequestBodySchema": null,
+          "RequestBodySchema": {
+            "Name": "AddFacultyViewModel",
+            "Properties": [
+              {
+                "Name": "Role",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required"
+                ]
+              },
+              {
+                "Name": "Email",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "DataType",
+                  "EmailAddress"
+                ]
+              },
+              {
+                "Name": "Password",
+                "Type": "string",
+                "IsRequired": false,
+                "Attributes": [
+                  "DataType"
+                ]
+              },
+              {
+                "Name": "Name",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "MaxLength",
+                  "DataType"
+                ]
+              },
+              {
+                "Name": "MiddleName",
+                "Type": "string",
+                "IsRequired": false,
+                "Attributes": [
+                  "MaxLength",
+                  "DataType"
+                ]
+              },
+              {
+                "Name": "LastName",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "MaxLength",
+                  "DataType"
+                ]
+              },
+              {
+                "Name": "PhoneNumber",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "DataType",
+                  "RegularExpression"
+                ]
+              },
+              {
+                "Name": "Address",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "MaxLength",
+                  "DataType"
+                ]
+              },
+              {
+                "Name": "Branch",
+                "Type": "BranchEnum",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required"
+                ]
+              },
+              {
+                "Name": "DOB",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "DataType"
+                ]
+              }
+            ]
+          },
           "Responses": [
             {
               "StatusCode": 200,
-              "Body": null
+              "Kind": "view",
+              "JsonBodySchema": null,
+              "ViewModelSchema": {
+                "Name": "AddFacultyViewModel",
+                "Properties": [
+                  {
+                    "Name": "Role",
+                    "Type": "string",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required"
+                    ]
+                  },
+                  {
+                    "Name": "Email",
+                    "Type": "string",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required",
+                      "DataType",
+                      "EmailAddress"
+                    ]
+                  },
+                  {
+                    "Name": "Password",
+                    "Type": "string",
+                    "IsRequired": false,
+                    "Attributes": [
+                      "DataType"
+                    ]
+                  },
+                  {
+                    "Name": "Name",
+                    "Type": "string",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required",
+                      "MaxLength",
+                      "DataType"
+                    ]
+                  },
+                  {
+                    "Name": "MiddleName",
+                    "Type": "string",
+                    "IsRequired": false,
+                    "Attributes": [
+                      "MaxLength",
+                      "DataType"
+                    ]
+                  },
+                  {
+                    "Name": "LastName",
+                    "Type": "string",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required",
+                      "MaxLength",
+                      "DataType"
+                    ]
+                  },
+                  {
+                    "Name": "PhoneNumber",
+                    "Type": "string",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required",
+                      "DataType",
+                      "RegularExpression"
+                    ]
+                  },
+                  {
+                    "Name": "Address",
+                    "Type": "string",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required",
+                      "MaxLength",
+                      "DataType"
+                    ]
+                  },
+                  {
+                    "Name": "Branch",
+                    "Type": "BranchEnum",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required"
+                    ]
+                  },
+                  {
+                    "Name": "DOB",
+                    "Type": "string",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required",
+                      "DataType"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "StatusCode": 302,
+              "Kind": "redirect",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         },
         {
+          "Kind": "mvc",
           "HttpMethod": "POST",
           "Route": "/",
           "Action": "AdminDetails",
@@ -925,18 +2986,21 @@
             {
               "Name": "id",
               "Type": "int",
-              "Source": "unknown"
+              "Source": "form"
             }
           ],
           "RequestBodySchema": null,
           "Responses": [
             {
               "StatusCode": 200,
-              "Body": null
+              "Kind": "view",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         },
         {
+          "Kind": "mvc",
           "HttpMethod": "POST",
           "Route": "/",
           "Action": "EditAdmin",
@@ -944,18 +3008,229 @@
             {
               "Name": "model",
               "Type": "FacultyDetailsViewModel",
-              "Source": "unknown"
+              "Source": "form"
             }
           ],
-          "RequestBodySchema": null,
+          "RequestBodySchema": {
+            "Name": "FacultyDetailsViewModel",
+            "Properties": [
+              {
+                "Name": "Role",
+                "Type": "string",
+                "IsRequired": false,
+                "Attributes": []
+              },
+              {
+                "Name": "Id",
+                "Type": "int",
+                "IsRequired": false,
+                "Attributes": []
+              },
+              {
+                "Name": "Email",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "DataType",
+                  "EmailAddress"
+                ]
+              },
+              {
+                "Name": "Password",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "DataType"
+                ]
+              },
+              {
+                "Name": "Name",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "MaxLength",
+                  "DataType"
+                ]
+              },
+              {
+                "Name": "MiddleName",
+                "Type": "string",
+                "IsRequired": false,
+                "Attributes": [
+                  "MaxLength",
+                  "DataType"
+                ]
+              },
+              {
+                "Name": "LastName",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "MaxLength",
+                  "DataType"
+                ]
+              },
+              {
+                "Name": "PhoneNumber",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "DataType",
+                  "RegularExpression"
+                ]
+              },
+              {
+                "Name": "Address",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "MaxLength",
+                  "DataType"
+                ]
+              },
+              {
+                "Name": "Branch",
+                "Type": "BranchEnum",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required"
+                ]
+              },
+              {
+                "Name": "DOB",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "DataType"
+                ]
+              }
+            ]
+          },
           "Responses": [
             {
               "StatusCode": 200,
-              "Body": null
+              "Kind": "view",
+              "JsonBodySchema": null,
+              "ViewModelSchema": {
+                "Name": "FacultyDetailsViewModel",
+                "Properties": [
+                  {
+                    "Name": "Role",
+                    "Type": "string",
+                    "IsRequired": false,
+                    "Attributes": []
+                  },
+                  {
+                    "Name": "Id",
+                    "Type": "int",
+                    "IsRequired": false,
+                    "Attributes": []
+                  },
+                  {
+                    "Name": "Email",
+                    "Type": "string",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required",
+                      "DataType",
+                      "EmailAddress"
+                    ]
+                  },
+                  {
+                    "Name": "Password",
+                    "Type": "string",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required",
+                      "DataType"
+                    ]
+                  },
+                  {
+                    "Name": "Name",
+                    "Type": "string",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required",
+                      "MaxLength",
+                      "DataType"
+                    ]
+                  },
+                  {
+                    "Name": "MiddleName",
+                    "Type": "string",
+                    "IsRequired": false,
+                    "Attributes": [
+                      "MaxLength",
+                      "DataType"
+                    ]
+                  },
+                  {
+                    "Name": "LastName",
+                    "Type": "string",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required",
+                      "MaxLength",
+                      "DataType"
+                    ]
+                  },
+                  {
+                    "Name": "PhoneNumber",
+                    "Type": "string",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required",
+                      "DataType",
+                      "RegularExpression"
+                    ]
+                  },
+                  {
+                    "Name": "Address",
+                    "Type": "string",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required",
+                      "MaxLength",
+                      "DataType"
+                    ]
+                  },
+                  {
+                    "Name": "Branch",
+                    "Type": "BranchEnum",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required"
+                    ]
+                  },
+                  {
+                    "Name": "DOB",
+                    "Type": "string",
+                    "IsRequired": true,
+                    "Attributes": [
+                      "Required",
+                      "DataType"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "StatusCode": 302,
+              "Kind": "redirect",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         },
         {
+          "Kind": "mvc",
           "HttpMethod": "POST",
           "Route": "/",
           "Action": "DeleteAdmin",
@@ -963,14 +3238,22 @@
             {
               "Name": "id",
               "Type": "int",
-              "Source": "unknown"
+              "Source": "form"
             }
           ],
           "RequestBodySchema": null,
           "Responses": [
             {
               "StatusCode": 200,
-              "Body": null
+              "Kind": "view",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
+            },
+            {
+              "StatusCode": 302,
+              "Kind": "redirect",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         }
@@ -981,6 +3264,7 @@
       "RoutePrefix": null,
       "Endpoints": [
         {
+          "Kind": "mvc",
           "HttpMethod": "GET",
           "Route": "/",
           "Action": "Index",
@@ -989,11 +3273,14 @@
           "Responses": [
             {
               "StatusCode": 200,
-              "Body": null
+              "Kind": "view",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         },
         {
+          "Kind": "mvc",
           "HttpMethod": "GET",
           "Route": "/",
           "Action": "Rename",
@@ -1001,18 +3288,21 @@
             {
               "Name": "id",
               "Type": "int",
-              "Source": "unknown"
+              "Source": "form"
             }
           ],
           "RequestBodySchema": null,
           "Responses": [
             {
               "StatusCode": 200,
-              "Body": null
+              "Kind": "view",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         },
         {
+          "Kind": "mvc",
           "HttpMethod": "POST",
           "Route": "/",
           "Action": "CreateTag",
@@ -1020,18 +3310,40 @@
             {
               "Name": "model",
               "Type": "CreateTagViewModel",
-              "Source": "unknown"
+              "Source": "form"
             }
           ],
-          "RequestBodySchema": null,
+          "RequestBodySchema": {
+            "Name": "CreateTagViewModel",
+            "Properties": [
+              {
+                "Name": "Create_Tag_Name",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "DisplayName"
+                ]
+              },
+              {
+                "Name": "Tags",
+                "Type": "List\u003CTag\u003E",
+                "IsRequired": false,
+                "Attributes": []
+              }
+            ]
+          },
           "Responses": [
             {
-              "StatusCode": 200,
-              "Body": null
+              "StatusCode": 302,
+              "Kind": "redirect",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         },
         {
+          "Kind": "mvc",
           "HttpMethod": "POST",
           "Route": "/",
           "Action": "DeleteTag",
@@ -1039,18 +3351,21 @@
             {
               "Name": "id",
               "Type": "int",
-              "Source": "unknown"
+              "Source": "form"
             }
           ],
           "RequestBodySchema": null,
           "Responses": [
             {
-              "StatusCode": 200,
-              "Body": null
+              "StatusCode": 302,
+              "Kind": "redirect",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         },
         {
+          "Kind": "mvc",
           "HttpMethod": "POST",
           "Route": "/",
           "Action": "Rename",
@@ -1058,19 +3373,40 @@
             {
               "Name": "id",
               "Type": "int",
-              "Source": "unknown"
+              "Source": "form"
             },
             {
               "Name": "model",
               "Type": "CreateTagViewModel",
-              "Source": "unknown"
+              "Source": "form"
             }
           ],
-          "RequestBodySchema": null,
+          "RequestBodySchema": {
+            "Name": "CreateTagViewModel",
+            "Properties": [
+              {
+                "Name": "Create_Tag_Name",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "DisplayName"
+                ]
+              },
+              {
+                "Name": "Tags",
+                "Type": "List\u003CTag\u003E",
+                "IsRequired": false,
+                "Attributes": []
+              }
+            ]
+          },
           "Responses": [
             {
-              "StatusCode": 200,
-              "Body": null
+              "StatusCode": 302,
+              "Kind": "redirect",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         }
@@ -1081,6 +3417,7 @@
       "RoutePrefix": null,
       "Endpoints": [
         {
+          "Kind": "mvc",
           "HttpMethod": "GET",
           "Route": "/",
           "Action": "Index",
@@ -1089,11 +3426,14 @@
           "Responses": [
             {
               "StatusCode": 200,
-              "Body": null
+              "Kind": "view",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         },
         {
+          "Kind": "mvc",
           "HttpMethod": "GET",
           "Route": "/",
           "Action": "TestDetails",
@@ -1101,18 +3441,21 @@
             {
               "Name": "id",
               "Type": "int",
-              "Source": "unknown"
+              "Source": "form"
             }
           ],
           "RequestBodySchema": null,
           "Responses": [
             {
               "StatusCode": 200,
-              "Body": null
+              "Kind": "view",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         },
         {
+          "Kind": "mvc",
           "HttpMethod": "GET",
           "Route": "/",
           "Action": "AddQuestions",
@@ -1120,18 +3463,21 @@
             {
               "Name": "id",
               "Type": "int",
-              "Source": "unknown"
+              "Source": "form"
             }
           ],
           "RequestBodySchema": null,
           "Responses": [
             {
               "StatusCode": 200,
-              "Body": null
+              "Kind": "view",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         },
         {
+          "Kind": "mvc",
           "HttpMethod": "GET",
           "Route": "/",
           "Action": "AssignTest",
@@ -1139,18 +3485,21 @@
             {
               "Name": "id",
               "Type": "int",
-              "Source": "unknown"
+              "Source": "form"
             }
           ],
           "RequestBodySchema": null,
           "Responses": [
             {
               "StatusCode": 200,
-              "Body": null
+              "Kind": "view",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         },
         {
+          "Kind": "mvc",
           "HttpMethod": "POST",
           "Route": "/",
           "Action": "CreateTest",
@@ -1158,18 +3507,80 @@
             {
               "Name": "model",
               "Type": "CreateTestViewModel",
-              "Source": "unknown"
+              "Source": "form"
             }
           ],
-          "RequestBodySchema": null,
+          "RequestBodySchema": {
+            "Name": "CreateTestViewModel",
+            "Properties": [
+              {
+                "Name": "Title",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "DisplayName"
+                ]
+              },
+              {
+                "Name": "Type_name",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "DisplayName"
+                ]
+              },
+              {
+                "Name": "Duration",
+                "Type": "TimeSpan?",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "DataType",
+                  "DisplayFormat"
+                ]
+              },
+              {
+                "Name": "StartDate",
+                "Type": "string",
+                "IsRequired": false,
+                "Attributes": []
+              },
+              {
+                "Name": "EndDate",
+                "Type": "string",
+                "IsRequired": false,
+                "Attributes": []
+              },
+              {
+                "Name": "PassingMarks",
+                "Type": "int?",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "DisplayName"
+                ]
+              },
+              {
+                "Name": "TestTypes",
+                "Type": "List\u003CTestType\u003E",
+                "IsRequired": false,
+                "Attributes": []
+              }
+            ]
+          },
           "Responses": [
             {
-              "StatusCode": 200,
-              "Body": null
+              "StatusCode": 302,
+              "Kind": "redirect",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         },
         {
+          "Kind": "mvc",
           "HttpMethod": "POST",
           "Route": "/",
           "Action": "AddQuestions",
@@ -1177,18 +3588,117 @@
             {
               "Name": "model",
               "Type": "AddQuestionsViewModel",
-              "Source": "unknown"
+              "Source": "form"
             }
           ],
-          "RequestBodySchema": null,
+          "RequestBodySchema": {
+            "Name": "AddQuestionsViewModel",
+            "Properties": [
+              {
+                "Name": "Question",
+                "Type": "string[]",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "DisplayName"
+                ]
+              },
+              {
+                "Name": "Option1",
+                "Type": "string[]",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "DisplayName"
+                ]
+              },
+              {
+                "Name": "Option2",
+                "Type": "string[]",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "DisplayName"
+                ]
+              },
+              {
+                "Name": "Option3",
+                "Type": "string[]",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "DisplayName"
+                ]
+              },
+              {
+                "Name": "Option4",
+                "Type": "string[]",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "DisplayName"
+                ]
+              },
+              {
+                "Name": "Answer",
+                "Type": "string[]",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required"
+                ]
+              },
+              {
+                "Name": "Description",
+                "Type": "string[]",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "DisplayName"
+                ]
+              },
+              {
+                "Name": "Marks",
+                "Type": "int[]",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "DisplayName"
+                ]
+              },
+              {
+                "Name": "Tag_id",
+                "Type": "int[]",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "DisplayName"
+                ]
+              },
+              {
+                "Name": "Test_id",
+                "Type": "int",
+                "IsRequired": false,
+                "Attributes": []
+              },
+              {
+                "Name": "Tags",
+                "Type": "List\u003CTag\u003E",
+                "IsRequired": false,
+                "Attributes": []
+              }
+            ]
+          },
           "Responses": [
             {
-              "StatusCode": 200,
-              "Body": null
+              "StatusCode": 302,
+              "Kind": "redirect",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         },
         {
+          "Kind": "mvc",
           "HttpMethod": "POST",
           "Route": "/",
           "Action": "AssignTest",
@@ -1203,7 +3713,9 @@
           "Responses": [
             {
               "StatusCode": 200,
-              "Body": null
+              "Kind": "unknown",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         }
@@ -1214,6 +3726,7 @@
       "RoutePrefix": null,
       "Endpoints": [
         {
+          "Kind": "mvc",
           "HttpMethod": "GET",
           "Route": "/",
           "Action": "Index",
@@ -1222,11 +3735,14 @@
           "Responses": [
             {
               "StatusCode": 200,
-              "Body": null
+              "Kind": "view",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         },
         {
+          "Kind": "mvc",
           "HttpMethod": "GET",
           "Route": "/",
           "Action": "Rename",
@@ -1234,18 +3750,21 @@
             {
               "Name": "id",
               "Type": "int",
-              "Source": "unknown"
+              "Source": "form"
             }
           ],
           "RequestBodySchema": null,
           "Responses": [
             {
               "StatusCode": 200,
-              "Body": null
+              "Kind": "view",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         },
         {
+          "Kind": "mvc",
           "HttpMethod": "POST",
           "Route": "/",
           "Action": "CreateType",
@@ -1253,18 +3772,40 @@
             {
               "Name": "model",
               "Type": "CreateTestTypeViewModel",
-              "Source": "unknown"
+              "Source": "form"
             }
           ],
-          "RequestBodySchema": null,
+          "RequestBodySchema": {
+            "Name": "CreateTestTypeViewModel",
+            "Properties": [
+              {
+                "Name": "Create_TestType_Name",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "DisplayName"
+                ]
+              },
+              {
+                "Name": "TestTypes",
+                "Type": "List\u003CTestType\u003E",
+                "IsRequired": false,
+                "Attributes": []
+              }
+            ]
+          },
           "Responses": [
             {
-              "StatusCode": 200,
-              "Body": null
+              "StatusCode": 302,
+              "Kind": "redirect",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         },
         {
+          "Kind": "mvc",
           "HttpMethod": "POST",
           "Route": "/",
           "Action": "DeleteType",
@@ -1272,18 +3813,21 @@
             {
               "Name": "id",
               "Type": "int",
-              "Source": "unknown"
+              "Source": "form"
             }
           ],
           "RequestBodySchema": null,
           "Responses": [
             {
-              "StatusCode": 200,
-              "Body": null
+              "StatusCode": 302,
+              "Kind": "redirect",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         },
         {
+          "Kind": "mvc",
           "HttpMethod": "POST",
           "Route": "/",
           "Action": "Rename",
@@ -1291,19 +3835,40 @@
             {
               "Name": "id",
               "Type": "int",
-              "Source": "unknown"
+              "Source": "form"
             },
             {
               "Name": "model",
               "Type": "CreateTestTypeViewModel",
-              "Source": "unknown"
+              "Source": "form"
             }
           ],
-          "RequestBodySchema": null,
+          "RequestBodySchema": {
+            "Name": "CreateTestTypeViewModel",
+            "Properties": [
+              {
+                "Name": "Create_TestType_Name",
+                "Type": "string",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "DisplayName"
+                ]
+              },
+              {
+                "Name": "TestTypes",
+                "Type": "List\u003CTestType\u003E",
+                "IsRequired": false,
+                "Attributes": []
+              }
+            ]
+          },
           "Responses": [
             {
-              "StatusCode": 200,
-              "Body": null
+              "StatusCode": 302,
+              "Kind": "redirect",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
             }
           ]
         }

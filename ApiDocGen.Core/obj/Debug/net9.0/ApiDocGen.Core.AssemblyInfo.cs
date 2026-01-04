@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ApiDocGen.Core")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+702fb503a33c762f749bb53dc73a4b198bc16581")]
 [assembly: System.Reflection.AssemblyProductAttribute("ApiDocGen.Core")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ApiDocGen.Core")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
