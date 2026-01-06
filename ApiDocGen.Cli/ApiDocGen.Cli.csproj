@@ -4,7 +4,7 @@
     <ProjectReference Include="..\ApiDocGen.Core\ApiDocGen.Core.csproj" />
     <ProjectReference Include="..\ApiDocGen.Git\ApiDocGen.Git.csproj" />
     <ProjectReference Include="..\ApiDocGen.Scanner.Roslyn\ApiDocGen.Scanner.Roslyn.csproj" />
-    <ProjectReference Include="..\ApiDocGen.AI.Ollama\ApiDocGen.AI.Ollama.csproj" />
+    <ProjectReference Include="..\ApiDocGen.AI.Gemini\ApiDocGen.AI.Gemini.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

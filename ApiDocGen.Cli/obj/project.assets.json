@@ -124,17 +124,17 @@
           }
         }
       },
-      "ApiDocGen.AI.Ollama/1.0.0": {
+      "ApiDocGen.AI.Gemini/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
         "dependencies": {
           "ApiDocGen.Core": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/ApiDocGen.AI.Ollama.dll": {}
+          "bin/placeholder/ApiDocGen.AI.Gemini.dll": {}
         },
         "runtime": {
-          "bin/placeholder/ApiDocGen.AI.Ollama.dll": {}
+          "bin/placeholder/ApiDocGen.AI.Gemini.dll": {}
         }
       },
       "ApiDocGen.Core/1.0.0": {
@@ -1001,10 +1001,10 @@
         "microsoft.codeanalysis.csharp.nuspec"
       ]
     },
-    "ApiDocGen.AI.Ollama/1.0.0": {
+    "ApiDocGen.AI.Gemini/1.0.0": {
       "type": "project",
-      "path": "../ApiDocGen.AI.Ollama/ApiDocGen.AI.Ollama.csproj",
-      "msbuildProject": "../ApiDocGen.AI.Ollama/ApiDocGen.AI.Ollama.csproj"
+      "path": "../ApiDocGen.AI.Gemini/ApiDocGen.AI.Gemini.csproj",
+      "msbuildProject": "../ApiDocGen.AI.Gemini/ApiDocGen.AI.Gemini.csproj"
     },
     "ApiDocGen.Core/1.0.0": {
       "type": "project",
@@ -1024,7 +1024,7 @@
   },
   "projectFileDependencyGroups": {
     "net9.0": [
-      "ApiDocGen.AI.Ollama >= 1.0.0",
+      "ApiDocGen.AI.Gemini >= 1.0.0",
       "ApiDocGen.Core >= 1.0.0",
       "ApiDocGen.Git >= 1.0.0",
       "ApiDocGen.Scanner.Roslyn >= 1.0.0"
@@ -1062,8 +1062,8 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "C:\\Users\\pritv\\Documents\\Prit\\AI Suite Project\\API-Documentation-Generator\\ApiDocGen.AI.Ollama\\ApiDocGen.AI.Ollama.csproj": {
-              "projectPath": "C:\\Users\\pritv\\Documents\\Prit\\AI Suite Project\\API-Documentation-Generator\\ApiDocGen.AI.Ollama\\ApiDocGen.AI.Ollama.csproj"
+            "C:\\Users\\pritv\\Documents\\Prit\\AI Suite Project\\API-Documentation-Generator\\ApiDocGen.AI.Gemini\\ApiDocGen.AI.Gemini.csproj": {
+              "projectPath": "C:\\Users\\pritv\\Documents\\Prit\\AI Suite Project\\API-Documentation-Generator\\ApiDocGen.AI.Gemini\\ApiDocGen.AI.Gemini.csproj"
             },
             "C:\\Users\\pritv\\Documents\\Prit\\AI Suite Project\\API-Documentation-Generator\\ApiDocGen.Core\\ApiDocGen.Core.csproj": {
               "projectPath": "C:\\Users\\pritv\\Documents\\Prit\\AI Suite Project\\API-Documentation-Generator\\ApiDocGen.Core\\ApiDocGen.Core.csproj"

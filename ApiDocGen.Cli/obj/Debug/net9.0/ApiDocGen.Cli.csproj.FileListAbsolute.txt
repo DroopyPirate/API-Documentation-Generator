@@ -83,14 +83,14 @@ C:\Users\pritv\Documents\Prit\AI Suite Project\API-Documentation-Generator\ApiDo
 C:\Users\pritv\Documents\Prit\AI Suite Project\API-Documentation-Generator\ApiDocGen.Cli\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
 C:\Users\pritv\Documents\Prit\AI Suite Project\API-Documentation-Generator\ApiDocGen.Cli\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
 C:\Users\pritv\Documents\Prit\AI Suite Project\API-Documentation-Generator\ApiDocGen.Cli\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
-C:\Users\pritv\Documents\Prit\AI Suite Project\API-Documentation-Generator\ApiDocGen.Cli\bin\Debug\net9.0\ApiDocGen.AI.Ollama.dll
+C:\Users\pritv\Documents\Prit\AI Suite Project\API-Documentation-Generator\ApiDocGen.Cli\bin\Debug\net9.0\ApiDocGen.AI.Gemini.dll
 C:\Users\pritv\Documents\Prit\AI Suite Project\API-Documentation-Generator\ApiDocGen.Cli\bin\Debug\net9.0\ApiDocGen.Core.dll
 C:\Users\pritv\Documents\Prit\AI Suite Project\API-Documentation-Generator\ApiDocGen.Cli\bin\Debug\net9.0\ApiDocGen.Git.dll
 C:\Users\pritv\Documents\Prit\AI Suite Project\API-Documentation-Generator\ApiDocGen.Cli\bin\Debug\net9.0\ApiDocGen.Scanner.Roslyn.dll
 C:\Users\pritv\Documents\Prit\AI Suite Project\API-Documentation-Generator\ApiDocGen.Cli\bin\Debug\net9.0\ApiDocGen.Core.pdb
 C:\Users\pritv\Documents\Prit\AI Suite Project\API-Documentation-Generator\ApiDocGen.Cli\bin\Debug\net9.0\ApiDocGen.Git.pdb
 C:\Users\pritv\Documents\Prit\AI Suite Project\API-Documentation-Generator\ApiDocGen.Cli\bin\Debug\net9.0\ApiDocGen.Scanner.Roslyn.pdb
-C:\Users\pritv\Documents\Prit\AI Suite Project\API-Documentation-Generator\ApiDocGen.Cli\bin\Debug\net9.0\ApiDocGen.AI.Ollama.pdb
+C:\Users\pritv\Documents\Prit\AI Suite Project\API-Documentation-Generator\ApiDocGen.Cli\bin\Debug\net9.0\ApiDocGen.AI.Gemini.pdb
 C:\Users\pritv\Documents\Prit\AI Suite Project\API-Documentation-Generator\ApiDocGen.Cli\obj\Debug\net9.0\ApiDocGen.Cli.csproj.AssemblyReference.cache
 C:\Users\pritv\Documents\Prit\AI Suite Project\API-Documentation-Generator\ApiDocGen.Cli\obj\Debug\net9.0\ApiDocGen.Cli.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\pritv\Documents\Prit\AI Suite Project\API-Documentation-Generator\ApiDocGen.Cli\obj\Debug\net9.0\ApiDocGen.Cli.AssemblyInfoInputs.cache

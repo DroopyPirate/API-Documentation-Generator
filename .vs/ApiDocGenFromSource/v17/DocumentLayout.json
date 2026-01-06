@@ -3,6 +3,22 @@
   "WorkspaceRootPath": "C:\\Users\\pritv\\Documents\\Prit\\AI Suite Project\\API-Documentation-Generator\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{20250F58-F5BC-45D7-AACC-5CBF2A81492A}|ApiDocGen.Cli\\ApiDocGen.Cli.csproj|c:\\users\\pritv\\documents\\prit\\ai suite project\\api-documentation-generator\\apidocgen.cli\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{20250F58-F5BC-45D7-AACC-5CBF2A81492A}|ApiDocGen.Cli\\ApiDocGen.Cli.csproj|solutionrelative:apidocgen.cli\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A94EA46D-EED9-4DEA-B7EE-D44BAE7DB93E}|ApiDocGen.AI.Gemini\\ApiDocGen.AI.Gemini.csproj|c:\\users\\pritv\\documents\\prit\\ai suite project\\api-documentation-generator\\apidocgen.ai.gemini\\geminiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A94EA46D-EED9-4DEA-B7EE-D44BAE7DB93E}|ApiDocGen.AI.Gemini\\ApiDocGen.AI.Gemini.csproj|solutionrelative:apidocgen.ai.gemini\\geminiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1A4A71C-89E8-4D75-98DF-D932A5DFC713}|ApiDocGen.Core\\ApiDocGen.Core.csproj|c:\\users\\pritv\\documents\\prit\\ai suite project\\api-documentation-generator\\apidocgen.core\\ai\\promptbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1A4A71C-89E8-4D75-98DF-D932A5DFC713}|ApiDocGen.Core\\ApiDocGen.Core.csproj|solutionrelative:apidocgen.core\\ai\\promptbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1A4A71C-89E8-4D75-98DF-D932A5DFC713}|ApiDocGen.Core\\ApiDocGen.Core.csproj|c:\\users\\pritv\\documents\\prit\\ai suite project\\api-documentation-generator\\apidocgen.core\\models\\apispec.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1A4A71C-89E8-4D75-98DF-D932A5DFC713}|ApiDocGen.Core\\ApiDocGen.Core.csproj|solutionrelative:apidocgen.core\\models\\apispec.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{ABE1465C-918D-4AAC-A740-5087BA63CD60}|ApiDocGen.Scanner.Roslyn\\ApiDocGen.Scanner.Roslyn.csproj|c:\\users\\pritv\\documents\\prit\\ai suite project\\api-documentation-generator\\apidocgen.scanner.roslyn\\roslyncontrollerscanner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ABE1465C-918D-4AAC-A740-5087BA63CD60}|ApiDocGen.Scanner.Roslyn\\ApiDocGen.Scanner.Roslyn.csproj|solutionrelative:apidocgen.scanner.roslyn\\roslyncontrollerscanner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -23,28 +39,12 @@
       "RelativeMoniker": "D:0:0:{ABE1465C-918D-4AAC-A740-5087BA63CD60}|ApiDocGen.Scanner.Roslyn\\ApiDocGen.Scanner.Roslyn.csproj|solutionrelative:apidocgen.scanner.roslyn\\repotypeindex.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F1A4A71C-89E8-4D75-98DF-D932A5DFC713}|ApiDocGen.Core\\ApiDocGen.Core.csproj|c:\\users\\pritv\\documents\\prit\\ai suite project\\api-documentation-generator\\apidocgen.core\\models\\apispec.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F1A4A71C-89E8-4D75-98DF-D932A5DFC713}|ApiDocGen.Core\\ApiDocGen.Core.csproj|solutionrelative:apidocgen.core\\models\\apispec.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1D46BE45-22A6-40B9-9C89-6A89098150B5}|ApiDocGen.AI.Ollama\\ApiDocGen.AI.Ollama.csproj|c:\\users\\pritv\\documents\\prit\\ai suite project\\api-documentation-generator\\apidocgen.ai.ollama\\ollamaclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1D46BE45-22A6-40B9-9C89-6A89098150B5}|ApiDocGen.AI.Ollama\\ApiDocGen.AI.Ollama.csproj|solutionrelative:apidocgen.ai.ollama\\ollamaclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{ABE1465C-918D-4AAC-A740-5087BA63CD60}|ApiDocGen.Scanner.Roslyn\\ApiDocGen.Scanner.Roslyn.csproj|c:\\users\\pritv\\documents\\prit\\ai suite project\\api-documentation-generator\\apidocgen.scanner.roslyn\\schemaextractor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ABE1465C-918D-4AAC-A740-5087BA63CD60}|ApiDocGen.Scanner.Roslyn\\ApiDocGen.Scanner.Roslyn.csproj|solutionrelative:apidocgen.scanner.roslyn\\schemaextractor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F1A4A71C-89E8-4D75-98DF-D932A5DFC713}|ApiDocGen.Core\\ApiDocGen.Core.csproj|c:\\users\\pritv\\documents\\prit\\ai suite project\\api-documentation-generator\\apidocgen.core\\serialization\\jsondefauls.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F1A4A71C-89E8-4D75-98DF-D932A5DFC713}|ApiDocGen.Core\\ApiDocGen.Core.csproj|solutionrelative:apidocgen.core\\serialization\\jsondefauls.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1D46BE45-22A6-40B9-9C89-6A89098150B5}|ApiDocGen.AI.Ollama\\ApiDocGen.AI.Ollama.csproj|c:\\users\\pritv\\documents\\prit\\ai suite project\\api-documentation-generator\\apidocgen.ai.ollama\\promptbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1D46BE45-22A6-40B9-9C89-6A89098150B5}|ApiDocGen.AI.Ollama\\ApiDocGen.AI.Ollama.csproj|solutionrelative:apidocgen.ai.ollama\\promptbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{20250F58-F5BC-45D7-AACC-5CBF2A81492A}|ApiDocGen.Cli\\ApiDocGen.Cli.csproj|c:\\users\\pritv\\documents\\prit\\ai suite project\\api-documentation-generator\\apidocgen.cli\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{20250F58-F5BC-45D7-AACC-5CBF2A81492A}|ApiDocGen.Cli\\ApiDocGen.Cli.csproj|solutionrelative:apidocgen.cli\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{497DC0C3-6527-43D9-82A5-6A5642EA0BCD}|ApiDocGen.Git\\ApiDocGen.Git.csproj|c:\\users\\pritv\\documents\\prit\\ai suite project\\api-documentation-generator\\apidocgen.git\\gitclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -58,50 +58,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ResponseInference.cs",
-              "DocumentMoniker": "C:\\Users\\pritv\\Documents\\Prit\\AI Suite Project\\API-Documentation-Generator\\ApiDocGen.Scanner.Roslyn\\ResponseInference.cs",
-              "RelativeDocumentMoniker": "ApiDocGen.Scanner.Roslyn\\ResponseInference.cs",
-              "ToolTip": "C:\\Users\\pritv\\Documents\\Prit\\AI Suite Project\\API-Documentation-Generator\\ApiDocGen.Scanner.Roslyn\\ResponseInference.cs",
-              "RelativeToolTip": "ApiDocGen.Scanner.Roslyn\\ResponseInference.cs",
-              "ViewState": "AgIAADMAAAAAAAAAAAAYwE4AAAAAAAAAAAAAAA==",
+              "Title": "GeminiClient.cs",
+              "DocumentMoniker": "C:\\Users\\pritv\\Documents\\Prit\\AI Suite Project\\API-Documentation-Generator\\ApiDocGen.AI.Gemini\\GeminiClient.cs",
+              "RelativeDocumentMoniker": "ApiDocGen.AI.Gemini\\GeminiClient.cs",
+              "ToolTip": "C:\\Users\\pritv\\Documents\\Prit\\AI Suite Project\\API-Documentation-Generator\\ApiDocGen.AI.Gemini\\GeminiClient.cs",
+              "RelativeToolTip": "ApiDocGen.AI.Gemini\\GeminiClient.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-04T22:55:04.671Z",
+              "WhenOpened": "2026-01-06T00:13:25.888Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "MvcResponseInference.cs",
-              "DocumentMoniker": "C:\\Users\\pritv\\Documents\\Prit\\AI Suite Project\\API-Documentation-Generator\\ApiDocGen.Scanner.Roslyn\\MvcResponseInference.cs",
-              "RelativeDocumentMoniker": "ApiDocGen.Scanner.Roslyn\\MvcResponseInference.cs",
-              "ToolTip": "C:\\Users\\pritv\\Documents\\Prit\\AI Suite Project\\API-Documentation-Generator\\ApiDocGen.Scanner.Roslyn\\MvcResponseInference.cs",
-              "RelativeToolTip": "ApiDocGen.Scanner.Roslyn\\MvcResponseInference.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAYAAAAAAAAAA==",
+              "Title": "PromptBuilder.cs",
+              "DocumentMoniker": "C:\\Users\\pritv\\Documents\\Prit\\AI Suite Project\\API-Documentation-Generator\\ApiDocGen.Core\\AI\\PromptBuilder.cs",
+              "RelativeDocumentMoniker": "ApiDocGen.Core\\AI\\PromptBuilder.cs",
+              "ToolTip": "C:\\Users\\pritv\\Documents\\Prit\\AI Suite Project\\API-Documentation-Generator\\ApiDocGen.Core\\AI\\PromptBuilder.cs",
+              "RelativeToolTip": "ApiDocGen.Core\\AI\\PromptBuilder.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-04T22:53:23.848Z",
+              "WhenOpened": "2026-01-06T00:10:26.433Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ReturnTypeParser.cs",
-              "DocumentMoniker": "C:\\Users\\pritv\\Documents\\Prit\\AI Suite Project\\API-Documentation-Generator\\ApiDocGen.Scanner.Roslyn\\ReturnTypeParser.cs",
-              "RelativeDocumentMoniker": "ApiDocGen.Scanner.Roslyn\\ReturnTypeParser.cs",
-              "ToolTip": "C:\\Users\\pritv\\Documents\\Prit\\AI Suite Project\\API-Documentation-Generator\\ApiDocGen.Scanner.Roslyn\\ReturnTypeParser.cs",
-              "RelativeToolTip": "ApiDocGen.Scanner.Roslyn\\ReturnTypeParser.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-02T21:02:07.36Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "RepoTypeIndex.cs",
               "DocumentMoniker": "C:\\Users\\pritv\\Documents\\Prit\\AI Suite Project\\API-Documentation-Generator\\ApiDocGen.Scanner.Roslyn\\RepoTypeIndex.cs",
               "RelativeDocumentMoniker": "ApiDocGen.Scanner.Roslyn\\RepoTypeIndex.cs",
@@ -109,36 +96,11 @@
               "RelativeToolTip": "ApiDocGen.Scanner.Roslyn\\RepoTypeIndex.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-02T21:01:12.483Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-02T21:01:12.483Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "PromptBuilder.cs",
-              "DocumentMoniker": "C:\\Users\\pritv\\Documents\\Prit\\AI Suite Project\\API-Documentation-Generator\\ApiDocGen.AI.Ollama\\PromptBuilder.cs",
-              "RelativeDocumentMoniker": "ApiDocGen.AI.Ollama\\PromptBuilder.cs",
-              "ToolTip": "C:\\Users\\pritv\\Documents\\Prit\\AI Suite Project\\API-Documentation-Generator\\ApiDocGen.AI.Ollama\\PromptBuilder.cs",
-              "RelativeToolTip": "ApiDocGen.AI.Ollama\\PromptBuilder.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAiwC0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-27T00:31:11.888Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "OllamaClient.cs",
-              "DocumentMoniker": "C:\\Users\\pritv\\Documents\\Prit\\AI Suite Project\\API-Documentation-Generator\\ApiDocGen.AI.Ollama\\OllamaClient.cs",
-              "RelativeDocumentMoniker": "ApiDocGen.AI.Ollama\\OllamaClient.cs",
-              "ToolTip": "C:\\Users\\pritv\\Documents\\Prit\\AI Suite Project\\API-Documentation-Generator\\ApiDocGen.AI.Ollama\\OllamaClient.cs",
-              "RelativeToolTip": "ApiDocGen.AI.Ollama\\OllamaClient.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAgwCMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-27T00:30:36.186Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "RoslynControllerScanner.cs",
               "DocumentMoniker": "C:\\Users\\pritv\\Documents\\Prit\\AI Suite Project\\API-Documentation-Generator\\ApiDocGen.Scanner.Roslyn\\RoslynControllerScanner.cs",
               "RelativeDocumentMoniker": "ApiDocGen.Scanner.Roslyn\\RoslynControllerScanner.cs",
@@ -146,24 +108,73 @@
               "RelativeToolTip": "ApiDocGen.Scanner.Roslyn\\RoslynControllerScanner.cs",
               "ViewState": "AgIAAE4AAAAAAAAAAAAAAF0AAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-27T00:30:02.152Z",
+              "WhenOpened": "2025-12-27T00:30:02.152Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ApiSpec.cs",
+              "DocumentMoniker": "C:\\Users\\pritv\\Documents\\Prit\\AI Suite Project\\API-Documentation-Generator\\ApiDocGen.Core\\Models\\ApiSpec.cs",
+              "RelativeDocumentMoniker": "ApiDocGen.Core\\Models\\ApiSpec.cs",
+              "ToolTip": "C:\\Users\\pritv\\Documents\\Prit\\AI Suite Project\\API-Documentation-Generator\\ApiDocGen.Core\\Models\\ApiSpec.cs",
+              "RelativeToolTip": "ApiDocGen.Core\\Models\\ApiSpec.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-27T00:27:55.305Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\pritv\\Documents\\Prit\\AI Suite Project\\API-Documentation-Generator\\ApiDocGen.Cli\\Program.cs",
               "RelativeDocumentMoniker": "ApiDocGen.Cli\\Program.cs",
               "ToolTip": "C:\\Users\\pritv\\Documents\\Prit\\AI Suite Project\\API-Documentation-Generator\\ApiDocGen.Cli\\Program.cs",
               "RelativeToolTip": "ApiDocGen.Cli\\Program.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAHgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-27T00:31:41.772Z"
+              "WhenOpened": "2025-12-27T00:31:41.772Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
+              "Title": "ReturnTypeParser.cs",
+              "DocumentMoniker": "C:\\Users\\pritv\\Documents\\Prit\\AI Suite Project\\API-Documentation-Generator\\ApiDocGen.Scanner.Roslyn\\ReturnTypeParser.cs",
+              "RelativeDocumentMoniker": "ApiDocGen.Scanner.Roslyn\\ReturnTypeParser.cs",
+              "ToolTip": "C:\\Users\\pritv\\Documents\\Prit\\AI Suite Project\\API-Documentation-Generator\\ApiDocGen.Scanner.Roslyn\\ReturnTypeParser.cs",
+              "RelativeToolTip": "ApiDocGen.Scanner.Roslyn\\ReturnTypeParser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-02T21:02:07.36Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MvcResponseInference.cs",
+              "DocumentMoniker": "C:\\Users\\pritv\\Documents\\Prit\\AI Suite Project\\API-Documentation-Generator\\ApiDocGen.Scanner.Roslyn\\MvcResponseInference.cs",
+              "RelativeDocumentMoniker": "ApiDocGen.Scanner.Roslyn\\MvcResponseInference.cs",
+              "ToolTip": "C:\\Users\\pritv\\Documents\\Prit\\AI Suite Project\\API-Documentation-Generator\\ApiDocGen.Scanner.Roslyn\\MvcResponseInference.cs",
+              "RelativeToolTip": "ApiDocGen.Scanner.Roslyn\\MvcResponseInference.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-04T22:53:23.848Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ResponseInference.cs",
+              "DocumentMoniker": "C:\\Users\\pritv\\Documents\\Prit\\AI Suite Project\\API-Documentation-Generator\\ApiDocGen.Scanner.Roslyn\\ResponseInference.cs",
+              "RelativeDocumentMoniker": "ApiDocGen.Scanner.Roslyn\\ResponseInference.cs",
+              "ToolTip": "C:\\Users\\pritv\\Documents\\Prit\\AI Suite Project\\API-Documentation-Generator\\ApiDocGen.Scanner.Roslyn\\ResponseInference.cs",
+              "RelativeToolTip": "ApiDocGen.Scanner.Roslyn\\ResponseInference.cs",
+              "ViewState": "AgIAADMAAAAAAAAAAAAYwE4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-04T22:55:04.671Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "SchemaExtractor.cs",
               "DocumentMoniker": "C:\\Users\\pritv\\Documents\\Prit\\AI Suite Project\\API-Documentation-Generator\\ApiDocGen.Scanner.Roslyn\\SchemaExtractor.cs",
               "RelativeDocumentMoniker": "ApiDocGen.Scanner.Roslyn\\SchemaExtractor.cs",
@@ -172,19 +183,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-02T21:01:41.121Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ApiSpec.cs",
-              "DocumentMoniker": "C:\\Users\\pritv\\Documents\\Prit\\AI Suite Project\\API-Documentation-Generator\\ApiDocGen.Core\\Models\\ApiSpec.cs",
-              "RelativeDocumentMoniker": "ApiDocGen.Core\\Models\\ApiSpec.cs",
-              "ToolTip": "C:\\Users\\pritv\\Documents\\Prit\\AI Suite Project\\API-Documentation-Generator\\ApiDocGen.Core\\Models\\ApiSpec.cs",
-              "RelativeToolTip": "ApiDocGen.Core\\Models\\ApiSpec.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAACEAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-27T00:27:55.305Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -200,7 +198,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "JsonDefauls.cs",
               "DocumentMoniker": "C:\\Users\\pritv\\Documents\\Prit\\AI Suite Project\\API-Documentation-Generator\\ApiDocGen.Core\\Serialization\\JsonDefauls.cs",
               "RelativeDocumentMoniker": "ApiDocGen.Core\\Serialization\\JsonDefauls.cs",

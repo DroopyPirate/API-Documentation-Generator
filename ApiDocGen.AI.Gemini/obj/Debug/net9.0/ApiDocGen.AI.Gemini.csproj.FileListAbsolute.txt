@@ -1,0 +1,16 @@
+C:\Users\pritv\Documents\Prit\AI Suite Project\API-Documentation-Generator\ApiDocGen.AI.Gemini\bin\Debug\net9.0\ApiDocGen.AI.Gemini.deps.json
+C:\Users\pritv\Documents\Prit\AI Suite Project\API-Documentation-Generator\ApiDocGen.AI.Gemini\bin\Debug\net9.0\ApiDocGen.AI.Gemini.dll
+C:\Users\pritv\Documents\Prit\AI Suite Project\API-Documentation-Generator\ApiDocGen.AI.Gemini\bin\Debug\net9.0\ApiDocGen.AI.Gemini.pdb
+C:\Users\pritv\Documents\Prit\AI Suite Project\API-Documentation-Generator\ApiDocGen.AI.Gemini\bin\Debug\net9.0\ApiDocGen.Core.dll
+C:\Users\pritv\Documents\Prit\AI Suite Project\API-Documentation-Generator\ApiDocGen.AI.Gemini\bin\Debug\net9.0\ApiDocGen.Core.pdb
+C:\Users\pritv\Documents\Prit\AI Suite Project\API-Documentation-Generator\ApiDocGen.AI.Gemini\obj\Debug\net9.0\ApiDocGen.AI.Gemini.csproj.AssemblyReference.cache
+C:\Users\pritv\Documents\Prit\AI Suite Project\API-Documentation-Generator\ApiDocGen.AI.Gemini\obj\Debug\net9.0\ApiDocGen.AI.Gemini.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pritv\Documents\Prit\AI Suite Project\API-Documentation-Generator\ApiDocGen.AI.Gemini\obj\Debug\net9.0\ApiDocGen.AI.Gemini.AssemblyInfoInputs.cache
+C:\Users\pritv\Documents\Prit\AI Suite Project\API-Documentation-Generator\ApiDocGen.AI.Gemini\obj\Debug\net9.0\ApiDocGen.AI.Gemini.AssemblyInfo.cs
+C:\Users\pritv\Documents\Prit\AI Suite Project\API-Documentation-Generator\ApiDocGen.AI.Gemini\obj\Debug\net9.0\ApiDocGen.AI.Gemini.csproj.CoreCompileInputs.cache
+C:\Users\pritv\Documents\Prit\AI Suite Project\API-Documentation-Generator\ApiDocGen.AI.Gemini\obj\Debug\net9.0\ApiDocGen.AI.Gemini.sourcelink.json
+C:\Users\pritv\Documents\Prit\AI Suite Project\API-Documentation-Generator\ApiDocGen.AI.Gemini\obj\Debug\net9.0\ApiDocGe.5A7973A0.Up2Date
+C:\Users\pritv\Documents\Prit\AI Suite Project\API-Documentation-Generator\ApiDocGen.AI.Gemini\obj\Debug\net9.0\ApiDocGen.AI.Gemini.dll
+C:\Users\pritv\Documents\Prit\AI Suite Project\API-Documentation-Generator\ApiDocGen.AI.Gemini\obj\Debug\net9.0\refint\ApiDocGen.AI.Gemini.dll
+C:\Users\pritv\Documents\Prit\AI Suite Project\API-Documentation-Generator\ApiDocGen.AI.Gemini\obj\Debug\net9.0\ApiDocGen.AI.Gemini.pdb
+C:\Users\pritv\Documents\Prit\AI Suite Project\API-Documentation-Generator\ApiDocGen.AI.Gemini\obj\Debug\net9.0\ref\ApiDocGen.AI.Gemini.dll
