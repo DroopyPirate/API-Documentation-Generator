@@ -1,1077 +1,372 @@
-# Exam Portal API Documentation
+# API Documentation
 
-This documentation describes the publicly available API for the Exam Portal, allowing developers to interact with administrative, faculty, group, and test management functionalities.
-
----
-
-## Admin API
-
-### GET /
-Retrieves the page for adding a new faculty member.
-- **Route parameters**: Not specified.
-- **Query parameters**: Not specified.
-- **Request body**: Not specified.
-- **Example curl command**:
-  ```bash
-  curl -X GET "http://localhost:5000/"
-  ```
-- **Response notes**: Responds with HTTP 200 (view).
-
-### GET /
-Retrieves the page for adding faculty members using an Excel file.
-- **Route parameters**: Not specified.
-- **Query parameters**:
-  - `model` (List<ApplicationUser>): Not specified for complex types in query string.
-- **Request body**: Not specified.
-- **Example curl command**:
-  ```bash
-  curl -X GET "http://localhost:5000/"
-  ```
-- **Response notes**: Responds with HTTP 200 (view).
-
-### GET /
-Retrieves the page to view existing faculty members.
-- **Route parameters**: Not specified.
-- **Query parameters**: Not specified.
-- **Request body**: Not specified.
-- **Example curl command**:
-  ```bash
-  curl -X GET "http://localhost:5000/"
-  ```
-- **Response notes**: Responds with HTTP 200 (view).
-
-### GET /
-Retrieves the page to edit a specific faculty member.
-- **Route parameters**: Not specified.
-- **Query parameters**:
-  - `id` (int)
-- **Request body**: Not specified.
-- **Example curl command**:
-  ```bash
-  curl -X GET "http://localhost:5000/?id=123"
-  ```
-- **Response notes**: Responds with HTTP 200 (view).
-
-### GET /
-Retrieves the page for adding a new student.
-- **Route parameters**: Not specified.
-- **Query parameters**: Not specified.
-- **Request body**: Not specified.
-- **Example curl command**:
-  ```bash
-  curl -X GET "http://localhost:5000/"
-  ```
-- **Response notes**: Responds with HTTP 200 (view).
-
-### GET /
-Retrieves the page for adding students using an Excel file.
-- **Route parameters**: Not specified.
-- **Query parameters**:
-  - `model` (List<ApplicationUser>): Not specified for complex types in query string.
-- **Request body**: Not specified.
-- **Example curl command**:
-  ```bash
-  curl -X GET "http://localhost:5000/"
-  ```
-- **Response notes**: Responds with HTTP 200 (view).
-
-### GET /
-Retrieves the page to view existing students.
-- **Route parameters**: Not specified.
-- **Query parameters**: Not specified.
-- **Request body**: Not specified.
-- **Example curl command**:
-  ```bash
-  curl -X GET "http://localhost:5000/"
-  ```
-- **Response notes**: Responds with HTTP 200 (view).
-
-### GET /
-Retrieves the page to edit a specific student.
-- **Route parameters**: Not specified.
-- **Query parameters**:
-  - `id` (int)
-- **Request body**: Not specified.
-- **Example curl command**:
-  ```bash
-  curl -X GET "http://localhost:5000/?id=123"
-  ```
-- **Response notes**: Responds with HTTP 200 (view).
-
-### GET /
-Retrieves the page to view available tests.
-- **Route parameters**: Not specified.
-- **Query parameters**: Not specified.
-- **Request body**: Not specified.
-- **Example curl command**:
-  ```bash
-  curl -X GET "http://localhost:5000/"
-  ```
-- **Response notes**: Responds with HTTP 200 (view).
-
-### POST /
-Creates a new faculty member.
-- **Route parameters**: Not specified.
-- **Query parameters**: Not specified.
-- **Request body (form-urlencoded)**:
-  - `Role` (string) - Required
-  - `Email` (string) - Required
-  - `Password` (string)
-  - `Name` (string) - Required
-  - `MiddleName` (string)
-  - `LastName` (string) - Required
-  - `PhoneNumber` (string) - Required
-  - `Address` (string) - Required
-  - `Branch` (BranchEnum) - Required
-  - `DOB` (string) - Required
-- **Example curl command**:
-  ```bash
-  curl -X POST -H "Content-Type: application/x-www-form-urlencoded" \
-  -d "Role=Faculty&Email=new.faculty@example.com&Password=secure_pass&Name=John&LastName=Doe&PhoneNumber=1234567890&Address=123%20Main%20St&Branch=ComputerScience&DOB=1980-01-01" \
-  "http://localhost:5000/"
-  ```
-- **Response notes**: Responds with HTTP 200 (view) or HTTP 302 (redirect).
-
-### POST /
-Adds faculty members via an uploaded Excel file.
-- **Route parameters**: Not specified.
-- **Query parameters**: Not specified.
-- **Request body (multipart/form-data)**:
-  - `file` (IFormFile)
-  - `hostingEnvironment` (IHostingEnvironment): Not specified.
-- **Example curl command**:
-  ```bash
-  curl -X POST -H "Content-Type: multipart/form-data" \
-  -F "file=@/path/to/faculty.xlsx" \
-  "http://localhost:5000/"
-  ```
-- **Response notes**: Responds with HTTP 200 (view).
-
-### POST /
-Deletes an existing faculty member.
-- **Route parameters**: Not specified.
-- **Query parameters**: Not specified.
-- **Request body (form-urlencoded)**:
-  - `id` (int)
-- **Example curl command**:
-  ```bash
-  curl -X POST -H "Content-Type: application/x-www-form-urlencoded" \
-  -d "id=123" \
-  "http://localhost:5000/"
-  ```
-- **Response notes**: Responds with HTTP 200 (view) or HTTP 302 (redirect).
-
-### POST /
-Retrieves details for a specific faculty member.
-- **Route parameters**: Not specified.
-- **Query parameters**: Not specified.
-- **Request body (form-urlencoded)**:
-  - `id` (int)
-- **Example curl command**:
-  ```bash
-  curl -X POST -H "Content-Type: application/x-www-form-urlencoded" \
-  -d "id=123" \
-  "http://localhost:5000/"
-  ```
-- **Response notes**: Responds with HTTP 200 (view).
-
-### POST /
-Updates details for an existing faculty member.
-- **Route parameters**: Not specified.
-- **Query parameters**: Not specified.
-- **Request body (form-urlencoded)**:
-  - `Role` (string)
-  - `Id` (int)
-  - `Email` (string) - Required
-  - `Password` (string) - Required
-  - `Name` (string) - Required
-  - `MiddleName` (string)
-  - `LastName` (string) - Required
-  - `PhoneNumber` (string) - Required
-  - `Address` (string) - Required
-  - `Branch` (BranchEnum) - Required
-  - `DOB` (string) - Required
-- **Example curl command**:
-  ```bash
-  curl -X POST -H "Content-Type: application/x-www-form-urlencoded" \
-  -d "Id=123&Email=updated.faculty@example.com&Password=new_pass&Name=Jane&LastName=Doe&PhoneNumber=0987654321&Address=456%20Oak%20Ave&Branch=InformationTechnology&DOB=1985-05-05" \
-  "http://localhost:5000/"
-  ```
-- **Response notes**: Responds with HTTP 200 (view) or HTTP 302 (redirect).
-
-### POST /
-Creates a new student.
-- **Route parameters**: Not specified.
-- **Query parameters**: Not specified.
-- **Request body (form-urlencoded)**:
-  - `Role` (string) - Required
-  - `Email` (string) - Required
-  - `Password` (string)
-  - `Name` (string) - Required
-  - `MiddleName` (string)
-  - `LastName` (string) - Required
-  - `PhoneNumber` (string) - Required
-  - `Address` (string) - Required
-  - `Branch` (BranchEnum) - Required
-  - `Semester` (int) - Required
-  - `Division` (string) - Required
-  - `DOB` (string) - Required
-- **Example curl command**:
-  ```bash
-  curl -X POST -H "Content-Type: application/x-www-form-urlencoded" \
-  -d "Role=Student&Email=new.student@example.com&Password=student_pass&Name=Alice&LastName=Smith&PhoneNumber=1112223333&Address=789%20Pine%20Ln&Branch=ComputerScience&Semester=3&Division=A&DOB=2000-11-11" \
-  "http://localhost:5000/"
-  ```
-- **Response notes**: Responds with HTTP 200 (view) or HTTP 302 (redirect).
-
-### POST /
-Adds students via an uploaded Excel file.
-- **Route parameters**: Not specified.
-- **Query parameters**: Not specified.
-- **Request body (multipart/form-data)**:
-  - `file` (IFormFile)
-  - `hostingEnvironment` (IHostingEnvironment): Not specified.
-- **Example curl command**:
-  ```bash
-  curl -X POST -H "Content-Type: multipart/form-data" \
-  -F "file=@/path/to/students.xlsx" \
-  "http://localhost:5000/"
-  ```
-- **Response notes**: Responds with HTTP 200 (view).
-
-### POST /
-Deletes an existing student.
-- **Route parameters**: Not specified.
-- **Query parameters**: Not specified.
-- **Request body (form-urlencoded)**:
-  - `id` (int)
-- **Example curl command**:
-  ```bash
-  curl -X POST -H "Content-Type: application/x-www-form-urlencoded" \
-  -d "id=456" \
-  "http://localhost:5000/"
-  ```
-- **Response notes**: Responds with HTTP 200 (view) or HTTP 302 (redirect).
-
-### POST /
-Retrieves details for a specific student.
-- **Route parameters**: Not specified.
-- **Query parameters**: Not specified.
-- **Request body (form-urlencoded)**:
-  - `id` (int)
-- **Example curl command**:
-  ```bash
-  curl -X POST -H "Content-Type: application/x-www-form-urlencoded" \
-  -d "id=456" \
-  "http://localhost:5000/"
-  ```
-- **Response notes**: Responds with HTTP 200 (view).
-
-### POST /
-Updates details for an existing student.
-- **Route parameters**: Not specified.
-- **Query parameters**: Not specified.
-- **Request body (form-urlencoded)**:
-  - `Role` (string)
-  - `Id` (int)
-  - `Email` (string) - Required
-  - `Password` (string) - Required
-  - `Name` (string) - Required
-  - `MiddleName` (string)
-  - `LastName` (string) - Required
-  - `PhoneNumber` (string) - Required
-  - `Address` (string) - Required
-  - `Branch` (BranchEnum) - Required
-  - `Semester` (int) - Required
-  - `Division` (string) - Required
-  - `DOB` (string) - Required
-- **Example curl command**:
-  ```bash
-  curl -X POST -H "Content-Type: application/x-www-form-urlencoded" \
-  -d "Id=456&Email=updated.student@example.com&Password=new_student_pass&Name=Bob&LastName=Johnson&PhoneNumber=9998887777&Address=321%20Maple%20Rd&Branch=ElectricalEngineering&Semester=5&Division=B&DOB=1999-09-09" \
-  "http://localhost:5000/"
-  ```
-- **Response notes**: Responds with HTTP 200 (view) or HTTP 302 (redirect).
+This document provides API specifications for developers consuming the Cricketrivia Backend API. It describes the available endpoints, their expected parameters, request bodies, and typical responses.
 
 ---
 
-## Faculty API
+## Match Balls Mapping
 
-### GET /
-Retrieves the page for adding a new student.
-- **Route parameters**: Not specified.
-- **Query parameters**: Not specified.
-- **Request body**: Not specified.
-- **Example curl command**:
-  ```bash
-  curl -X GET "http://localhost:5000/"
-  ```
-- **Response notes**: Responds with HTTP 200 (view).
+### GET /api/MatchBallsMapping
+Retrieves match ball mappings.
 
-### GET /
-Retrieves the page for adding students using an Excel file.
-- **Route parameters**: Not specified.
-- **Query parameters**:
-  - `model` (List<ApplicationUser>): Not specified for complex types in query string.
-- **Request body**: Not specified.
-- **Example curl command**:
-  ```bash
-  curl -X GET "http://localhost:5000/"
-  ```
-- **Response notes**: Responds with HTTP 200 (view).
+**Parameters:**
+- Route parameters: Not specified
+- Query parameters: Not specified
+- Request body:
+  - `Match_id` (int)
+  - `Team_id` (int)
 
-### GET /
-Retrieves the page to view existing students.
-- **Route parameters**: Not specified.
-- **Query parameters**: Not specified.
-- **Request body**: Not specified.
-- **Example curl command**:
-  ```bash
-  curl -X GET "http://localhost:5000/"
-  ```
-- **Response notes**: Responds with HTTP 200 (view).
+**Example curl command:**
+```bash
+curl -X GET "https://api.example.com/api/MatchBallsMapping" -H "Content-Type: application/json" -d '{"Match_id": 0, "Team_id": 0}'
+```
 
-### GET /
-Retrieves the page to edit a specific student.
-- **Route parameters**: Not specified.
-- **Query parameters**:
-  - `id` (int)
-- **Request body**: Not specified.
-- **Example curl command**:
-  ```bash
-  curl -X GET "http://localhost:5000/?id=123"
-  ```
-- **Response notes**: Responds with HTTP 200 (view).
+**Response notes:**
+- Status Code: 200
+- Body: Not specified
 
-### GET /
-Retrieves the page to view available tests.
-- **Route parameters**: Not specified.
-- **Query parameters**: Not specified.
-- **Request body**: Not specified.
-- **Example curl command**:
-  ```bash
-  curl -X GET "http://localhost:5000/"
-  ```
-- **Response notes**: Responds with HTTP 200 (view).
+### PUT /api/MatchBallsMapping
+Updates match ball mappings.
 
-### POST /
-Creates a new student.
-- **Route parameters**: Not specified.
-- **Query parameters**: Not specified.
-- **Request body (form-urlencoded)**:
-  - `Role` (string) - Required
-  - `Email` (string) - Required
-  - `Password` (string)
-  - `Name` (string) - Required
-  - `MiddleName` (string)
-  - `LastName` (string) - Required
-  - `PhoneNumber` (string) - Required
-  - `Address` (string) - Required
-  - `Branch` (BranchEnum) - Required
-  - `Semester` (int) - Required
-  - `Division` (string) - Required
-  - `DOB` (string) - Required
-- **Example curl command**:
-  ```bash
-  curl -X POST -H "Content-Type: application/x-www-form-urlencoded" \
-  -d "Role=Student&Email=new.student@example.com&Password=student_pass&Name=Alice&LastName=Smith&PhoneNumber=1112223333&Address=789%20Pine%20Ln&Branch=ComputerScience&Semester=3&Division=A&DOB=2000-11-11" \
-  "http://localhost:5000/"
-  ```
-- **Response notes**: Responds with HTTP 200 (view) or HTTP 302 (redirect).
+**Parameters:**
+- Route parameters: Not specified
+- Query parameters: Not specified
+- Request body:
+  - `Id` (int, optional)
+  - `BallNumber` (int, optional)
+  - `Runs` (int, optional)
+  - `Wicket` (bool, optional)
 
-### POST /
-Adds students via an uploaded Excel file.
-- **Route parameters**: Not specified.
-- **Query parameters**: Not specified.
-- **Request body (multipart/form-data)**:
-  - `file` (IFormFile)
-  - `hostingEnvironment` (IHostingEnvironment): Not specified.
-- **Example curl command**:
-  ```bash
-  curl -X POST -H "Content-Type: multipart/form-data" \
-  -F "file=@/path/to/students.xlsx" \
-  "http://localhost:5000/"
-  ```
-- **Response notes**: Responds with HTTP 200 (view).
+**Example curl command:**
+```bash
+curl -X PUT "https://api.example.com/api/MatchBallsMapping" -H "Content-Type: application/json" -d '{"Id": 0, "BallNumber": 0, "Runs": 0, "Wicket": false}'
+```
 
-### POST /
-Deletes an existing student.
-- **Route parameters**: Not specified.
-- **Query parameters**: Not specified.
-- **Request body (form-urlencoded)**:
-  - `id` (int)
-- **Example curl command**:
-  ```bash
-  curl -X POST -H "Content-Type: application/x-www-form-urlencoded" \
-  -d "id=456" \
-  "http://localhost:5000/"
-  ```
-- **Response notes**: Responds with HTTP 200 (view) or HTTP 302 (redirect).
-
-### POST /
-Retrieves details for a specific student.
-- **Route parameters**: Not specified.
-- **Query parameters**: Not specified.
-- **Request body (form-urlencoded)**:
-  - `id` (int)
-- **Example curl command**:
-  ```bash
-  curl -X POST -H "Content-Type: application/x-www-form-urlencoded" \
-  -d "id=456" \
-  "http://localhost:5000/"
-  ```
-- **Response notes**: Responds with HTTP 200 (view).
-
-### POST /
-Updates details for an existing student.
-- **Route parameters**: Not specified.
-- **Query parameters**: Not specified.
-- **Request body (form-urlencoded)**:
-  - `Role` (string)
-  - `Id` (int)
-  - `Email` (string) - Required
-  - `Password` (string) - Required
-  - `Name` (string) - Required
-  - `MiddleName` (string)
-  - `LastName` (string) - Required
-  - `PhoneNumber` (string) - Required
-  - `Address` (string) - Required
-  - `Branch` (BranchEnum) - Required
-  - `Semester` (int) - Required
-  - `Division` (string) - Required
-  - `DOB` (string) - Required
-- **Example curl command**:
-  ```bash
-  curl -X POST -H "Content-Type: application/x-www-form-urlencoded" \
-  -d "Id=456&Email=updated.student@example.com&Password=new_student_pass&Name=Bob&LastName=Johnson&PhoneNumber=9998887777&Address=321%20Maple%20Rd&Branch=ElectricalEngineering&Semester=5&Division=B&DOB=1999-09-09" \
-  "http://localhost:5000/"
-  ```
-- **Response notes**: Responds with HTTP 200 (view) or HTTP 302 (redirect).
+**Response notes:**
+- Status Code: 200
+- Body:
+  - `Id` (int, optional)
+  - `BallNumber` (int, optional)
+  - `Runs` (int, optional)
+  - `Wicket` (bool, optional)
 
 ---
 
-## Group API
+## Matches
 
-### GET /
-Retrieves the page for creating a new group.
-- **Route parameters**: Not specified.
-- **Query parameters**: Not specified.
-- **Request body**: Not specified.
-- **Example curl command**:
-  ```bash
-  curl -X GET "http://localhost:5000/"
-  ```
-- **Response notes**: Responds with HTTP 200 (view).
+### POST /api/Matches
+Creates a new match.
 
-### GET /
-Retrieves the page with details for a specific group.
-- **Route parameters**: Not specified.
-- **Query parameters**:
+**Parameters:**
+- Route parameters: Not specified
+- Query parameters: Not specified
+- Request body:
+  - `Team1_id` (int, required)
+  - `Team2_id` (int, required)
+  - `NoOfBalls` (int, required)
+  - `Team1_PlayersId` (List<int>, optional)
+  - `Team2_PlayersId` (List<int>, optional)
+
+**Example curl command:**
+```bash
+curl -X POST "https://api.example.com/api/Matches" -H "Content-Type: application/json" -d '{"Team1_id": 1, "Team2_id": 2, "NoOfBalls": 60, "Team1_PlayersId": [], "Team2_PlayersId": []}'
+```
+
+**Response notes:**
+- Status Code: 200
+- Body:
+  - `CreatedDate` (DateTime, optional)
+  - `Team1Info` (TeamModel, optional)
+  - `Team2Info` (TeamModel, optional)
+
+### PUT /api/Matches
+Posts match results.
+
+**Parameters:**
+- Route parameters: Not specified
+- Query parameters: Not specified
+- Request body:
+  - `Id` (int, optional)
+  - `Team1_id` (int, optional)
+  - `Team2_id` (int, optional)
+  - `NoOfBalls` (int, optional)
+  - `Team1_Total` (int, optional)
+  - `Team1_Wickets` (int, optional)
+  - `Team2_Total` (int, optional)
+  - `Team2_Wickets` (int, optional)
+
+**Example curl command:**
+```bash
+curl -X PUT "https://api.example.com/api/Matches" -H "Content-Type: application/json" -d '{"Id": 0, "Team1_id": 0, "Team2_id": 0, "NoOfBalls": 0, "Team1_Total": 0, "Team1_Wickets": 0, "Team2_Total": 0, "Team2_Wickets": 0}'
+```
+
+**Response notes:**
+- Status Code: 200
+- Body:
+  - `Id` (int, optional)
+  - `Team1_id` (int, optional)
+  - `Team2_id` (int, optional)
+  - `NoOfBalls` (int, optional)
+  - `Team1_Total` (int, optional)
+  - `Team1_Wickets` (int, optional)
+  - `Team2_Total` (int, optional)
+  - `Team2_Wickets` (int, optional)
+
+### GET /api/Matches/{id}
+Retrieves a match by its ID.
+
+**Parameters:**
+- Route parameters: Not specified
+- Query parameters: Not specified
+- Request body:
   - `id` (int)
-- **Request body**: Not specified.
-- **Example curl command**:
-  ```bash
-  curl -X GET "http://localhost:5000/?id=123"
-  ```
-- **Response notes**: Responds with HTTP 200 (view).
 
-### GET /
-Retrieves the page for adding students to a specific group.
-- **Route parameters**: Not specified.
-- **Query parameters**:
-  - `id` (int)
-- **Request body**: Not specified.
-- **Example curl command**:
-  ```bash
-  curl -X GET "http://localhost:5000/?id=123"
-  ```
-- **Response notes**: Responds with HTTP 200 (view).
+**Example curl command:**
+```bash
+curl -X GET "https://api.example.com/api/Matches/{id}" -H "Content-Type: application/json" -d '{"id": 123}'
+```
 
-### GET /
-Retrieves the page to view groups associated with the current user.
-- **Route parameters**: Not specified.
-- **Query parameters**: Not specified.
-- **Request body**: Not specified.
-- **Example curl command**:
-  ```bash
-  curl -X GET "http://localhost:5000/"
-  ```
-- **Response notes**: Responds with HTTP 200 (view).
-
-### GET /
-Retrieves the page to view other available groups.
-- **Route parameters**: Not specified.
-- **Query parameters**: Not specified.
-- **Request body**: Not specified.
-- **Example curl command**:
-  ```bash
-  curl -X GET "http://localhost:5000/"
-  ```
-- **Response notes**: Responds with HTTP 200 (view).
-
-### GET /
-Retrieves the page to edit a specific group.
-- **Route parameters**: Not specified.
-- **Query parameters**:
-  - `id` (int)
-- **Request body**: Not specified.
-- **Example curl command**:
-  ```bash
-  curl -X GET "http://localhost:5000/?id=123"
-  ```
-- **Response notes**: Responds with HTTP 200 (view).
-
-### POST /
-Creates a new group.
-- **Route parameters**: Not specified.
-- **Query parameters**: Not specified.
-- **Request body (form-urlencoded)**:
-  - `Creator_id` (int) - Required
-  - `Name` (string) - Required
-  - `Branch` (BranchEnum)
-  - `Division` (DivisionEnum)
-  - `Semester` (int)
-- **Example curl command**:
-  ```bash
-  curl -X POST -H "Content-Type: application/x-www-form-urlencoded" \
-  -d "Creator_id=1&Name=MyNewGroup&Branch=ComputerScience&Division=A&Semester=5" \
-  "http://localhost:5000/"
-  ```
-- **Response notes**: Responds with HTTP 302 (redirect).
-
-### POST /
-Adds students to a group.
-- **Route parameters**: Not specified.
-- **Query parameters**: Not specified.
-- **Request body (raw)**:
-  - `array` (array of strings)
-- **Example curl command**:
-  ```bash
-  curl -X POST -H "Content-Type: application/json" \
-  -d "[\"student_id_1\", \"student_id_2\"]" \
-  "http://localhost:5000/"
-  ```
-- **Response notes**: Responds with HTTP 200 (unknown content).
-
-### POST /
-Removes students from a group.
-- **Route parameters**: Not specified.
-- **Query parameters**: Not specified.
-- **Request body (raw)**:
-  - `array` (array of strings)
-- **Example curl command**:
-  ```bash
-  curl -X POST -H "Content-Type: application/json" \
-  -d "[\"student_id_to_remove_1\", \"student_id_to_remove_2\"]" \
-  "http://localhost:5000/"
-  ```
-- **Response notes**: Responds with HTTP 200 (unknown content).
-
-### POST /
-Updates details for an existing group.
-- **Route parameters**: Not specified.
-- **Query parameters**: Not specified.
-- **Request body (form-urlencoded)**:
-  - `id` (int)
-  - `Creator_id` (int) - Required
-  - `Name` (string) - Required
-  - `Branch` (BranchEnum)
-  - `Division` (DivisionEnum)
-  - `Semester` (int)
-- **Example curl command**:
-  ```bash
-  curl -X POST -H "Content-Type: application/x-www-form-urlencoded" \
-  -d "id=123&Creator_id=1&Name=UpdatedGroupName&Branch=InformationTechnology&Division=B&Semester=6" \
-  "http://localhost:5000/"
-  ```
-- **Response notes**: Responds with HTTP 302 (redirect).
-
-### POST /
-Deletes an existing group.
-- **Route parameters**: Not specified.
-- **Query parameters**: Not specified.
-- **Request body (form-urlencoded)**:
-  - `id` (int)
-- **Example curl command**:
-  ```bash
-  curl -X POST -H "Content-Type: application/x-www-form-urlencoded" \
-  -d "id=123" \
-  "http://localhost:5000/"
-  ```
-- **Response notes**: Responds with HTTP 302 (redirect).
+**Response notes:**
+- Status Code: 200
+- Body:
+  - `CreatedDate` (DateTime, optional)
+  - `Team1Info` (TeamModel, optional)
+  - `Team2Info` (TeamModel, optional)
 
 ---
 
-## Home API
+## Players
 
-### GET /
-Retrieves the home or index page.
-- **Route parameters**: Not specified.
-- **Query parameters**: Not specified.
-- **Request body**: Not specified.
-- **Example curl command**:
-  ```bash
-  curl -X GET "http://localhost:5000/"
-  ```
-- **Response notes**: Responds with HTTP 200 (view).
+### GET /api/Players
+Retrieves all players.
 
-### GET /
-Retrieves the page for changing the user's password.
-- **Route parameters**: Not specified.
-- **Query parameters**: Not specified.
-- **Request body**: Not specified.
-- **Example curl command**:
-  ```bash
-  curl -X GET "http://localhost:5000/"
-  ```
-- **Response notes**: Responds with HTTP 200 (view).
+**Parameters:**
+- Route parameters: Not specified
+- Query parameters: Not specified
+- Request body: Not specified
 
-### GET /
-Retrieves the user's profile page.
-- **Route parameters**: Not specified.
-- **Query parameters**: Not specified.
-- **Request body**: Not specified.
-- **Example curl command**:
-  ```bash
-  curl -X GET "http://localhost:5000/"
-  ```
-- **Response notes**: Responds with HTTP 200 (view).
+**Example curl command:**
+```bash
+curl -X GET "https://api.example.com/api/Players"
+```
 
-### POST /
-Authenticates a user and logs them in.
-- **Route parameters**: Not specified.
-- **Query parameters**: Not specified.
-- **Request body (form-urlencoded)**:
-  - `Email` (string) - Required
-  - `Password` (string) - Required
-  - `RememberMe` (bool)
-- **Example curl command**:
-  ```bash
-  curl -X POST -H "Content-Type: application/x-www-form-urlencoded" \
-  -d "Email=user@example.com&Password=secure_password&RememberMe=true" \
-  "http://localhost:5000/"
-  ```
-- **Response notes**: Responds with HTTP 200 (view) or HTTP 302 (redirect).
+**Response notes:**
+- Status Code: 200
+- Body: Not specified
 
-### POST /
-Logs out the current user.
-- **Route parameters**: Not specified.
-- **Query parameters**: Not specified.
-- **Request body**: Not specified.
-- **Example curl command**:
-  ```bash
-  curl -X POST "http://localhost:5000/"
-  ```
-- **Response notes**: Responds with HTTP 302 (redirect).
+### POST /api/Players
+Creates a new player.
 
-### POST /
-Changes the current user's password.
-- **Route parameters**: Not specified.
-- **Query parameters**: Not specified.
-- **Request body (form-urlencoded)**:
-  - `CurrentPassword` (string) - Required
-  - `NewPassword` (string) - Required
-  - `ConfirmPassword` (string)
-- **Example curl command**:
-  ```bash
-  curl -X POST -H "Content-Type: application/x-www-form-urlencoded" \
-  -d "CurrentPassword=old_password&NewPassword=new_strong_password&ConfirmPassword=new_strong_password" \
-  "http://localhost:5000/"
-  ```
-- **Response notes**: Responds with HTTP 200 (view) or HTTP 302 (redirect).
+**Parameters:**
+- Route parameters: Not specified
+- Query parameters: Not specified
+- Request body:
+  - `Name` (string, optional)
 
-### POST /
-Updates the current user's profile information.
-- **Route parameters**: Not specified.
-- **Query parameters**: Not specified.
-- **Request body (form-urlencoded)**:
-  - `Password` (string) - Required
-  - `Name` (string) - Required
-  - `MiddleName` (string)
-  - `LastName` (string) - Required
-  - `Address` (string) - Required
-  - `Branch` (string)
-  - `Semester` (int)
-  - `Division` (string)
-  - `DOB` (string) - Required
-  - `InitialLogin` (bool)
-  - `Tags` (List<Tag>)
-  - `Tests` (ICollection<Test>)
-  - `Groups` (ICollection<Groups>)
-  - `UserGroups` (ICollection<UserGroup>)
-  - `QuestionResults` (ICollection<QuestionResult>)
-  - `DescriptiveResults` (ICollection<DescriptiveResult>)
-  - `TotalResults` (ICollection<TotalResult>)
-- **Example curl command**:
-  ```bash
-  curl -X POST -H "Content-Type: application/x-www-form-urlencoded" \
-  -d "Password=user_pass&Name=ProfileName&LastName=ProfileLastName&Address=ProfileAddress&DOB=1990-10-10" \
-  "http://localhost:5000/"
-  ```
-- **Response notes**: Responds with HTTP 302 (redirect).
+**Example curl command:**
+```bash
+curl -X POST "https://api.example.com/api/Players" -H "Content-Type: application/json" -d '{"Name": "New Player"}'
+```
+
+**Response notes:**
+- Status Code: 200
+- Body:
+  - `Id` (int, optional)
+  - `Name` (string, optional)
+
+### PUT /api/Players
+Updates an existing player.
+
+**Parameters:**
+- Route parameters: Not specified
+- Query parameters: Not specified
+- Request body:
+  - `Id` (int, optional)
+  - `Name` (string, optional)
+
+**Example curl command:**
+```bash
+curl -X PUT "https://api.example.com/api/Players" -H "Content-Type: application/json" -d '{"Id": 1, "Name": "Updated Player Name"}'
+```
+
+**Response notes:**
+- Status Code: 200
+- Body:
+  - `Id` (int, optional)
+  - `Name` (string, optional)
+
+### DELETE /api/Players/{id}
+Deletes a player by ID.
+
+**Parameters:**
+- Route parameters: Not specified
+- Query parameters: Not specified
+- Request body:
+  - `id` (int)
+
+**Example curl command:**
+```bash
+curl -X DELETE "https://api.example.com/api/Players/{id}" -H "Content-Type: application/json" -d '{"id": 123}'
+```
+
+**Response notes:**
+- Status Code: 200
+- Body:
+  - `Id` (int, optional)
+  - `Name` (string, optional)
+
+### GET /api/Players/{id}
+Retrieves a player by ID.
+
+**Parameters:**
+- Route parameters: Not specified
+- Query parameters: Not specified
+- Request body:
+  - `id` (int)
+
+**Example curl command:**
+```bash
+curl -X GET "https://api.example.com/api/Players/{id}" -H "Content-Type: application/json" -d '{"id": 123}'
+```
+
+**Response notes:**
+- Status Code: 200
+- Body:
+  - `Team` (TeamModel?, optional)
+
+### GET /api/Players/NotMapped
+Retrieves all players not currently assigned to a team.
+
+**Parameters:**
+- Route parameters: Not specified
+- Query parameters: Not specified
+- Request body: Not specified
+
+**Example curl command:**
+```bash
+curl -X GET "https://api.example.com/api/Players/NotMapped"
+```
+
+**Response notes:**
+- Status Code: 200
+- Body: Not specified
 
 ---
 
-## SuperAdmin API
+## Teams
 
-### GET /
-Retrieves the page for adding a new administrator.
-- **Route parameters**: Not specified.
-- **Query parameters**: Not specified.
-- **Request body**: Not specified.
-- **Example curl command**:
-  ```bash
-  curl -X GET "http://localhost:5000/"
-  ```
-- **Response notes**: Responds with HTTP 200 (view).
+### GET /api/Teams
+Retrieves all teams.
 
-### GET /
-Retrieves the page to view existing administrators.
-- **Route parameters**: Not specified.
-- **Query parameters**: Not specified.
-- **Request body**: Not specified.
-- **Example curl command**:
-  ```bash
-  curl -X GET "http://localhost:5000/"
-  ```
-- **Response notes**: Responds with HTTP 200 (view).
+**Parameters:**
+- Route parameters: Not specified
+- Query parameters: Not specified
+- Request body: Not specified
 
-### GET /
-Retrieves the page to edit a specific administrator.
-- **Route parameters**: Not specified.
-- **Query parameters**:
+**Example curl command:**
+```bash
+curl -X GET "https://api.example.com/api/Teams"
+```
+
+**Response notes:**
+- Status Code: 200
+- Body: Not specified
+
+### POST /api/Teams
+Creates a new team.
+
+**Parameters:**
+- Route parameters: Not specified
+- Query parameters: Not specified
+- Request body:
+  - `Name` (string, optional)
+  - `PlayersId` (List<int>?, optional)
+
+**Example curl command:**
+```bash
+curl -X POST "https://api.example.com/api/Teams" -H "Content-Type: application/json" -d '{"Name": "New Team", "PlayersId": []}'
+```
+
+**Response notes:**
+- Status Code: 200
+- Body:
+  - `Players` (IEnumerable<PlayerModel>?, optional)
+
+### PUT /api/Teams
+Updates an existing team.
+
+**Parameters:**
+- Route parameters: Not specified
+- Query parameters: Not specified
+- Request body:
+  - `PlayersId` (List<int>?, optional)
+
+**Example curl command:**
+```bash
+curl -X PUT "https://api.example.com/api/Teams" -H "Content-Type: application/json" -d '{"PlayersId": [1, 2, 3]}'
+```
+
+**Response notes:**
+- Status Code: 200
+- Body:
+  - `Players` (IEnumerable<PlayerModel>?, optional)
+
+### DELETE /api/Teams/{id}
+Deletes a team by ID.
+
+**Parameters:**
+- Route parameters: Not specified
+- Query parameters: Not specified
+- Request body:
   - `id` (int)
-- **Request body**: Not specified.
-- **Example curl command**:
-  ```bash
-  curl -X GET "http://localhost:5000/?id=123"
-  ```
-- **Response notes**: Responds with HTTP 200 (view).
 
-### POST /
-Creates a new administrator.
-- **Route parameters**: Not specified.
-- **Query parameters**: Not specified.
-- **Request body (form-urlencoded)**:
-  - `Role` (string) - Required
-  - `Email` (string) - Required
-  - `Password` (string)
-  - `Name` (string) - Required
-  - `MiddleName` (string)
-  - `LastName` (string) - Required
-  - `PhoneNumber` (string) - Required
-  - `Address` (string) - Required
-  - `Branch` (BranchEnum) - Required
-  - `DOB` (string) - Required
-- **Example curl command**:
-  ```bash
-  curl -X POST -H "Content-Type: application/x-www-form-urlencoded" \
-  -d "Role=Admin&Email=new.admin@example.com&Password=admin_pass&Name=AdminName&LastName=AdminLastName&PhoneNumber=1231231234&Address=AdminAddress&Branch=ComputerScience&DOB=1975-01-01" \
-  "http://localhost:5000/"
-  ```
-- **Response notes**: Responds with HTTP 200 (view) or HTTP 302 (redirect).
+**Example curl command:**
+```bash
+curl -X DELETE "https://api.example.com/api/Teams/{id}" -H "Content-Type: application/json" -d '{"id": 123}'
+```
 
-### POST /
-Retrieves details for a specific administrator.
-- **Route parameters**: Not specified.
-- **Query parameters**: Not specified.
-- **Request body (form-urlencoded)**:
+**Response notes:**
+- Status Code: 200
+- Body:
+  - `Id` (int, optional)
+  - `Name` (string, optional)
+
+### GET /api/Teams/{id}
+Retrieves a team by ID.
+
+**Parameters:**
+- Route parameters: Not specified
+- Query parameters: Not specified
+- Request body:
   - `id` (int)
-- **Example curl command**:
-  ```bash
-  curl -X POST -H "Content-Type: application/x-www-form-urlencoded" \
-  -d "id=123" \
-  "http://localhost:5000/"
-  ```
-- **Response notes**: Responds with HTTP 200 (view).
 
-### POST /
-Updates details for an existing administrator.
-- **Route parameters**: Not specified.
-- **Query parameters**: Not specified.
-- **Request body (form-urlencoded)**:
-  - `Role` (string)
-  - `Id` (int)
-  - `Email` (string) - Required
-  - `Password` (string) - Required
-  - `Name` (string) - Required
-  - `MiddleName` (string)
-  - `LastName` (string) - Required
-  - `PhoneNumber` (string) - Required
-  - `Address` (string) - Required
-  - `Branch` (BranchEnum) - Required
-  - `DOB` (string) - Required
-- **Example curl command**:
-  ```bash
-  curl -X POST -H "Content-Type: application/x-www-form-urlencoded" \
-  -d "Id=123&Email=updated.admin@example.com&Password=new_admin_pass&Name=UpdatedAdmin&LastName=UpdatedAdminLastName&PhoneNumber=9876543210&Address=UpdatedAdminAddress&Branch=ElectricalEngineering&DOB=1976-02-02" \
-  "http://localhost:5000/"
-  ```
-- **Response notes**: Responds with HTTP 200 (view) or HTTP 302 (redirect).
+**Example curl command:**
+```bash
+curl -X GET "https://api.example.com/api/Teams/{id}" -H "Content-Type: application/json" -d '{"id": 123}'
+```
 
-### POST /
-Deletes an existing administrator.
-- **Route parameters**: Not specified.
-- **Query parameters**: Not specified.
-- **Request body (form-urlencoded)**:
-  - `id` (int)
-- **Example curl command**:
-  ```bash
-  curl -X POST -H "Content-Type: application/x-www-form-urlencoded" \
-  -d "id=123" \
-  "http://localhost:5000/"
-  ```
-- **Response notes**: Responds with HTTP 200 (view) or HTTP 302 (redirect).
+**Response notes:**
+- Status Code: 200
+- Body:
+  - `Players` (IEnumerable<PlayerModel>?, optional)
 
 ---
 
-## Tag API
+## Weather Forecast
 
-### GET /
-Retrieves the page to view existing tags.
-- **Route parameters**: Not specified.
-- **Query parameters**: Not specified.
-- **Request body**: Not specified.
-- **Example curl command**:
-  ```bash
-  curl -X GET "http://localhost:5000/"
-  ```
-- **Response notes**: Responds with HTTP 200 (view).
+### GET /WeatherForecast/Name = "GetWeatherForecast"
+Retrieves weather forecasts.
 
-### GET /
-Retrieves the page for renaming a specific tag.
-- **Route parameters**: Not specified.
-- **Query parameters**:
-  - `id` (int)
-- **Request body**: Not specified.
-- **Example curl command**:
-  ```bash
-  curl -X GET "http://localhost:5000/?id=123"
-  ```
-- **Response notes**: Responds with HTTP 200 (view).
+**Parameters:**
+- Route parameters: Not specified
+- Query parameters: Not specified
+- Request body: Not specified
 
-### POST /
-Creates a new tag.
-- **Route parameters**: Not specified.
-- **Query parameters**: Not specified.
-- **Request body (form-urlencoded)**:
-  - `Create_Tag_Name` (string) - Required
-  - `Tags` (List<Tag>)
-- **Example curl command**:
-  ```bash
-  curl -X POST -H "Content-Type: application/x-www-form-urlencoded" \
-  -d "Create_Tag_Name=NewTag" \
-  "http://localhost:5000/"
-  ```
-- **Response notes**: Responds with HTTP 302 (redirect).
+**Example curl command:**
+```bash
+curl -X GET "https://api.example.com/WeatherForecast/Name = \"GetWeatherForecast\""
+```
 
-### POST /
-Deletes an existing tag.
-- **Route parameters**: Not specified.
-- **Query parameters**: Not specified.
-- **Request body (form-urlencoded)**:
-  - `id` (int)
-- **Example curl command**:
-  ```bash
-  curl -X POST -H "Content-Type: application/x-www-form-urlencoded" \
-  -d "id=123" \
-  "http://localhost:5000/"
-  ```
-- **Response notes**: Responds with HTTP 302 (redirect).
-
-### POST /
-Renames an existing tag.
-- **Route parameters**: Not specified.
-- **Query parameters**: Not specified.
-- **Request body (form-urlencoded)**:
-  - `id` (int)
-  - `Create_Tag_Name` (string) - Required
-  - `Tags` (List<Tag>)
-- **Example curl command**:
-  ```bash
-  curl -X POST -H "Content-Type: application/x-www-form-urlencoded" \
-  -d "id=123&Create_Tag_Name=RenamedTag" \
-  "http://localhost:5000/"
-  ```
-- **Response notes**: Responds with HTTP 302 (redirect).
-
----
-
-## Test API
-
-### GET /
-Retrieves the page to view existing tests.
-- **Route parameters**: Not specified.
-- **Query parameters**: Not specified.
-- **Request body**: Not specified.
-- **Example curl command**:
-  ```bash
-  curl -X GET "http://localhost:5000/"
-  ```
-- **Response notes**: Responds with HTTP 200 (view).
-
-### GET /
-Retrieves the page with details for a specific test.
-- **Route parameters**: Not specified.
-- **Query parameters**:
-  - `id` (int)
-- **Request body**: Not specified.
-- **Example curl command**:
-  ```bash
-  curl -X GET "http://localhost:5000/?id=123"
-  ```
-- **Response notes**: Responds with HTTP 200 (view).
-
-### GET /
-Retrieves the page for adding questions to a specific test.
-- **Route parameters**: Not specified.
-- **Query parameters**:
-  - `id` (int)
-- **Request body**: Not specified.
-- **Example curl command**:
-  ```bash
-  curl -X GET "http://localhost:5000/?id=123"
-  ```
-- **Response notes**: Responds with HTTP 200 (view).
-
-### GET /
-Retrieves the page for assigning a test to users or groups.
-- **Route parameters**: Not specified.
-- **Query parameters**:
-  - `id` (int)
-- **Request body**: Not specified.
-- **Example curl command**:
-  ```bash
-  curl -X GET "http://localhost:5000/?id=123"
-  ```
-- **Response notes**: Responds with HTTP 200 (view).
-
-### POST /
-Creates a new test.
-- **Route parameters**: Not specified.
-- **Query parameters**: Not specified.
-- **Request body (form-urlencoded)**:
-  - `Title` (string) - Required
-  - `Type_name` (string) - Required
-  - `Duration` (TimeSpan) - Required
-  - `StartDate` (string)
-  - `EndDate` (string)
-  - `PassingMarks` (int) - Required
-  - `TestTypes` (List<TestType>)
-- **Example curl command**:
-  ```bash
-  curl -X POST -H "Content-Type: application/x-www-form-urlencoded" \
-  -d "Title=NewTest&Type_name=Quiz&Duration=01:00:00&StartDate=2023-01-01&EndDate=2023-01-05&PassingMarks=60" \
-  "http://localhost:5000/"
-  ```
-- **Response notes**: Responds with HTTP 302 (redirect).
-
-### POST /
-Adds questions to a test.
-- **Route parameters**: Not specified.
-- **Query parameters**: Not specified.
-- **Request body (form-urlencoded)**:
-  - `Question` (array of strings) - Required
-  - `Option1` (array of strings) - Required
-  - `Option2` (array of strings) - Required
-  - `Option3` (array of strings) - Required
-  - `Option4` (array of strings) - Required
-  - `Answer` (array of strings) - Required
-  - `Description` (array of strings) - Required
-  - `Marks` (array of int) - Required
-  - `Tag_id` (array of int) - Required
-  - `Test_id` (int)
-  - `Tags` (List<Tag>)
-- **Example curl command**:
-  ```bash
-  curl -X POST -H "Content-Type: application/x-www-form-urlencoded" \
-  -d "Question[]=Q1&Option1[]=A1&Option2[]=A2&Option3[]=A3&Option4[]=A4&Answer[]=A1&Description[]=Desc1&Marks[]=5&Tag_id[]=1&Test_id=123" \
-  "http://localhost:5000/"
-  ```
-- **Response notes**: Responds with HTTP 302 (redirect).
-
-### POST /
-Assigns a test to users or groups.
-- **Route parameters**: Not specified.
-- **Query parameters**: Not specified.
-- **Request body (raw)**:
-  - `array` (array of strings)
-- **Example curl command**:
-  ```bash
-  curl -X POST -H "Content-Type: application/json" \
-  -d "[\"user_id_1\", \"group_id_2\"]" \
-  "http://localhost:5000/"
-  ```
-- **Response notes**: Responds with HTTP 200 (unknown content).
-
----
-
-## TestType API
-
-### GET /
-Retrieves the page to view existing test types.
-- **Route parameters**: Not specified.
-- **Query parameters**: Not specified.
-- **Request body**: Not specified.
-- **Example curl command**:
-  ```bash
-  curl -X GET "http://localhost:5000/"
-  ```
-- **Response notes**: Responds with HTTP 200 (view).
-
-### GET /
-Retrieves the page for renaming a specific test type.
-- **Route parameters**: Not specified.
-- **Query parameters**:
-  - `id` (int)
-- **Request body**: Not specified.
-- **Example curl command**:
-  ```bash
-  curl -X GET "http://localhost:5000/?id=123"
-  ```
-- **Response notes**: Responds with HTTP 200 (view).
-
-### POST /
-Creates a new test type.
-- **Route parameters**: Not specified.
-- **Query parameters**: Not specified.
-- **Request body (form-urlencoded)**:
-  - `Create_TestType_Name` (string) - Required
-  - `TestTypes` (List<TestType>)
-- **Example curl command**:
-  ```bash
-  curl -X POST -H "Content-Type: application/x-www-form-urlencoded" \
-  -d "Create_TestType_Name=NewTestType" \
-  "http://localhost:5000/"
-  ```
-- **Response notes**: Responds with HTTP 302 (redirect).
-
-### POST /
-Deletes an existing test type.
-- **Route parameters**: Not specified.
-- **Query parameters**: Not specified.
-- **Request body (form-urlencoded)**:
-  - `id` (int)
-- **Example curl command**:
-  ```bash
-  curl -X POST -H "Content-Type: application/x-www-form-urlencoded" \
-  -d "id=123" \
-  "http://localhost:5000/"
-  ```
-- **Response notes**: Responds with HTTP 302 (redirect).
-
-### POST /
-Renames an existing test type.
-- **Route parameters**: Not specified.
-- **Query parameters**: Not specified.
-- **Request body (form-urlencoded)**:
-  - `id` (int)
-  - `Create_TestType_Name` (string) - Required
-  - `TestTypes` (List<TestType>)
-- **Example curl command**:
-  ```bash
-  curl -X POST -H "Content-Type: application/x-www-form-urlencoded" \
-  -d "id=123&Create_TestType_Name=RenamedTestType" \
-  "http://localhost:5000/"
-  ```
-- **Response notes**: Responds with HTTP 302 (redirect).
+**Response notes:**
+- Status Code: 200
+- Body: Not specified

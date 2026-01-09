@@ -1,2175 +1,25 @@
 {
-  "RepoUrl": "https://github.com/DroopyPirate/Exam-Portal.git",
-  "RepoCommit": "e02d83db7df75a24ae83323b99dc5b27b47af57f",
+  "RepoUrl": "https://github.com/yogeshrathod2508/cricketrivia-backend",
+  "RepoCommit": "be98843c8d6ed49de1cdbd705454da701fa27514",
   "Controllers": [
     {
-      "Name": "AdminController",
-      "RoutePrefix": null,
+      "Name": "MatchBallsMappingController",
+      "RoutePrefix": "api/[controller]",
       "Endpoints": [
         {
-          "Kind": "mvc",
+          "Kind": "api",
           "HttpMethod": "GET",
-          "Route": "/",
-          "Action": "AddFaculty",
-          "Parameters": [],
-          "RequestBodySchema": null,
-          "Responses": [
-            {
-              "StatusCode": 200,
-              "Kind": "view",
-              "JsonBodySchema": null,
-              "ViewModelSchema": null
-            }
-          ]
-        },
-        {
-          "Kind": "mvc",
-          "HttpMethod": "GET",
-          "Route": "/",
-          "Action": "AddFacultyExcel",
+          "Route": "/api/MatchBallsMapping",
+          "Action": "GetMatchBallsMapping",
           "Parameters": [
             {
-              "Name": "model",
-              "Type": "List\u003CApplicationUser\u003E",
-              "Source": "form"
-            }
-          ],
-          "RequestBodySchema": null,
-          "Responses": [
-            {
-              "StatusCode": 200,
-              "Kind": "view",
-              "JsonBodySchema": null,
-              "ViewModelSchema": null
-            }
-          ]
-        },
-        {
-          "Kind": "mvc",
-          "HttpMethod": "GET",
-          "Route": "/",
-          "Action": "ViewFaculty",
-          "Parameters": [],
-          "RequestBodySchema": null,
-          "Responses": [
-            {
-              "StatusCode": 200,
-              "Kind": "view",
-              "JsonBodySchema": null,
-              "ViewModelSchema": null
-            }
-          ]
-        },
-        {
-          "Kind": "mvc",
-          "HttpMethod": "GET",
-          "Route": "/",
-          "Action": "EditFaculty",
-          "Parameters": [
-            {
-              "Name": "id",
+              "Name": "Match_id",
               "Type": "int",
-              "Source": "form"
-            }
-          ],
-          "RequestBodySchema": null,
-          "Responses": [
-            {
-              "StatusCode": 200,
-              "Kind": "view",
-              "JsonBodySchema": null,
-              "ViewModelSchema": null
-            }
-          ]
-        },
-        {
-          "Kind": "mvc",
-          "HttpMethod": "GET",
-          "Route": "/",
-          "Action": "AddStudent",
-          "Parameters": [],
-          "RequestBodySchema": null,
-          "Responses": [
-            {
-              "StatusCode": 200,
-              "Kind": "view",
-              "JsonBodySchema": null,
-              "ViewModelSchema": null
-            }
-          ]
-        },
-        {
-          "Kind": "mvc",
-          "HttpMethod": "GET",
-          "Route": "/",
-          "Action": "AddStudentExcel",
-          "Parameters": [
-            {
-              "Name": "model",
-              "Type": "List\u003CApplicationUser\u003E",
-              "Source": "form"
-            }
-          ],
-          "RequestBodySchema": null,
-          "Responses": [
-            {
-              "StatusCode": 200,
-              "Kind": "view",
-              "JsonBodySchema": null,
-              "ViewModelSchema": null
-            }
-          ]
-        },
-        {
-          "Kind": "mvc",
-          "HttpMethod": "GET",
-          "Route": "/",
-          "Action": "ViewStudent",
-          "Parameters": [],
-          "RequestBodySchema": null,
-          "Responses": [
-            {
-              "StatusCode": 200,
-              "Kind": "view",
-              "JsonBodySchema": null,
-              "ViewModelSchema": null
-            }
-          ]
-        },
-        {
-          "Kind": "mvc",
-          "HttpMethod": "GET",
-          "Route": "/",
-          "Action": "EditStudent",
-          "Parameters": [
-            {
-              "Name": "id",
-              "Type": "int",
-              "Source": "form"
-            }
-          ],
-          "RequestBodySchema": null,
-          "Responses": [
-            {
-              "StatusCode": 200,
-              "Kind": "view",
-              "JsonBodySchema": null,
-              "ViewModelSchema": null
-            }
-          ]
-        },
-        {
-          "Kind": "mvc",
-          "HttpMethod": "GET",
-          "Route": "/",
-          "Action": "ViewTest",
-          "Parameters": [],
-          "RequestBodySchema": null,
-          "Responses": [
-            {
-              "StatusCode": 200,
-              "Kind": "view",
-              "JsonBodySchema": null,
-              "ViewModelSchema": null
-            }
-          ]
-        },
-        {
-          "Kind": "mvc",
-          "HttpMethod": "POST",
-          "Route": "/",
-          "Action": "AddFaculty",
-          "Parameters": [
-            {
-              "Name": "model",
-              "Type": "AddFacultyViewModel",
-              "Source": "form"
-            }
-          ],
-          "RequestBodySchema": {
-            "Name": "AddFacultyViewModel",
-            "Properties": [
-              {
-                "Name": "Role",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required"
-                ]
-              },
-              {
-                "Name": "Email",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "DataType",
-                  "EmailAddress"
-                ]
-              },
-              {
-                "Name": "Password",
-                "Type": "string",
-                "IsRequired": false,
-                "Attributes": [
-                  "DataType"
-                ]
-              },
-              {
-                "Name": "Name",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "MaxLength",
-                  "DataType"
-                ]
-              },
-              {
-                "Name": "MiddleName",
-                "Type": "string",
-                "IsRequired": false,
-                "Attributes": [
-                  "MaxLength",
-                  "DataType"
-                ]
-              },
-              {
-                "Name": "LastName",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "MaxLength",
-                  "DataType"
-                ]
-              },
-              {
-                "Name": "PhoneNumber",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "DataType",
-                  "RegularExpression"
-                ]
-              },
-              {
-                "Name": "Address",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "MaxLength",
-                  "DataType"
-                ]
-              },
-              {
-                "Name": "Branch",
-                "Type": "BranchEnum",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required"
-                ]
-              },
-              {
-                "Name": "DOB",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "DataType"
-                ]
-              }
-            ]
-          },
-          "Responses": [
-            {
-              "StatusCode": 200,
-              "Kind": "view",
-              "JsonBodySchema": null,
-              "ViewModelSchema": {
-                "Name": "AddFacultyViewModel",
-                "Properties": [
-                  {
-                    "Name": "Role",
-                    "Type": "string",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required"
-                    ]
-                  },
-                  {
-                    "Name": "Email",
-                    "Type": "string",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required",
-                      "DataType",
-                      "EmailAddress"
-                    ]
-                  },
-                  {
-                    "Name": "Password",
-                    "Type": "string",
-                    "IsRequired": false,
-                    "Attributes": [
-                      "DataType"
-                    ]
-                  },
-                  {
-                    "Name": "Name",
-                    "Type": "string",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required",
-                      "MaxLength",
-                      "DataType"
-                    ]
-                  },
-                  {
-                    "Name": "MiddleName",
-                    "Type": "string",
-                    "IsRequired": false,
-                    "Attributes": [
-                      "MaxLength",
-                      "DataType"
-                    ]
-                  },
-                  {
-                    "Name": "LastName",
-                    "Type": "string",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required",
-                      "MaxLength",
-                      "DataType"
-                    ]
-                  },
-                  {
-                    "Name": "PhoneNumber",
-                    "Type": "string",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required",
-                      "DataType",
-                      "RegularExpression"
-                    ]
-                  },
-                  {
-                    "Name": "Address",
-                    "Type": "string",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required",
-                      "MaxLength",
-                      "DataType"
-                    ]
-                  },
-                  {
-                    "Name": "Branch",
-                    "Type": "BranchEnum",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required"
-                    ]
-                  },
-                  {
-                    "Name": "DOB",
-                    "Type": "string",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required",
-                      "DataType"
-                    ]
-                  }
-                ]
-              }
+              "Source": "body"
             },
             {
-              "StatusCode": 302,
-              "Kind": "redirect",
-              "JsonBodySchema": null,
-              "ViewModelSchema": null
-            }
-          ]
-        },
-        {
-          "Kind": "mvc",
-          "HttpMethod": "POST",
-          "Route": "/",
-          "Action": "AddFacultyExcel",
-          "Parameters": [
-            {
-              "Name": "file",
-              "Type": "IFormFile",
-              "Source": "form"
-            },
-            {
-              "Name": "hostingEnvironment",
-              "Type": "IHostingEnvironment",
-              "Source": "form"
-            }
-          ],
-          "RequestBodySchema": null,
-          "Responses": [
-            {
-              "StatusCode": 200,
-              "Kind": "view",
-              "JsonBodySchema": null,
-              "ViewModelSchema": null
-            }
-          ]
-        },
-        {
-          "Kind": "mvc",
-          "HttpMethod": "POST",
-          "Route": "/",
-          "Action": "DeleteFaculty",
-          "Parameters": [
-            {
-              "Name": "id",
+              "Name": "Team_id",
               "Type": "int",
-              "Source": "form"
-            }
-          ],
-          "RequestBodySchema": null,
-          "Responses": [
-            {
-              "StatusCode": 200,
-              "Kind": "view",
-              "JsonBodySchema": null,
-              "ViewModelSchema": null
-            },
-            {
-              "StatusCode": 302,
-              "Kind": "redirect",
-              "JsonBodySchema": null,
-              "ViewModelSchema": null
-            }
-          ]
-        },
-        {
-          "Kind": "mvc",
-          "HttpMethod": "POST",
-          "Route": "/",
-          "Action": "FacultyDetails",
-          "Parameters": [
-            {
-              "Name": "id",
-              "Type": "int",
-              "Source": "form"
-            }
-          ],
-          "RequestBodySchema": null,
-          "Responses": [
-            {
-              "StatusCode": 200,
-              "Kind": "view",
-              "JsonBodySchema": null,
-              "ViewModelSchema": null
-            }
-          ]
-        },
-        {
-          "Kind": "mvc",
-          "HttpMethod": "POST",
-          "Route": "/",
-          "Action": "EditFaculty",
-          "Parameters": [
-            {
-              "Name": "model",
-              "Type": "FacultyDetailsViewModel",
-              "Source": "form"
-            }
-          ],
-          "RequestBodySchema": {
-            "Name": "FacultyDetailsViewModel",
-            "Properties": [
-              {
-                "Name": "Role",
-                "Type": "string",
-                "IsRequired": false,
-                "Attributes": []
-              },
-              {
-                "Name": "Id",
-                "Type": "int",
-                "IsRequired": false,
-                "Attributes": []
-              },
-              {
-                "Name": "Email",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "DataType",
-                  "EmailAddress"
-                ]
-              },
-              {
-                "Name": "Password",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "DataType"
-                ]
-              },
-              {
-                "Name": "Name",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "MaxLength",
-                  "DataType"
-                ]
-              },
-              {
-                "Name": "MiddleName",
-                "Type": "string",
-                "IsRequired": false,
-                "Attributes": [
-                  "MaxLength",
-                  "DataType"
-                ]
-              },
-              {
-                "Name": "LastName",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "MaxLength",
-                  "DataType"
-                ]
-              },
-              {
-                "Name": "PhoneNumber",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "DataType",
-                  "RegularExpression"
-                ]
-              },
-              {
-                "Name": "Address",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "MaxLength",
-                  "DataType"
-                ]
-              },
-              {
-                "Name": "Branch",
-                "Type": "BranchEnum",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required"
-                ]
-              },
-              {
-                "Name": "DOB",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "DataType"
-                ]
-              }
-            ]
-          },
-          "Responses": [
-            {
-              "StatusCode": 200,
-              "Kind": "view",
-              "JsonBodySchema": null,
-              "ViewModelSchema": {
-                "Name": "FacultyDetailsViewModel",
-                "Properties": [
-                  {
-                    "Name": "Role",
-                    "Type": "string",
-                    "IsRequired": false,
-                    "Attributes": []
-                  },
-                  {
-                    "Name": "Id",
-                    "Type": "int",
-                    "IsRequired": false,
-                    "Attributes": []
-                  },
-                  {
-                    "Name": "Email",
-                    "Type": "string",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required",
-                      "DataType",
-                      "EmailAddress"
-                    ]
-                  },
-                  {
-                    "Name": "Password",
-                    "Type": "string",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required",
-                      "DataType"
-                    ]
-                  },
-                  {
-                    "Name": "Name",
-                    "Type": "string",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required",
-                      "MaxLength",
-                      "DataType"
-                    ]
-                  },
-                  {
-                    "Name": "MiddleName",
-                    "Type": "string",
-                    "IsRequired": false,
-                    "Attributes": [
-                      "MaxLength",
-                      "DataType"
-                    ]
-                  },
-                  {
-                    "Name": "LastName",
-                    "Type": "string",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required",
-                      "MaxLength",
-                      "DataType"
-                    ]
-                  },
-                  {
-                    "Name": "PhoneNumber",
-                    "Type": "string",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required",
-                      "DataType",
-                      "RegularExpression"
-                    ]
-                  },
-                  {
-                    "Name": "Address",
-                    "Type": "string",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required",
-                      "MaxLength",
-                      "DataType"
-                    ]
-                  },
-                  {
-                    "Name": "Branch",
-                    "Type": "BranchEnum",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required"
-                    ]
-                  },
-                  {
-                    "Name": "DOB",
-                    "Type": "string",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required",
-                      "DataType"
-                    ]
-                  }
-                ]
-              }
-            },
-            {
-              "StatusCode": 302,
-              "Kind": "redirect",
-              "JsonBodySchema": null,
-              "ViewModelSchema": null
-            }
-          ]
-        },
-        {
-          "Kind": "mvc",
-          "HttpMethod": "POST",
-          "Route": "/",
-          "Action": "AddStudent",
-          "Parameters": [
-            {
-              "Name": "model",
-              "Type": "AddStudentViewModel",
-              "Source": "form"
-            }
-          ],
-          "RequestBodySchema": {
-            "Name": "AddStudentViewModel",
-            "Properties": [
-              {
-                "Name": "Role",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required"
-                ]
-              },
-              {
-                "Name": "Email",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "DataType",
-                  "EmailAddress"
-                ]
-              },
-              {
-                "Name": "Password",
-                "Type": "string",
-                "IsRequired": false,
-                "Attributes": [
-                  "DataType"
-                ]
-              },
-              {
-                "Name": "Name",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "MaxLength",
-                  "DataType"
-                ]
-              },
-              {
-                "Name": "MiddleName",
-                "Type": "string",
-                "IsRequired": false,
-                "Attributes": [
-                  "MaxLength",
-                  "DataType"
-                ]
-              },
-              {
-                "Name": "LastName",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "MaxLength",
-                  "DataType"
-                ]
-              },
-              {
-                "Name": "PhoneNumber",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "DataType",
-                  "RegularExpression"
-                ]
-              },
-              {
-                "Name": "Address",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "MaxLength",
-                  "DataType"
-                ]
-              },
-              {
-                "Name": "Branch",
-                "Type": "BranchEnum",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required"
-                ]
-              },
-              {
-                "Name": "Semester",
-                "Type": "int",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required"
-                ]
-              },
-              {
-                "Name": "Division",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required"
-                ]
-              },
-              {
-                "Name": "DOB",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "DataType"
-                ]
-              }
-            ]
-          },
-          "Responses": [
-            {
-              "StatusCode": 200,
-              "Kind": "view",
-              "JsonBodySchema": null,
-              "ViewModelSchema": {
-                "Name": "AddStudentViewModel",
-                "Properties": [
-                  {
-                    "Name": "Role",
-                    "Type": "string",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required"
-                    ]
-                  },
-                  {
-                    "Name": "Email",
-                    "Type": "string",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required",
-                      "DataType",
-                      "EmailAddress"
-                    ]
-                  },
-                  {
-                    "Name": "Password",
-                    "Type": "string",
-                    "IsRequired": false,
-                    "Attributes": [
-                      "DataType"
-                    ]
-                  },
-                  {
-                    "Name": "Name",
-                    "Type": "string",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required",
-                      "MaxLength",
-                      "DataType"
-                    ]
-                  },
-                  {
-                    "Name": "MiddleName",
-                    "Type": "string",
-                    "IsRequired": false,
-                    "Attributes": [
-                      "MaxLength",
-                      "DataType"
-                    ]
-                  },
-                  {
-                    "Name": "LastName",
-                    "Type": "string",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required",
-                      "MaxLength",
-                      "DataType"
-                    ]
-                  },
-                  {
-                    "Name": "PhoneNumber",
-                    "Type": "string",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required",
-                      "DataType",
-                      "RegularExpression"
-                    ]
-                  },
-                  {
-                    "Name": "Address",
-                    "Type": "string",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required",
-                      "MaxLength",
-                      "DataType"
-                    ]
-                  },
-                  {
-                    "Name": "Branch",
-                    "Type": "BranchEnum",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required"
-                    ]
-                  },
-                  {
-                    "Name": "Semester",
-                    "Type": "int",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required"
-                    ]
-                  },
-                  {
-                    "Name": "Division",
-                    "Type": "string",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required"
-                    ]
-                  },
-                  {
-                    "Name": "DOB",
-                    "Type": "string",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required",
-                      "DataType"
-                    ]
-                  }
-                ]
-              }
-            },
-            {
-              "StatusCode": 302,
-              "Kind": "redirect",
-              "JsonBodySchema": null,
-              "ViewModelSchema": null
-            }
-          ]
-        },
-        {
-          "Kind": "mvc",
-          "HttpMethod": "POST",
-          "Route": "/",
-          "Action": "AddStudentExcel",
-          "Parameters": [
-            {
-              "Name": "file",
-              "Type": "IFormFile",
-              "Source": "form"
-            },
-            {
-              "Name": "hostingEnvironment",
-              "Type": "IHostingEnvironment",
-              "Source": "form"
-            }
-          ],
-          "RequestBodySchema": null,
-          "Responses": [
-            {
-              "StatusCode": 200,
-              "Kind": "view",
-              "JsonBodySchema": null,
-              "ViewModelSchema": null
-            }
-          ]
-        },
-        {
-          "Kind": "mvc",
-          "HttpMethod": "POST",
-          "Route": "/",
-          "Action": "DeleteStudent",
-          "Parameters": [
-            {
-              "Name": "id",
-              "Type": "int",
-              "Source": "form"
-            }
-          ],
-          "RequestBodySchema": null,
-          "Responses": [
-            {
-              "StatusCode": 200,
-              "Kind": "view",
-              "JsonBodySchema": null,
-              "ViewModelSchema": null
-            },
-            {
-              "StatusCode": 302,
-              "Kind": "redirect",
-              "JsonBodySchema": null,
-              "ViewModelSchema": null
-            }
-          ]
-        },
-        {
-          "Kind": "mvc",
-          "HttpMethod": "POST",
-          "Route": "/",
-          "Action": "StudentDetails",
-          "Parameters": [
-            {
-              "Name": "id",
-              "Type": "int",
-              "Source": "form"
-            }
-          ],
-          "RequestBodySchema": null,
-          "Responses": [
-            {
-              "StatusCode": 200,
-              "Kind": "view",
-              "JsonBodySchema": null,
-              "ViewModelSchema": null
-            }
-          ]
-        },
-        {
-          "Kind": "mvc",
-          "HttpMethod": "POST",
-          "Route": "/",
-          "Action": "EditStudent",
-          "Parameters": [
-            {
-              "Name": "model",
-              "Type": "StudentDetailsViewModel",
-              "Source": "form"
-            }
-          ],
-          "RequestBodySchema": {
-            "Name": "StudentDetailsViewModel",
-            "Properties": [
-              {
-                "Name": "Role",
-                "Type": "string",
-                "IsRequired": false,
-                "Attributes": []
-              },
-              {
-                "Name": "Id",
-                "Type": "int",
-                "IsRequired": false,
-                "Attributes": []
-              },
-              {
-                "Name": "Email",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "DataType",
-                  "EmailAddress"
-                ]
-              },
-              {
-                "Name": "Password",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "DataType"
-                ]
-              },
-              {
-                "Name": "Name",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "MaxLength",
-                  "DataType"
-                ]
-              },
-              {
-                "Name": "MiddleName",
-                "Type": "string",
-                "IsRequired": false,
-                "Attributes": [
-                  "MaxLength",
-                  "DataType"
-                ]
-              },
-              {
-                "Name": "LastName",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "MaxLength",
-                  "DataType"
-                ]
-              },
-              {
-                "Name": "PhoneNumber",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "DataType",
-                  "RegularExpression"
-                ]
-              },
-              {
-                "Name": "Address",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "MaxLength",
-                  "DataType"
-                ]
-              },
-              {
-                "Name": "Branch",
-                "Type": "BranchEnum",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required"
-                ]
-              },
-              {
-                "Name": "Semester",
-                "Type": "int",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required"
-                ]
-              },
-              {
-                "Name": "Division",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required"
-                ]
-              },
-              {
-                "Name": "DOB",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "DataType"
-                ]
-              }
-            ]
-          },
-          "Responses": [
-            {
-              "StatusCode": 200,
-              "Kind": "view",
-              "JsonBodySchema": null,
-              "ViewModelSchema": {
-                "Name": "StudentDetailsViewModel",
-                "Properties": [
-                  {
-                    "Name": "Role",
-                    "Type": "string",
-                    "IsRequired": false,
-                    "Attributes": []
-                  },
-                  {
-                    "Name": "Id",
-                    "Type": "int",
-                    "IsRequired": false,
-                    "Attributes": []
-                  },
-                  {
-                    "Name": "Email",
-                    "Type": "string",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required",
-                      "DataType",
-                      "EmailAddress"
-                    ]
-                  },
-                  {
-                    "Name": "Password",
-                    "Type": "string",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required",
-                      "DataType"
-                    ]
-                  },
-                  {
-                    "Name": "Name",
-                    "Type": "string",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required",
-                      "MaxLength",
-                      "DataType"
-                    ]
-                  },
-                  {
-                    "Name": "MiddleName",
-                    "Type": "string",
-                    "IsRequired": false,
-                    "Attributes": [
-                      "MaxLength",
-                      "DataType"
-                    ]
-                  },
-                  {
-                    "Name": "LastName",
-                    "Type": "string",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required",
-                      "MaxLength",
-                      "DataType"
-                    ]
-                  },
-                  {
-                    "Name": "PhoneNumber",
-                    "Type": "string",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required",
-                      "DataType",
-                      "RegularExpression"
-                    ]
-                  },
-                  {
-                    "Name": "Address",
-                    "Type": "string",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required",
-                      "MaxLength",
-                      "DataType"
-                    ]
-                  },
-                  {
-                    "Name": "Branch",
-                    "Type": "BranchEnum",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required"
-                    ]
-                  },
-                  {
-                    "Name": "Semester",
-                    "Type": "int",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required"
-                    ]
-                  },
-                  {
-                    "Name": "Division",
-                    "Type": "string",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required"
-                    ]
-                  },
-                  {
-                    "Name": "DOB",
-                    "Type": "string",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required",
-                      "DataType"
-                    ]
-                  }
-                ]
-              }
-            },
-            {
-              "StatusCode": 302,
-              "Kind": "redirect",
-              "JsonBodySchema": null,
-              "ViewModelSchema": null
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "FacultyController",
-      "RoutePrefix": null,
-      "Endpoints": [
-        {
-          "Kind": "mvc",
-          "HttpMethod": "GET",
-          "Route": "/",
-          "Action": "AddStudent",
-          "Parameters": [],
-          "RequestBodySchema": null,
-          "Responses": [
-            {
-              "StatusCode": 200,
-              "Kind": "view",
-              "JsonBodySchema": null,
-              "ViewModelSchema": null
-            }
-          ]
-        },
-        {
-          "Kind": "mvc",
-          "HttpMethod": "GET",
-          "Route": "/",
-          "Action": "AddStudentExcel",
-          "Parameters": [
-            {
-              "Name": "model",
-              "Type": "List\u003CApplicationUser\u003E",
-              "Source": "form"
-            }
-          ],
-          "RequestBodySchema": null,
-          "Responses": [
-            {
-              "StatusCode": 200,
-              "Kind": "view",
-              "JsonBodySchema": null,
-              "ViewModelSchema": null
-            }
-          ]
-        },
-        {
-          "Kind": "mvc",
-          "HttpMethod": "GET",
-          "Route": "/",
-          "Action": "ViewStudent",
-          "Parameters": [],
-          "RequestBodySchema": null,
-          "Responses": [
-            {
-              "StatusCode": 200,
-              "Kind": "view",
-              "JsonBodySchema": null,
-              "ViewModelSchema": null
-            }
-          ]
-        },
-        {
-          "Kind": "mvc",
-          "HttpMethod": "GET",
-          "Route": "/",
-          "Action": "EditStudent",
-          "Parameters": [
-            {
-              "Name": "id",
-              "Type": "int",
-              "Source": "form"
-            }
-          ],
-          "RequestBodySchema": null,
-          "Responses": [
-            {
-              "StatusCode": 200,
-              "Kind": "view",
-              "JsonBodySchema": null,
-              "ViewModelSchema": null
-            }
-          ]
-        },
-        {
-          "Kind": "mvc",
-          "HttpMethod": "GET",
-          "Route": "/",
-          "Action": "ViewTest",
-          "Parameters": [],
-          "RequestBodySchema": null,
-          "Responses": [
-            {
-              "StatusCode": 200,
-              "Kind": "view",
-              "JsonBodySchema": null,
-              "ViewModelSchema": null
-            }
-          ]
-        },
-        {
-          "Kind": "mvc",
-          "HttpMethod": "POST",
-          "Route": "/",
-          "Action": "AddStudent",
-          "Parameters": [
-            {
-              "Name": "model",
-              "Type": "AddStudentViewModel",
-              "Source": "form"
-            }
-          ],
-          "RequestBodySchema": {
-            "Name": "AddStudentViewModel",
-            "Properties": [
-              {
-                "Name": "Role",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required"
-                ]
-              },
-              {
-                "Name": "Email",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "DataType",
-                  "EmailAddress"
-                ]
-              },
-              {
-                "Name": "Password",
-                "Type": "string",
-                "IsRequired": false,
-                "Attributes": [
-                  "DataType"
-                ]
-              },
-              {
-                "Name": "Name",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "MaxLength",
-                  "DataType"
-                ]
-              },
-              {
-                "Name": "MiddleName",
-                "Type": "string",
-                "IsRequired": false,
-                "Attributes": [
-                  "MaxLength",
-                  "DataType"
-                ]
-              },
-              {
-                "Name": "LastName",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "MaxLength",
-                  "DataType"
-                ]
-              },
-              {
-                "Name": "PhoneNumber",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "DataType",
-                  "RegularExpression"
-                ]
-              },
-              {
-                "Name": "Address",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "MaxLength",
-                  "DataType"
-                ]
-              },
-              {
-                "Name": "Branch",
-                "Type": "BranchEnum",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required"
-                ]
-              },
-              {
-                "Name": "Semester",
-                "Type": "int",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required"
-                ]
-              },
-              {
-                "Name": "Division",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required"
-                ]
-              },
-              {
-                "Name": "DOB",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "DataType"
-                ]
-              }
-            ]
-          },
-          "Responses": [
-            {
-              "StatusCode": 200,
-              "Kind": "view",
-              "JsonBodySchema": null,
-              "ViewModelSchema": {
-                "Name": "AddStudentViewModel",
-                "Properties": [
-                  {
-                    "Name": "Role",
-                    "Type": "string",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required"
-                    ]
-                  },
-                  {
-                    "Name": "Email",
-                    "Type": "string",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required",
-                      "DataType",
-                      "EmailAddress"
-                    ]
-                  },
-                  {
-                    "Name": "Password",
-                    "Type": "string",
-                    "IsRequired": false,
-                    "Attributes": [
-                      "DataType"
-                    ]
-                  },
-                  {
-                    "Name": "Name",
-                    "Type": "string",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required",
-                      "MaxLength",
-                      "DataType"
-                    ]
-                  },
-                  {
-                    "Name": "MiddleName",
-                    "Type": "string",
-                    "IsRequired": false,
-                    "Attributes": [
-                      "MaxLength",
-                      "DataType"
-                    ]
-                  },
-                  {
-                    "Name": "LastName",
-                    "Type": "string",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required",
-                      "MaxLength",
-                      "DataType"
-                    ]
-                  },
-                  {
-                    "Name": "PhoneNumber",
-                    "Type": "string",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required",
-                      "DataType",
-                      "RegularExpression"
-                    ]
-                  },
-                  {
-                    "Name": "Address",
-                    "Type": "string",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required",
-                      "MaxLength",
-                      "DataType"
-                    ]
-                  },
-                  {
-                    "Name": "Branch",
-                    "Type": "BranchEnum",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required"
-                    ]
-                  },
-                  {
-                    "Name": "Semester",
-                    "Type": "int",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required"
-                    ]
-                  },
-                  {
-                    "Name": "Division",
-                    "Type": "string",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required"
-                    ]
-                  },
-                  {
-                    "Name": "DOB",
-                    "Type": "string",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required",
-                      "DataType"
-                    ]
-                  }
-                ]
-              }
-            },
-            {
-              "StatusCode": 302,
-              "Kind": "redirect",
-              "JsonBodySchema": null,
-              "ViewModelSchema": null
-            }
-          ]
-        },
-        {
-          "Kind": "mvc",
-          "HttpMethod": "POST",
-          "Route": "/",
-          "Action": "AddStudentExcel",
-          "Parameters": [
-            {
-              "Name": "file",
-              "Type": "IFormFile",
-              "Source": "form"
-            },
-            {
-              "Name": "hostingEnvironment",
-              "Type": "IHostingEnvironment",
-              "Source": "form"
-            }
-          ],
-          "RequestBodySchema": null,
-          "Responses": [
-            {
-              "StatusCode": 200,
-              "Kind": "view",
-              "JsonBodySchema": null,
-              "ViewModelSchema": null
-            }
-          ]
-        },
-        {
-          "Kind": "mvc",
-          "HttpMethod": "POST",
-          "Route": "/",
-          "Action": "DeleteStudent",
-          "Parameters": [
-            {
-              "Name": "id",
-              "Type": "int",
-              "Source": "form"
-            }
-          ],
-          "RequestBodySchema": null,
-          "Responses": [
-            {
-              "StatusCode": 200,
-              "Kind": "view",
-              "JsonBodySchema": null,
-              "ViewModelSchema": null
-            },
-            {
-              "StatusCode": 302,
-              "Kind": "redirect",
-              "JsonBodySchema": null,
-              "ViewModelSchema": null
-            }
-          ]
-        },
-        {
-          "Kind": "mvc",
-          "HttpMethod": "POST",
-          "Route": "/",
-          "Action": "StudentDetails",
-          "Parameters": [
-            {
-              "Name": "id",
-              "Type": "int",
-              "Source": "form"
-            }
-          ],
-          "RequestBodySchema": null,
-          "Responses": [
-            {
-              "StatusCode": 200,
-              "Kind": "view",
-              "JsonBodySchema": null,
-              "ViewModelSchema": null
-            }
-          ]
-        },
-        {
-          "Kind": "mvc",
-          "HttpMethod": "POST",
-          "Route": "/",
-          "Action": "EditStudent",
-          "Parameters": [
-            {
-              "Name": "model",
-              "Type": "StudentDetailsViewModel",
-              "Source": "form"
-            }
-          ],
-          "RequestBodySchema": {
-            "Name": "StudentDetailsViewModel",
-            "Properties": [
-              {
-                "Name": "Role",
-                "Type": "string",
-                "IsRequired": false,
-                "Attributes": []
-              },
-              {
-                "Name": "Id",
-                "Type": "int",
-                "IsRequired": false,
-                "Attributes": []
-              },
-              {
-                "Name": "Email",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "DataType",
-                  "EmailAddress"
-                ]
-              },
-              {
-                "Name": "Password",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "DataType"
-                ]
-              },
-              {
-                "Name": "Name",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "MaxLength",
-                  "DataType"
-                ]
-              },
-              {
-                "Name": "MiddleName",
-                "Type": "string",
-                "IsRequired": false,
-                "Attributes": [
-                  "MaxLength",
-                  "DataType"
-                ]
-              },
-              {
-                "Name": "LastName",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "MaxLength",
-                  "DataType"
-                ]
-              },
-              {
-                "Name": "PhoneNumber",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "DataType",
-                  "RegularExpression"
-                ]
-              },
-              {
-                "Name": "Address",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "MaxLength",
-                  "DataType"
-                ]
-              },
-              {
-                "Name": "Branch",
-                "Type": "BranchEnum",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required"
-                ]
-              },
-              {
-                "Name": "Semester",
-                "Type": "int",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required"
-                ]
-              },
-              {
-                "Name": "Division",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required"
-                ]
-              },
-              {
-                "Name": "DOB",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "DataType"
-                ]
-              }
-            ]
-          },
-          "Responses": [
-            {
-              "StatusCode": 200,
-              "Kind": "view",
-              "JsonBodySchema": null,
-              "ViewModelSchema": {
-                "Name": "StudentDetailsViewModel",
-                "Properties": [
-                  {
-                    "Name": "Role",
-                    "Type": "string",
-                    "IsRequired": false,
-                    "Attributes": []
-                  },
-                  {
-                    "Name": "Id",
-                    "Type": "int",
-                    "IsRequired": false,
-                    "Attributes": []
-                  },
-                  {
-                    "Name": "Email",
-                    "Type": "string",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required",
-                      "DataType",
-                      "EmailAddress"
-                    ]
-                  },
-                  {
-                    "Name": "Password",
-                    "Type": "string",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required",
-                      "DataType"
-                    ]
-                  },
-                  {
-                    "Name": "Name",
-                    "Type": "string",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required",
-                      "MaxLength",
-                      "DataType"
-                    ]
-                  },
-                  {
-                    "Name": "MiddleName",
-                    "Type": "string",
-                    "IsRequired": false,
-                    "Attributes": [
-                      "MaxLength",
-                      "DataType"
-                    ]
-                  },
-                  {
-                    "Name": "LastName",
-                    "Type": "string",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required",
-                      "MaxLength",
-                      "DataType"
-                    ]
-                  },
-                  {
-                    "Name": "PhoneNumber",
-                    "Type": "string",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required",
-                      "DataType",
-                      "RegularExpression"
-                    ]
-                  },
-                  {
-                    "Name": "Address",
-                    "Type": "string",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required",
-                      "MaxLength",
-                      "DataType"
-                    ]
-                  },
-                  {
-                    "Name": "Branch",
-                    "Type": "BranchEnum",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required"
-                    ]
-                  },
-                  {
-                    "Name": "Semester",
-                    "Type": "int",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required"
-                    ]
-                  },
-                  {
-                    "Name": "Division",
-                    "Type": "string",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required"
-                    ]
-                  },
-                  {
-                    "Name": "DOB",
-                    "Type": "string",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required",
-                      "DataType"
-                    ]
-                  }
-                ]
-              }
-            },
-            {
-              "StatusCode": 302,
-              "Kind": "redirect",
-              "JsonBodySchema": null,
-              "ViewModelSchema": null
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "GroupController",
-      "RoutePrefix": null,
-      "Endpoints": [
-        {
-          "Kind": "mvc",
-          "HttpMethod": "GET",
-          "Route": "/",
-          "Action": "CreateGroup",
-          "Parameters": [],
-          "RequestBodySchema": null,
-          "Responses": [
-            {
-              "StatusCode": 200,
-              "Kind": "view",
-              "JsonBodySchema": null,
-              "ViewModelSchema": null
-            }
-          ]
-        },
-        {
-          "Kind": "mvc",
-          "HttpMethod": "GET",
-          "Route": "/",
-          "Action": "GroupDetails",
-          "Parameters": [
-            {
-              "Name": "id",
-              "Type": "int",
-              "Source": "form"
-            }
-          ],
-          "RequestBodySchema": null,
-          "Responses": [
-            {
-              "StatusCode": 200,
-              "Kind": "view",
-              "JsonBodySchema": null,
-              "ViewModelSchema": null
-            }
-          ]
-        },
-        {
-          "Kind": "mvc",
-          "HttpMethod": "GET",
-          "Route": "/",
-          "Action": "AddStudentToGroup",
-          "Parameters": [
-            {
-              "Name": "id",
-              "Type": "int",
-              "Source": "form"
-            }
-          ],
-          "RequestBodySchema": null,
-          "Responses": [
-            {
-              "StatusCode": 200,
-              "Kind": "view",
-              "JsonBodySchema": null,
-              "ViewModelSchema": null
-            }
-          ]
-        },
-        {
-          "Kind": "mvc",
-          "HttpMethod": "GET",
-          "Route": "/",
-          "Action": "ViewUserGroups",
-          "Parameters": [],
-          "RequestBodySchema": null,
-          "Responses": [
-            {
-              "StatusCode": 200,
-              "Kind": "view",
-              "JsonBodySchema": null,
-              "ViewModelSchema": null
-            }
-          ]
-        },
-        {
-          "Kind": "mvc",
-          "HttpMethod": "GET",
-          "Route": "/",
-          "Action": "ViewOtherGroups",
-          "Parameters": [],
-          "RequestBodySchema": null,
-          "Responses": [
-            {
-              "StatusCode": 200,
-              "Kind": "view",
-              "JsonBodySchema": null,
-              "ViewModelSchema": null
-            }
-          ]
-        },
-        {
-          "Kind": "mvc",
-          "HttpMethod": "GET",
-          "Route": "/",
-          "Action": "EditGroup",
-          "Parameters": [
-            {
-              "Name": "id",
-              "Type": "int",
-              "Source": "form"
-            }
-          ],
-          "RequestBodySchema": null,
-          "Responses": [
-            {
-              "StatusCode": 200,
-              "Kind": "view",
-              "JsonBodySchema": null,
-              "ViewModelSchema": null
-            }
-          ]
-        },
-        {
-          "Kind": "mvc",
-          "HttpMethod": "POST",
-          "Route": "/",
-          "Action": "CreateGroup",
-          "Parameters": [
-            {
-              "Name": "model",
-              "Type": "CreateGroupViewModel",
-              "Source": "form"
-            }
-          ],
-          "RequestBodySchema": {
-            "Name": "CreateGroupViewModel",
-            "Properties": [
-              {
-                "Name": "Creator_id",
-                "Type": "int",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required"
-                ]
-              },
-              {
-                "Name": "Name",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required"
-                ]
-              },
-              {
-                "Name": "Branch",
-                "Type": "BranchEnumNullable?",
-                "IsRequired": false,
-                "Attributes": []
-              },
-              {
-                "Name": "Division",
-                "Type": "DivisionEnumNullable?",
-                "IsRequired": false,
-                "Attributes": []
-              },
-              {
-                "Name": "Semester",
-                "Type": "int?",
-                "IsRequired": false,
-                "Attributes": []
-              }
-            ]
-          },
-          "Responses": [
-            {
-              "StatusCode": 302,
-              "Kind": "redirect",
-              "JsonBodySchema": null,
-              "ViewModelSchema": null
-            }
-          ]
-        },
-        {
-          "Kind": "mvc",
-          "HttpMethod": "POST",
-          "Route": "/",
-          "Action": "AddStudentToGroup",
-          "Parameters": [
-            {
-              "Name": "array",
-              "Type": "string[]",
               "Source": "body"
             }
           ],
@@ -2177,522 +27,86 @@
           "Responses": [
             {
               "StatusCode": 200,
-              "Kind": "unknown",
+              "Kind": "json",
               "JsonBodySchema": null,
               "ViewModelSchema": null
             }
           ]
         },
         {
-          "Kind": "mvc",
-          "HttpMethod": "POST",
-          "Route": "/",
-          "Action": "RemoveStudent",
+          "Kind": "api",
+          "HttpMethod": "PUT",
+          "Route": "/api/MatchBallsMapping",
+          "Action": "MatchBallsMapping",
           "Parameters": [
             {
-              "Name": "array",
-              "Type": "string[]",
+              "Name": "model",
+              "Type": "UpdateMatchBallsMappingModel",
               "Source": "body"
             }
           ],
-          "RequestBodySchema": null,
-          "Responses": [
-            {
-              "StatusCode": 200,
-              "Kind": "unknown",
-              "JsonBodySchema": null,
-              "ViewModelSchema": null
-            }
-          ]
-        },
-        {
-          "Kind": "mvc",
-          "HttpMethod": "POST",
-          "Route": "/",
-          "Action": "EditGroup",
-          "Parameters": [
-            {
-              "Name": "id",
-              "Type": "int",
-              "Source": "form"
-            },
-            {
-              "Name": "model",
-              "Type": "CreateGroupViewModel",
-              "Source": "form"
-            }
-          ],
           "RequestBodySchema": {
-            "Name": "CreateGroupViewModel",
+            "Name": "UpdateMatchBallsMappingModel",
             "Properties": [
               {
-                "Name": "Creator_id",
+                "Name": "Id",
                 "Type": "int",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required"
-                ]
-              },
-              {
-                "Name": "Name",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required"
-                ]
-              },
-              {
-                "Name": "Branch",
-                "Type": "BranchEnumNullable?",
                 "IsRequired": false,
                 "Attributes": []
               },
               {
-                "Name": "Division",
-                "Type": "DivisionEnumNullable?",
+                "Name": "BallNumber",
+                "Type": "int",
                 "IsRequired": false,
                 "Attributes": []
               },
               {
-                "Name": "Semester",
-                "Type": "int?",
+                "Name": "Runs",
+                "Type": "int",
                 "IsRequired": false,
                 "Attributes": []
-              }
-            ]
-          },
-          "Responses": [
-            {
-              "StatusCode": 302,
-              "Kind": "redirect",
-              "JsonBodySchema": null,
-              "ViewModelSchema": null
-            }
-          ]
-        },
-        {
-          "Kind": "mvc",
-          "HttpMethod": "POST",
-          "Route": "/",
-          "Action": "DeleteGroup",
-          "Parameters": [
-            {
-              "Name": "id",
-              "Type": "int",
-              "Source": "form"
-            }
-          ],
-          "RequestBodySchema": null,
-          "Responses": [
-            {
-              "StatusCode": 302,
-              "Kind": "redirect",
-              "JsonBodySchema": null,
-              "ViewModelSchema": null
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "HomeController",
-      "RoutePrefix": null,
-      "Endpoints": [
-        {
-          "Kind": "mvc",
-          "HttpMethod": "GET",
-          "Route": "/",
-          "Action": "Index",
-          "Parameters": [],
-          "RequestBodySchema": null,
-          "Responses": [
-            {
-              "StatusCode": 200,
-              "Kind": "view",
-              "JsonBodySchema": null,
-              "ViewModelSchema": null
-            }
-          ]
-        },
-        {
-          "Kind": "mvc",
-          "HttpMethod": "GET",
-          "Route": "/",
-          "Action": "ChangePassword",
-          "Parameters": [],
-          "RequestBodySchema": null,
-          "Responses": [
-            {
-              "StatusCode": 200,
-              "Kind": "view",
-              "JsonBodySchema": null,
-              "ViewModelSchema": null
-            }
-          ]
-        },
-        {
-          "Kind": "mvc",
-          "HttpMethod": "GET",
-          "Route": "/",
-          "Action": "Profile",
-          "Parameters": [],
-          "RequestBodySchema": null,
-          "Responses": [
-            {
-              "StatusCode": 200,
-              "Kind": "view",
-              "JsonBodySchema": null,
-              "ViewModelSchema": null
-            }
-          ]
-        },
-        {
-          "Kind": "mvc",
-          "HttpMethod": "POST",
-          "Route": "/",
-          "Action": "Index",
-          "Parameters": [
-            {
-              "Name": "model",
-              "Type": "LoginViewModel",
-              "Source": "form"
-            }
-          ],
-          "RequestBodySchema": {
-            "Name": "LoginViewModel",
-            "Properties": [
-              {
-                "Name": "Email",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "DataType",
-                  "EmailAddress"
-                ]
               },
               {
-                "Name": "Password",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "DataType"
-                ]
-              },
-              {
-                "Name": "RememberMe",
+                "Name": "Wicket",
                 "Type": "bool",
                 "IsRequired": false,
-                "Attributes": [
-                  "Display"
-                ]
+                "Attributes": []
               }
             ]
           },
           "Responses": [
             {
               "StatusCode": 200,
-              "Kind": "view",
-              "JsonBodySchema": null,
-              "ViewModelSchema": {
-                "Name": "LoginViewModel",
+              "Kind": "json",
+              "JsonBodySchema": {
+                "Name": "UpdateMatchBallsMappingModel",
                 "Properties": [
                   {
-                    "Name": "Email",
-                    "Type": "string",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required",
-                      "DataType",
-                      "EmailAddress"
-                    ]
+                    "Name": "Id",
+                    "Type": "int",
+                    "IsRequired": false,
+                    "Attributes": []
                   },
                   {
-                    "Name": "Password",
-                    "Type": "string",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required",
-                      "DataType"
-                    ]
+                    "Name": "BallNumber",
+                    "Type": "int",
+                    "IsRequired": false,
+                    "Attributes": []
                   },
                   {
-                    "Name": "RememberMe",
+                    "Name": "Runs",
+                    "Type": "int",
+                    "IsRequired": false,
+                    "Attributes": []
+                  },
+                  {
+                    "Name": "Wicket",
                     "Type": "bool",
                     "IsRequired": false,
-                    "Attributes": [
-                      "Display"
-                    ]
+                    "Attributes": []
                   }
                 ]
-              }
-            },
-            {
-              "StatusCode": 302,
-              "Kind": "redirect",
-              "JsonBodySchema": null,
-              "ViewModelSchema": null
-            }
-          ]
-        },
-        {
-          "Kind": "mvc",
-          "HttpMethod": "POST",
-          "Route": "/",
-          "Action": "LogOut",
-          "Parameters": [],
-          "RequestBodySchema": null,
-          "Responses": [
-            {
-              "StatusCode": 302,
-              "Kind": "redirect",
-              "JsonBodySchema": null,
-              "ViewModelSchema": null
-            }
-          ]
-        },
-        {
-          "Kind": "mvc",
-          "HttpMethod": "POST",
-          "Route": "/",
-          "Action": "ChangePassword",
-          "Parameters": [
-            {
-              "Name": "model",
-              "Type": "ChangePasswordViewModel",
-              "Source": "form"
-            }
-          ],
-          "RequestBodySchema": {
-            "Name": "ChangePasswordViewModel",
-            "Properties": [
-              {
-                "Name": "CurrentPassword",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "DataType",
-                  "Display"
-                ]
               },
-              {
-                "Name": "NewPassword",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "DataType",
-                  "Display"
-                ]
-              },
-              {
-                "Name": "ConfirmPassword",
-                "Type": "string",
-                "IsRequired": false,
-                "Attributes": [
-                  "DataType",
-                  "Display",
-                  "Compare"
-                ]
-              }
-            ]
-          },
-          "Responses": [
-            {
-              "StatusCode": 200,
-              "Kind": "view",
-              "JsonBodySchema": null,
-              "ViewModelSchema": {
-                "Name": "ChangePasswordViewModel",
-                "Properties": [
-                  {
-                    "Name": "CurrentPassword",
-                    "Type": "string",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required",
-                      "DataType",
-                      "Display"
-                    ]
-                  },
-                  {
-                    "Name": "NewPassword",
-                    "Type": "string",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required",
-                      "DataType",
-                      "Display"
-                    ]
-                  },
-                  {
-                    "Name": "ConfirmPassword",
-                    "Type": "string",
-                    "IsRequired": false,
-                    "Attributes": [
-                      "DataType",
-                      "Display",
-                      "Compare"
-                    ]
-                  }
-                ]
-              }
-            },
-            {
-              "StatusCode": 302,
-              "Kind": "redirect",
-              "JsonBodySchema": null,
-              "ViewModelSchema": null
-            }
-          ]
-        },
-        {
-          "Kind": "mvc",
-          "HttpMethod": "POST",
-          "Route": "/",
-          "Action": "Profile",
-          "Parameters": [
-            {
-              "Name": "model",
-              "Type": "ApplicationUser",
-              "Source": "form"
-            }
-          ],
-          "RequestBodySchema": {
-            "Name": "ApplicationUser",
-            "Properties": [
-              {
-                "Name": "Password",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "DataType"
-                ]
-              },
-              {
-                "Name": "Name",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "MaxLength",
-                  "DataType"
-                ]
-              },
-              {
-                "Name": "MiddleName",
-                "Type": "string",
-                "IsRequired": false,
-                "Attributes": [
-                  "MaxLength",
-                  "DataType"
-                ]
-              },
-              {
-                "Name": "LastName",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "MaxLength",
-                  "DataType"
-                ]
-              },
-              {
-                "Name": "Address",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "MaxLength",
-                  "DataType"
-                ]
-              },
-              {
-                "Name": "Branch",
-                "Type": "string",
-                "IsRequired": false,
-                "Attributes": []
-              },
-              {
-                "Name": "Semester",
-                "Type": "int",
-                "IsRequired": false,
-                "Attributes": []
-              },
-              {
-                "Name": "Division",
-                "Type": "string",
-                "IsRequired": false,
-                "Attributes": []
-              },
-              {
-                "Name": "DOB",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "DataType"
-                ]
-              },
-              {
-                "Name": "InitialLogin",
-                "Type": "bool",
-                "IsRequired": false,
-                "Attributes": []
-              },
-              {
-                "Name": "Tags",
-                "Type": "List\u003CTag\u003E",
-                "IsRequired": false,
-                "Attributes": []
-              },
-              {
-                "Name": "Tests",
-                "Type": "ICollection\u003CTest\u003E",
-                "IsRequired": false,
-                "Attributes": []
-              },
-              {
-                "Name": "Groups",
-                "Type": "ICollection\u003CGroups\u003E",
-                "IsRequired": false,
-                "Attributes": []
-              },
-              {
-                "Name": "UserGroups",
-                "Type": "ICollection\u003CUserGroup\u003E",
-                "IsRequired": false,
-                "Attributes": []
-              },
-              {
-                "Name": "QuestionResults",
-                "Type": "ICollection\u003CQuestionResult\u003E",
-                "IsRequired": false,
-                "Attributes": []
-              },
-              {
-                "Name": "DescriptiveResults",
-                "Type": "ICollection\u003CDescriptiveResult\u003E",
-                "IsRequired": false,
-                "Attributes": []
-              },
-              {
-                "Name": "TotalResults",
-                "Type": "ICollection\u003CTotalResult\u003E",
-                "IsRequired": false,
-                "Attributes": []
-              }
-            ]
-          },
-          "Responses": [
-            {
-              "StatusCode": 302,
-              "Kind": "redirect",
-              "JsonBodySchema": null,
               "ViewModelSchema": null
             }
           ]
@@ -2700,326 +114,111 @@
       ]
     },
     {
-      "Name": "SuperAdminController",
-      "RoutePrefix": null,
+      "Name": "MatchesController",
+      "RoutePrefix": "api/[controller]",
       "Endpoints": [
         {
-          "Kind": "mvc",
-          "HttpMethod": "GET",
-          "Route": "/",
-          "Action": "AddAdmin",
-          "Parameters": [],
-          "RequestBodySchema": null,
-          "Responses": [
-            {
-              "StatusCode": 200,
-              "Kind": "view",
-              "JsonBodySchema": null,
-              "ViewModelSchema": null
-            }
-          ]
-        },
-        {
-          "Kind": "mvc",
-          "HttpMethod": "GET",
-          "Route": "/",
-          "Action": "ViewAdmin",
-          "Parameters": [],
-          "RequestBodySchema": null,
-          "Responses": [
-            {
-              "StatusCode": 200,
-              "Kind": "view",
-              "JsonBodySchema": null,
-              "ViewModelSchema": null
-            }
-          ]
-        },
-        {
-          "Kind": "mvc",
-          "HttpMethod": "GET",
-          "Route": "/",
-          "Action": "EditAdmin",
-          "Parameters": [
-            {
-              "Name": "id",
-              "Type": "int",
-              "Source": "form"
-            }
-          ],
-          "RequestBodySchema": null,
-          "Responses": [
-            {
-              "StatusCode": 200,
-              "Kind": "view",
-              "JsonBodySchema": null,
-              "ViewModelSchema": null
-            }
-          ]
-        },
-        {
-          "Kind": "mvc",
+          "Kind": "api",
           "HttpMethod": "POST",
-          "Route": "/",
-          "Action": "AddAdmin",
+          "Route": "/api/Matches",
+          "Action": "CreateMatch",
           "Parameters": [
             {
               "Name": "model",
-              "Type": "AddFacultyViewModel",
-              "Source": "form"
+              "Type": "MatchCreateModel",
+              "Source": "body"
             }
           ],
           "RequestBodySchema": {
-            "Name": "AddFacultyViewModel",
+            "Name": "MatchCreateModel",
             "Properties": [
               {
-                "Name": "Role",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required"
-                ]
-              },
-              {
-                "Name": "Email",
-                "Type": "string",
+                "Name": "Team1_id",
+                "Type": "int",
                 "IsRequired": true,
                 "Attributes": [
                   "Required",
-                  "DataType",
-                  "EmailAddress"
+                  "Range"
                 ]
               },
               {
-                "Name": "Password",
-                "Type": "string",
+                "Name": "Team2_id",
+                "Type": "int",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "Range"
+                ]
+              },
+              {
+                "Name": "NoOfBalls",
+                "Type": "int",
+                "IsRequired": true,
+                "Attributes": [
+                  "Required",
+                  "Range"
+                ]
+              },
+              {
+                "Name": "Team1_PlayersId",
+                "Type": "List\u003Cint\u003E",
                 "IsRequired": false,
-                "Attributes": [
-                  "DataType"
-                ]
+                "Attributes": []
               },
               {
-                "Name": "Name",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "MaxLength",
-                  "DataType"
-                ]
-              },
-              {
-                "Name": "MiddleName",
-                "Type": "string",
+                "Name": "Team2_PlayersId",
+                "Type": "List\u003Cint\u003E",
                 "IsRequired": false,
-                "Attributes": [
-                  "MaxLength",
-                  "DataType"
-                ]
-              },
-              {
-                "Name": "LastName",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "MaxLength",
-                  "DataType"
-                ]
-              },
-              {
-                "Name": "PhoneNumber",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "DataType",
-                  "RegularExpression"
-                ]
-              },
-              {
-                "Name": "Address",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "MaxLength",
-                  "DataType"
-                ]
-              },
-              {
-                "Name": "Branch",
-                "Type": "BranchEnum",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required"
-                ]
-              },
-              {
-                "Name": "DOB",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "DataType"
-                ]
+                "Attributes": []
               }
             ]
           },
           "Responses": [
             {
               "StatusCode": 200,
-              "Kind": "view",
-              "JsonBodySchema": null,
-              "ViewModelSchema": {
-                "Name": "AddFacultyViewModel",
+              "Kind": "json",
+              "JsonBodySchema": {
+                "Name": "MatchModel",
                 "Properties": [
                   {
-                    "Name": "Role",
-                    "Type": "string",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required"
-                    ]
-                  },
-                  {
-                    "Name": "Email",
-                    "Type": "string",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required",
-                      "DataType",
-                      "EmailAddress"
-                    ]
-                  },
-                  {
-                    "Name": "Password",
-                    "Type": "string",
+                    "Name": "CreatedDate",
+                    "Type": "DateTime",
                     "IsRequired": false,
-                    "Attributes": [
-                      "DataType"
-                    ]
+                    "Attributes": []
                   },
                   {
-                    "Name": "Name",
-                    "Type": "string",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required",
-                      "MaxLength",
-                      "DataType"
-                    ]
-                  },
-                  {
-                    "Name": "MiddleName",
-                    "Type": "string",
+                    "Name": "Team1Info",
+                    "Type": "TeamModel",
                     "IsRequired": false,
-                    "Attributes": [
-                      "MaxLength",
-                      "DataType"
-                    ]
+                    "Attributes": []
                   },
                   {
-                    "Name": "LastName",
-                    "Type": "string",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required",
-                      "MaxLength",
-                      "DataType"
-                    ]
-                  },
-                  {
-                    "Name": "PhoneNumber",
-                    "Type": "string",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required",
-                      "DataType",
-                      "RegularExpression"
-                    ]
-                  },
-                  {
-                    "Name": "Address",
-                    "Type": "string",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required",
-                      "MaxLength",
-                      "DataType"
-                    ]
-                  },
-                  {
-                    "Name": "Branch",
-                    "Type": "BranchEnum",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required"
-                    ]
-                  },
-                  {
-                    "Name": "DOB",
-                    "Type": "string",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required",
-                      "DataType"
-                    ]
+                    "Name": "Team2Info",
+                    "Type": "TeamModel",
+                    "IsRequired": false,
+                    "Attributes": []
                   }
                 ]
-              }
-            },
-            {
-              "StatusCode": 302,
-              "Kind": "redirect",
-              "JsonBodySchema": null,
+              },
               "ViewModelSchema": null
             }
           ]
         },
         {
-          "Kind": "mvc",
-          "HttpMethod": "POST",
-          "Route": "/",
-          "Action": "AdminDetails",
-          "Parameters": [
-            {
-              "Name": "id",
-              "Type": "int",
-              "Source": "form"
-            }
-          ],
-          "RequestBodySchema": null,
-          "Responses": [
-            {
-              "StatusCode": 200,
-              "Kind": "view",
-              "JsonBodySchema": null,
-              "ViewModelSchema": null
-            }
-          ]
-        },
-        {
-          "Kind": "mvc",
-          "HttpMethod": "POST",
-          "Route": "/",
-          "Action": "EditAdmin",
+          "Kind": "api",
+          "HttpMethod": "PUT",
+          "Route": "/api/Matches",
+          "Action": "PostMatchResult",
           "Parameters": [
             {
               "Name": "model",
-              "Type": "FacultyDetailsViewModel",
-              "Source": "form"
+              "Type": "PostMatchResultModel",
+              "Source": "body"
             }
           ],
           "RequestBodySchema": {
-            "Name": "FacultyDetailsViewModel",
+            "Name": "PostMatchResultModel",
             "Properties": [
-              {
-                "Name": "Role",
-                "Type": "string",
-                "IsRequired": false,
-                "Attributes": []
-              },
               {
                 "Name": "Id",
                 "Type": "int",
@@ -3027,106 +226,56 @@
                 "Attributes": []
               },
               {
-                "Name": "Email",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "DataType",
-                  "EmailAddress"
-                ]
-              },
-              {
-                "Name": "Password",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "DataType"
-                ]
-              },
-              {
-                "Name": "Name",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "MaxLength",
-                  "DataType"
-                ]
-              },
-              {
-                "Name": "MiddleName",
-                "Type": "string",
+                "Name": "Team1_id",
+                "Type": "int",
                 "IsRequired": false,
-                "Attributes": [
-                  "MaxLength",
-                  "DataType"
-                ]
+                "Attributes": []
               },
               {
-                "Name": "LastName",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "MaxLength",
-                  "DataType"
-                ]
+                "Name": "Team2_id",
+                "Type": "int",
+                "IsRequired": false,
+                "Attributes": []
               },
               {
-                "Name": "PhoneNumber",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "DataType",
-                  "RegularExpression"
-                ]
+                "Name": "NoOfBalls",
+                "Type": "int",
+                "IsRequired": false,
+                "Attributes": []
               },
               {
-                "Name": "Address",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "MaxLength",
-                  "DataType"
-                ]
+                "Name": "Team1_Total",
+                "Type": "int",
+                "IsRequired": false,
+                "Attributes": []
               },
               {
-                "Name": "Branch",
-                "Type": "BranchEnum",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required"
-                ]
+                "Name": "Team1_Wickets",
+                "Type": "int",
+                "IsRequired": false,
+                "Attributes": []
               },
               {
-                "Name": "DOB",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "DataType"
-                ]
+                "Name": "Team2_Total",
+                "Type": "int",
+                "IsRequired": false,
+                "Attributes": []
+              },
+              {
+                "Name": "Team2_Wickets",
+                "Type": "int",
+                "IsRequired": false,
+                "Attributes": []
               }
             ]
           },
           "Responses": [
             {
               "StatusCode": 200,
-              "Kind": "view",
-              "JsonBodySchema": null,
-              "ViewModelSchema": {
-                "Name": "FacultyDetailsViewModel",
+              "Kind": "json",
+              "JsonBodySchema": {
+                "Name": "PostMatchResultModel",
                 "Properties": [
-                  {
-                    "Name": "Role",
-                    "Type": "string",
-                    "IsRequired": false,
-                    "Attributes": []
-                  },
                   {
                     "Name": "Id",
                     "Type": "int",
@@ -3134,578 +283,62 @@
                     "Attributes": []
                   },
                   {
-                    "Name": "Email",
-                    "Type": "string",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required",
-                      "DataType",
-                      "EmailAddress"
-                    ]
-                  },
-                  {
-                    "Name": "Password",
-                    "Type": "string",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required",
-                      "DataType"
-                    ]
-                  },
-                  {
-                    "Name": "Name",
-                    "Type": "string",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required",
-                      "MaxLength",
-                      "DataType"
-                    ]
-                  },
-                  {
-                    "Name": "MiddleName",
-                    "Type": "string",
+                    "Name": "Team1_id",
+                    "Type": "int",
                     "IsRequired": false,
-                    "Attributes": [
-                      "MaxLength",
-                      "DataType"
-                    ]
+                    "Attributes": []
                   },
                   {
-                    "Name": "LastName",
-                    "Type": "string",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required",
-                      "MaxLength",
-                      "DataType"
-                    ]
+                    "Name": "Team2_id",
+                    "Type": "int",
+                    "IsRequired": false,
+                    "Attributes": []
                   },
                   {
-                    "Name": "PhoneNumber",
-                    "Type": "string",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required",
-                      "DataType",
-                      "RegularExpression"
-                    ]
+                    "Name": "NoOfBalls",
+                    "Type": "int",
+                    "IsRequired": false,
+                    "Attributes": []
                   },
                   {
-                    "Name": "Address",
-                    "Type": "string",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required",
-                      "MaxLength",
-                      "DataType"
-                    ]
+                    "Name": "Team1_Total",
+                    "Type": "int",
+                    "IsRequired": false,
+                    "Attributes": []
                   },
                   {
-                    "Name": "Branch",
-                    "Type": "BranchEnum",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required"
-                    ]
+                    "Name": "Team1_Wickets",
+                    "Type": "int",
+                    "IsRequired": false,
+                    "Attributes": []
                   },
                   {
-                    "Name": "DOB",
-                    "Type": "string",
-                    "IsRequired": true,
-                    "Attributes": [
-                      "Required",
-                      "DataType"
-                    ]
+                    "Name": "Team2_Total",
+                    "Type": "int",
+                    "IsRequired": false,
+                    "Attributes": []
+                  },
+                  {
+                    "Name": "Team2_Wickets",
+                    "Type": "int",
+                    "IsRequired": false,
+                    "Attributes": []
                   }
                 ]
-              }
-            },
-            {
-              "StatusCode": 302,
-              "Kind": "redirect",
-              "JsonBodySchema": null,
+              },
               "ViewModelSchema": null
             }
           ]
         },
         {
-          "Kind": "mvc",
-          "HttpMethod": "POST",
-          "Route": "/",
-          "Action": "DeleteAdmin",
-          "Parameters": [
-            {
-              "Name": "id",
-              "Type": "int",
-              "Source": "form"
-            }
-          ],
-          "RequestBodySchema": null,
-          "Responses": [
-            {
-              "StatusCode": 200,
-              "Kind": "view",
-              "JsonBodySchema": null,
-              "ViewModelSchema": null
-            },
-            {
-              "StatusCode": 302,
-              "Kind": "redirect",
-              "JsonBodySchema": null,
-              "ViewModelSchema": null
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "TagController",
-      "RoutePrefix": null,
-      "Endpoints": [
-        {
-          "Kind": "mvc",
+          "Kind": "api",
           "HttpMethod": "GET",
-          "Route": "/",
-          "Action": "Index",
-          "Parameters": [],
-          "RequestBodySchema": null,
-          "Responses": [
-            {
-              "StatusCode": 200,
-              "Kind": "view",
-              "JsonBodySchema": null,
-              "ViewModelSchema": null
-            }
-          ]
-        },
-        {
-          "Kind": "mvc",
-          "HttpMethod": "GET",
-          "Route": "/",
-          "Action": "Rename",
+          "Route": "/api/Matches/{id}",
+          "Action": "GetMatchById",
           "Parameters": [
             {
               "Name": "id",
               "Type": "int",
-              "Source": "form"
-            }
-          ],
-          "RequestBodySchema": null,
-          "Responses": [
-            {
-              "StatusCode": 200,
-              "Kind": "view",
-              "JsonBodySchema": null,
-              "ViewModelSchema": null
-            }
-          ]
-        },
-        {
-          "Kind": "mvc",
-          "HttpMethod": "POST",
-          "Route": "/",
-          "Action": "CreateTag",
-          "Parameters": [
-            {
-              "Name": "model",
-              "Type": "CreateTagViewModel",
-              "Source": "form"
-            }
-          ],
-          "RequestBodySchema": {
-            "Name": "CreateTagViewModel",
-            "Properties": [
-              {
-                "Name": "Create_Tag_Name",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "DisplayName"
-                ]
-              },
-              {
-                "Name": "Tags",
-                "Type": "List\u003CTag\u003E",
-                "IsRequired": false,
-                "Attributes": []
-              }
-            ]
-          },
-          "Responses": [
-            {
-              "StatusCode": 302,
-              "Kind": "redirect",
-              "JsonBodySchema": null,
-              "ViewModelSchema": null
-            }
-          ]
-        },
-        {
-          "Kind": "mvc",
-          "HttpMethod": "POST",
-          "Route": "/",
-          "Action": "DeleteTag",
-          "Parameters": [
-            {
-              "Name": "id",
-              "Type": "int",
-              "Source": "form"
-            }
-          ],
-          "RequestBodySchema": null,
-          "Responses": [
-            {
-              "StatusCode": 302,
-              "Kind": "redirect",
-              "JsonBodySchema": null,
-              "ViewModelSchema": null
-            }
-          ]
-        },
-        {
-          "Kind": "mvc",
-          "HttpMethod": "POST",
-          "Route": "/",
-          "Action": "Rename",
-          "Parameters": [
-            {
-              "Name": "id",
-              "Type": "int",
-              "Source": "form"
-            },
-            {
-              "Name": "model",
-              "Type": "CreateTagViewModel",
-              "Source": "form"
-            }
-          ],
-          "RequestBodySchema": {
-            "Name": "CreateTagViewModel",
-            "Properties": [
-              {
-                "Name": "Create_Tag_Name",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "DisplayName"
-                ]
-              },
-              {
-                "Name": "Tags",
-                "Type": "List\u003CTag\u003E",
-                "IsRequired": false,
-                "Attributes": []
-              }
-            ]
-          },
-          "Responses": [
-            {
-              "StatusCode": 302,
-              "Kind": "redirect",
-              "JsonBodySchema": null,
-              "ViewModelSchema": null
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "TestController",
-      "RoutePrefix": null,
-      "Endpoints": [
-        {
-          "Kind": "mvc",
-          "HttpMethod": "GET",
-          "Route": "/",
-          "Action": "Index",
-          "Parameters": [],
-          "RequestBodySchema": null,
-          "Responses": [
-            {
-              "StatusCode": 200,
-              "Kind": "view",
-              "JsonBodySchema": null,
-              "ViewModelSchema": null
-            }
-          ]
-        },
-        {
-          "Kind": "mvc",
-          "HttpMethod": "GET",
-          "Route": "/",
-          "Action": "TestDetails",
-          "Parameters": [
-            {
-              "Name": "id",
-              "Type": "int",
-              "Source": "form"
-            }
-          ],
-          "RequestBodySchema": null,
-          "Responses": [
-            {
-              "StatusCode": 200,
-              "Kind": "view",
-              "JsonBodySchema": null,
-              "ViewModelSchema": null
-            }
-          ]
-        },
-        {
-          "Kind": "mvc",
-          "HttpMethod": "GET",
-          "Route": "/",
-          "Action": "AddQuestions",
-          "Parameters": [
-            {
-              "Name": "id",
-              "Type": "int",
-              "Source": "form"
-            }
-          ],
-          "RequestBodySchema": null,
-          "Responses": [
-            {
-              "StatusCode": 200,
-              "Kind": "view",
-              "JsonBodySchema": null,
-              "ViewModelSchema": null
-            }
-          ]
-        },
-        {
-          "Kind": "mvc",
-          "HttpMethod": "GET",
-          "Route": "/",
-          "Action": "AssignTest",
-          "Parameters": [
-            {
-              "Name": "id",
-              "Type": "int",
-              "Source": "form"
-            }
-          ],
-          "RequestBodySchema": null,
-          "Responses": [
-            {
-              "StatusCode": 200,
-              "Kind": "view",
-              "JsonBodySchema": null,
-              "ViewModelSchema": null
-            }
-          ]
-        },
-        {
-          "Kind": "mvc",
-          "HttpMethod": "POST",
-          "Route": "/",
-          "Action": "CreateTest",
-          "Parameters": [
-            {
-              "Name": "model",
-              "Type": "CreateTestViewModel",
-              "Source": "form"
-            }
-          ],
-          "RequestBodySchema": {
-            "Name": "CreateTestViewModel",
-            "Properties": [
-              {
-                "Name": "Title",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "DisplayName"
-                ]
-              },
-              {
-                "Name": "Type_name",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "DisplayName"
-                ]
-              },
-              {
-                "Name": "Duration",
-                "Type": "TimeSpan?",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "DataType",
-                  "DisplayFormat"
-                ]
-              },
-              {
-                "Name": "StartDate",
-                "Type": "string",
-                "IsRequired": false,
-                "Attributes": []
-              },
-              {
-                "Name": "EndDate",
-                "Type": "string",
-                "IsRequired": false,
-                "Attributes": []
-              },
-              {
-                "Name": "PassingMarks",
-                "Type": "int?",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "DisplayName"
-                ]
-              },
-              {
-                "Name": "TestTypes",
-                "Type": "List\u003CTestType\u003E",
-                "IsRequired": false,
-                "Attributes": []
-              }
-            ]
-          },
-          "Responses": [
-            {
-              "StatusCode": 302,
-              "Kind": "redirect",
-              "JsonBodySchema": null,
-              "ViewModelSchema": null
-            }
-          ]
-        },
-        {
-          "Kind": "mvc",
-          "HttpMethod": "POST",
-          "Route": "/",
-          "Action": "AddQuestions",
-          "Parameters": [
-            {
-              "Name": "model",
-              "Type": "AddQuestionsViewModel",
-              "Source": "form"
-            }
-          ],
-          "RequestBodySchema": {
-            "Name": "AddQuestionsViewModel",
-            "Properties": [
-              {
-                "Name": "Question",
-                "Type": "string[]",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "DisplayName"
-                ]
-              },
-              {
-                "Name": "Option1",
-                "Type": "string[]",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "DisplayName"
-                ]
-              },
-              {
-                "Name": "Option2",
-                "Type": "string[]",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "DisplayName"
-                ]
-              },
-              {
-                "Name": "Option3",
-                "Type": "string[]",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "DisplayName"
-                ]
-              },
-              {
-                "Name": "Option4",
-                "Type": "string[]",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "DisplayName"
-                ]
-              },
-              {
-                "Name": "Answer",
-                "Type": "string[]",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required"
-                ]
-              },
-              {
-                "Name": "Description",
-                "Type": "string[]",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "DisplayName"
-                ]
-              },
-              {
-                "Name": "Marks",
-                "Type": "int[]",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "DisplayName"
-                ]
-              },
-              {
-                "Name": "Tag_id",
-                "Type": "int[]",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "DisplayName"
-                ]
-              },
-              {
-                "Name": "Test_id",
-                "Type": "int",
-                "IsRequired": false,
-                "Attributes": []
-              },
-              {
-                "Name": "Tags",
-                "Type": "List\u003CTag\u003E",
-                "IsRequired": false,
-                "Attributes": []
-              }
-            ]
-          },
-          "Responses": [
-            {
-              "StatusCode": 302,
-              "Kind": "redirect",
-              "JsonBodySchema": null,
-              "ViewModelSchema": null
-            }
-          ]
-        },
-        {
-          "Kind": "mvc",
-          "HttpMethod": "POST",
-          "Route": "/",
-          "Action": "AssignTest",
-          "Parameters": [
-            {
-              "Name": "array",
-              "Type": "string[]",
               "Source": "body"
             }
           ],
@@ -3713,7 +346,239 @@
           "Responses": [
             {
               "StatusCode": 200,
-              "Kind": "unknown",
+              "Kind": "json",
+              "JsonBodySchema": {
+                "Name": "MatchModel",
+                "Properties": [
+                  {
+                    "Name": "CreatedDate",
+                    "Type": "DateTime",
+                    "IsRequired": false,
+                    "Attributes": []
+                  },
+                  {
+                    "Name": "Team1Info",
+                    "Type": "TeamModel",
+                    "IsRequired": false,
+                    "Attributes": []
+                  },
+                  {
+                    "Name": "Team2Info",
+                    "Type": "TeamModel",
+                    "IsRequired": false,
+                    "Attributes": []
+                  }
+                ]
+              },
+              "ViewModelSchema": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Name": "PlayersController",
+      "RoutePrefix": "api/[controller]",
+      "Endpoints": [
+        {
+          "Kind": "api",
+          "HttpMethod": "GET",
+          "Route": "/api/Players",
+          "Action": "GetAllPlayers",
+          "Parameters": [],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Kind": "json",
+              "JsonBodySchema": null,
+              "ViewModelSchema": null
+            }
+          ]
+        },
+        {
+          "Kind": "api",
+          "HttpMethod": "POST",
+          "Route": "/api/Players",
+          "Action": "CreatePlayer",
+          "Parameters": [
+            {
+              "Name": "model",
+              "Type": "PlayerNameModel",
+              "Source": "body"
+            }
+          ],
+          "RequestBodySchema": {
+            "Name": "PlayerNameModel",
+            "Properties": [
+              {
+                "Name": "Name",
+                "Type": "string",
+                "IsRequired": false,
+                "Attributes": []
+              }
+            ]
+          },
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Kind": "json",
+              "JsonBodySchema": {
+                "Name": "PlayerModel",
+                "Properties": [
+                  {
+                    "Name": "Id",
+                    "Type": "int",
+                    "IsRequired": false,
+                    "Attributes": []
+                  },
+                  {
+                    "Name": "Name",
+                    "Type": "string",
+                    "IsRequired": false,
+                    "Attributes": []
+                  }
+                ]
+              },
+              "ViewModelSchema": null
+            }
+          ]
+        },
+        {
+          "Kind": "api",
+          "HttpMethod": "PUT",
+          "Route": "/api/Players",
+          "Action": "UpdatePlayer",
+          "Parameters": [
+            {
+              "Name": "model",
+              "Type": "PlayerModel",
+              "Source": "body"
+            }
+          ],
+          "RequestBodySchema": {
+            "Name": "PlayerModel",
+            "Properties": [
+              {
+                "Name": "Id",
+                "Type": "int",
+                "IsRequired": false,
+                "Attributes": []
+              },
+              {
+                "Name": "Name",
+                "Type": "string",
+                "IsRequired": false,
+                "Attributes": []
+              }
+            ]
+          },
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Kind": "json",
+              "JsonBodySchema": {
+                "Name": "PlayerModel",
+                "Properties": [
+                  {
+                    "Name": "Id",
+                    "Type": "int",
+                    "IsRequired": false,
+                    "Attributes": []
+                  },
+                  {
+                    "Name": "Name",
+                    "Type": "string",
+                    "IsRequired": false,
+                    "Attributes": []
+                  }
+                ]
+              },
+              "ViewModelSchema": null
+            }
+          ]
+        },
+        {
+          "Kind": "api",
+          "HttpMethod": "DELETE",
+          "Route": "/api/Players/{id}",
+          "Action": "DeletePlayer",
+          "Parameters": [
+            {
+              "Name": "id",
+              "Type": "int",
+              "Source": "body"
+            }
+          ],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Kind": "json",
+              "JsonBodySchema": {
+                "Name": "PlayerModel",
+                "Properties": [
+                  {
+                    "Name": "Id",
+                    "Type": "int",
+                    "IsRequired": false,
+                    "Attributes": []
+                  },
+                  {
+                    "Name": "Name",
+                    "Type": "string",
+                    "IsRequired": false,
+                    "Attributes": []
+                  }
+                ]
+              },
+              "ViewModelSchema": null
+            }
+          ]
+        },
+        {
+          "Kind": "api",
+          "HttpMethod": "GET",
+          "Route": "/api/Players/{id}",
+          "Action": "GetPlayerById",
+          "Parameters": [
+            {
+              "Name": "id",
+              "Type": "int",
+              "Source": "body"
+            }
+          ],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Kind": "json",
+              "JsonBodySchema": {
+                "Name": "PlayerTeamModel",
+                "Properties": [
+                  {
+                    "Name": "Team",
+                    "Type": "TeamModel?",
+                    "IsRequired": false,
+                    "Attributes": []
+                  }
+                ]
+              },
+              "ViewModelSchema": null
+            }
+          ]
+        },
+        {
+          "Kind": "api",
+          "HttpMethod": "GET",
+          "Route": "/api/Players/NotMapped",
+          "Action": "GetAllPlayersNotAsigned",
+          "Parameters": [],
+          "RequestBodySchema": null,
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Kind": "json",
               "JsonBodySchema": null,
               "ViewModelSchema": null
             }
@@ -3722,151 +587,202 @@
       ]
     },
     {
-      "Name": "TestTypeController",
-      "RoutePrefix": null,
+      "Name": "TeamsController",
+      "RoutePrefix": "api/[controller]",
       "Endpoints": [
         {
-          "Kind": "mvc",
+          "Kind": "api",
           "HttpMethod": "GET",
-          "Route": "/",
-          "Action": "Index",
+          "Route": "/api/Teams",
+          "Action": "GetAllTeams",
           "Parameters": [],
           "RequestBodySchema": null,
           "Responses": [
             {
               "StatusCode": 200,
-              "Kind": "view",
+              "Kind": "json",
               "JsonBodySchema": null,
               "ViewModelSchema": null
             }
           ]
         },
         {
-          "Kind": "mvc",
-          "HttpMethod": "GET",
-          "Route": "/",
-          "Action": "Rename",
+          "Kind": "api",
+          "HttpMethod": "POST",
+          "Route": "/api/Teams",
+          "Action": "CreateTeam",
+          "Parameters": [
+            {
+              "Name": "model",
+              "Type": "TeamCreateModel",
+              "Source": "body"
+            }
+          ],
+          "RequestBodySchema": {
+            "Name": "TeamCreateModel",
+            "Properties": [
+              {
+                "Name": "Name",
+                "Type": "string",
+                "IsRequired": false,
+                "Attributes": []
+              },
+              {
+                "Name": "PlayersId",
+                "Type": "List\u003Cint\u003E?",
+                "IsRequired": false,
+                "Attributes": []
+              }
+            ]
+          },
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Kind": "json",
+              "JsonBodySchema": {
+                "Name": "TeamPlayerModel",
+                "Properties": [
+                  {
+                    "Name": "Players",
+                    "Type": "IEnumerable\u003CPlayerModel\u003E?",
+                    "IsRequired": false,
+                    "Attributes": []
+                  }
+                ]
+              },
+              "ViewModelSchema": null
+            }
+          ]
+        },
+        {
+          "Kind": "api",
+          "HttpMethod": "PUT",
+          "Route": "/api/Teams",
+          "Action": "UpdateTeam",
+          "Parameters": [
+            {
+              "Name": "model",
+              "Type": "TeamUpdateModel",
+              "Source": "body"
+            }
+          ],
+          "RequestBodySchema": {
+            "Name": "TeamUpdateModel",
+            "Properties": [
+              {
+                "Name": "PlayersId",
+                "Type": "List\u003Cint\u003E?",
+                "IsRequired": false,
+                "Attributes": []
+              }
+            ]
+          },
+          "Responses": [
+            {
+              "StatusCode": 200,
+              "Kind": "json",
+              "JsonBodySchema": {
+                "Name": "TeamPlayerModel",
+                "Properties": [
+                  {
+                    "Name": "Players",
+                    "Type": "IEnumerable\u003CPlayerModel\u003E?",
+                    "IsRequired": false,
+                    "Attributes": []
+                  }
+                ]
+              },
+              "ViewModelSchema": null
+            }
+          ]
+        },
+        {
+          "Kind": "api",
+          "HttpMethod": "DELETE",
+          "Route": "/api/Teams/{id}",
+          "Action": "DeleteTeam",
           "Parameters": [
             {
               "Name": "id",
               "Type": "int",
-              "Source": "form"
+              "Source": "body"
             }
           ],
           "RequestBodySchema": null,
           "Responses": [
             {
               "StatusCode": 200,
-              "Kind": "view",
-              "JsonBodySchema": null,
-              "ViewModelSchema": null
-            }
-          ]
-        },
-        {
-          "Kind": "mvc",
-          "HttpMethod": "POST",
-          "Route": "/",
-          "Action": "CreateType",
-          "Parameters": [
-            {
-              "Name": "model",
-              "Type": "CreateTestTypeViewModel",
-              "Source": "form"
-            }
-          ],
-          "RequestBodySchema": {
-            "Name": "CreateTestTypeViewModel",
-            "Properties": [
-              {
-                "Name": "Create_TestType_Name",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "DisplayName"
+              "Kind": "json",
+              "JsonBodySchema": {
+                "Name": "TeamModel",
+                "Properties": [
+                  {
+                    "Name": "Id",
+                    "Type": "int",
+                    "IsRequired": false,
+                    "Attributes": []
+                  },
+                  {
+                    "Name": "Name",
+                    "Type": "string",
+                    "IsRequired": false,
+                    "Attributes": []
+                  }
                 ]
               },
-              {
-                "Name": "TestTypes",
-                "Type": "List\u003CTestType\u003E",
-                "IsRequired": false,
-                "Attributes": []
-              }
-            ]
-          },
-          "Responses": [
-            {
-              "StatusCode": 302,
-              "Kind": "redirect",
-              "JsonBodySchema": null,
               "ViewModelSchema": null
             }
           ]
         },
         {
-          "Kind": "mvc",
-          "HttpMethod": "POST",
-          "Route": "/",
-          "Action": "DeleteType",
+          "Kind": "api",
+          "HttpMethod": "GET",
+          "Route": "/api/Teams/{id}",
+          "Action": "GetTeamById",
           "Parameters": [
             {
               "Name": "id",
               "Type": "int",
-              "Source": "form"
+              "Source": "body"
             }
           ],
           "RequestBodySchema": null,
           "Responses": [
             {
-              "StatusCode": 302,
-              "Kind": "redirect",
-              "JsonBodySchema": null,
+              "StatusCode": 200,
+              "Kind": "json",
+              "JsonBodySchema": {
+                "Name": "TeamPlayerModel",
+                "Properties": [
+                  {
+                    "Name": "Players",
+                    "Type": "IEnumerable\u003CPlayerModel\u003E?",
+                    "IsRequired": false,
+                    "Attributes": []
+                  }
+                ]
+              },
               "ViewModelSchema": null
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "Name": "WeatherForecastController",
+      "RoutePrefix": "[controller]",
+      "Endpoints": [
         {
-          "Kind": "mvc",
-          "HttpMethod": "POST",
-          "Route": "/",
-          "Action": "Rename",
-          "Parameters": [
-            {
-              "Name": "id",
-              "Type": "int",
-              "Source": "form"
-            },
-            {
-              "Name": "model",
-              "Type": "CreateTestTypeViewModel",
-              "Source": "form"
-            }
-          ],
-          "RequestBodySchema": {
-            "Name": "CreateTestTypeViewModel",
-            "Properties": [
-              {
-                "Name": "Create_TestType_Name",
-                "Type": "string",
-                "IsRequired": true,
-                "Attributes": [
-                  "Required",
-                  "DisplayName"
-                ]
-              },
-              {
-                "Name": "TestTypes",
-                "Type": "List\u003CTestType\u003E",
-                "IsRequired": false,
-                "Attributes": []
-              }
-            ]
-          },
+          "Kind": "api",
+          "HttpMethod": "GET",
+          "Route": "/WeatherForecast/Name = \u0022GetWeatherForecast\u0022",
+          "Action": "Get",
+          "Parameters": [],
+          "RequestBodySchema": null,
           "Responses": [
             {
-              "StatusCode": 302,
-              "Kind": "redirect",
+              "StatusCode": 200,
+              "Kind": "json",
               "JsonBodySchema": null,
               "ViewModelSchema": null
             }

@@ -1,6 +1,6 @@
 ﻿using System.Text.Json;
 using ApiDocGen.AI.Gemini;
-using ApiDocGen.Core.AI;              // <- adjust if your PromptBuilder namespace differs
+using ApiDocGen.Core.AI;
 using ApiDocGen.Core.Models;
 using ApiDocGen.Core.Serialization;
 using ApiDocGen.Git;
@@ -16,17 +16,24 @@ static void PrintUsage()
 {
     Console.WriteLine(
 @"Usage:
-  dotnet run -- --repo <github_url> --out <output_dir> [--gemini-model gemini-2.5-flash]
+  dotnet run -- --repo <github_url> --out <output_dir> [--gemini-model gemini-2.5-flash] [--github-token <token>]
 
 Environment:
   GEMINI_API_KEY must be set (recommended)
+  GITHUB_TOKEN   optional; required for private repos (recommended)
 
 Optional (local testing only):
   --gemini-key <api_key>
+  --github-token <token>
 
 Examples:
+  # Public repo
   $env:GEMINI_API_KEY=""YOUR_KEY""
   dotnet run -- --repo https://github.com/user/repo --out .\docs --gemini-model gemini-2.5-flash
+
+  # Private repo (preferred: env var)
+  $env:GITHUB_TOKEN=""YOUR_GITHUB_PAT""
+  dotnet run -- --repo https://github.com/user/private-repo --out .\docs
 ");
 }
 
@@ -50,12 +57,22 @@ if (string.IsNullOrWhiteSpace(geminiKey))
     return;
 }
 
+// GitHub token: optional for public repos, required for private repos
+var githubToken = Environment.GetEnvironmentVariable("GITHUB_TOKEN")
+               ?? Arg(args, "--github-token");
+
 Directory.CreateDirectory(outDir);
 
 // 1) Clone repo to temp
 var tempRoot = Path.Combine(Path.GetTempPath(), "ApiDocGenFromSource", Guid.NewGuid().ToString("N"));
+
 Console.WriteLine($"Cloning repo to: {tempRoot}");
-await GitClient.CloneAsync(repoUrl, tempRoot);
+if (!string.IsNullOrWhiteSpace(githubToken))
+{
+    Console.WriteLine("Using authenticated GitHub access (token provided).");
+}
+
+await GitClient.CloneAsync(repoUrl, tempRoot, githubToken);
 
 // 2) Commit hash
 var commit = await GitClient.GetHeadCommitAsync(tempRoot);
@@ -77,7 +94,7 @@ Console.WriteLine($"Wrote: {jsonPath}");
 
 // 5) Ask Gemini for Markdown
 Console.WriteLine($"Calling Gemini model '{geminiModel}'...");
-var prompt = PromptBuilder.Build(spec); // keep same Build(...) signature you had
+var prompt = PromptBuilder.Build(spec);
 
 using var http = new HttpClient();
 var gemini = new GeminiClient(http, geminiKey!, geminiModel);

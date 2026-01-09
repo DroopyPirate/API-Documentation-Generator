@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ApiDocGen.Scanner.Roslyn")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d2e503f3905d7b8670aed3f8dbcdbcbb0402f398")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9bf6839f4bd6481ad2305816a764d153ab36a571")]
 [assembly: System.Reflection.AssemblyProductAttribute("ApiDocGen.Scanner.Roslyn")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ApiDocGen.Scanner.Roslyn")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
